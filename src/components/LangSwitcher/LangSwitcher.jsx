@@ -1,16 +1,24 @@
-import { useState } from 'react';
+import {useEffect, useState} from 'react';
 import './LangSwitcher.scss'
 
 function LangSwitcher({ i18n }) {
     const [open, setOpen] = useState(false);
+    const [currentLanguage, setCurrentLanguage] = useState(() => {
+        return localStorage.getItem('language') || 'en'
+    });
+
     const languages = [
         { key: "uk", label: "UA" },
         { key: "en", label: "EN" }
     ];
-    const currentLanguage = i18n.language;
+
+    useEffect(() => {
+        localStorage.setItem('language', currentLanguage);
+        i18n.changeLanguage(currentLanguage);
+    }, [currentLanguage])
 
     const handleSelect = (lang) => {
-        i18n.changeLanguage(lang);
+        setCurrentLanguage(lang)
         setOpen(false);
     };
 
