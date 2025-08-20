@@ -2,12 +2,12 @@ import "./AnnouncementSection.scss"
 import {useTranslation} from "react-i18next";
 import SocialCard from "../../components/SocialCard/SocialCard.jsx";
 
-import announcementImgPng from "../../assets/announcement-woman.png";
-// import announcementImgWebp from "../../assets/announcement-woman.webp";
-import mediaIcon from "../../assets/social-media.svg";
-import telegramIcon from "../../assets/social-telegram.svg";
-import instagramIcon from "../../assets/social-instagram.svg";
-import youtubeIcon from "../../assets/social-youtube.svg";
+import announcementImgPng from "/assets/announcement-woman.png";
+// import announcementImgWebp from "/assets/announcement-woman.webp";
+import mediaIcon from "/assets/social-media.svg";
+import telegramIcon from "/assets/social-telegram.svg";
+import instagramIcon from "/assets/social-instagram.svg";
+import youtubeIcon from "/assets/social-youtube.svg";
 
 function AnnouncementSection() {
     const { t } = useTranslation();

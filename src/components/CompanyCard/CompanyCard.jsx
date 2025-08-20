@@ -1,12 +1,11 @@
 import './CompanyCard.scss'
 import {useTranslation} from "react-i18next";
 import Button from "../Button/Button.jsx";
-import {useEffect, useRef} from "react";
 
 function CompanyCard({ company }) {
     const { t } = useTranslation();
-    const imgSrc = `/src/assets/${company.logo}`
-    const imgElement = <img className="company__logo" src={imgSrc} alt={company.name} />
+    const imgSrc = `/assets/${company.logo}`
+    const imgElement = <img className="company__logo" src={imgSrc} alt={company.name} /> || null
 
     return (
         <div className="company" data-company={company.tag}>

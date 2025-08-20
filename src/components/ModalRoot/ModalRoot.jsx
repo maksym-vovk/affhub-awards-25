@@ -1,7 +1,7 @@
 import "./ModalRoot.scss"
 import {useModal} from "../../context/ModalContext.jsx";
 
-import logo from '../../assets/main-logo.svg'
+import logo from '/assets/main-logo.svg'
 import Button from "../Button/Button.jsx";
 import SignupForm from "../SignupForm/SignupForm.jsx";
 import LoginForm from "../LoginForm/LoginForm.jsx";

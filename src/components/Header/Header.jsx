@@ -1,6 +1,6 @@
 import React, {useEffect, useRef, useState} from 'react'
 import './Header.scss'
-import logo from '../../assets/main-logo.svg'
+import logo from '/assets/main-logo.svg'
 
 import { useTranslation } from 'react-i18next'
 import LangSwitcher from "../LangSwitcher/LangSwitcher.jsx";

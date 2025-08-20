@@ -1,7 +1,7 @@
 import './OverviewSection.scss'
-import overviewImgPng from "../../assets/overview-woman.png";
+import overviewImgPng from "/assets/overview-woman.png";
 import {useTranslation} from "react-i18next";
-// import overviewImgWebp from "../../assets/overview-woman.webp";
+// import overviewImgWebp from "/assets/overview-woman.webp";
 
 function OverviewSection() {
     const { t } = useTranslation();

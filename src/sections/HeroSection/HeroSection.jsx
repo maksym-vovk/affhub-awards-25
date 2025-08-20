@@ -1,8 +1,8 @@
 import './HeroSection.scss'
 import Button from "../../components/Button/Button.jsx";
 import {useTranslation} from "react-i18next";
-import heroImgPng from '../../assets/hero.png';
-// import heroImgWebp from '../../assets/hero.webp';
+import heroImgPng from '/assets/hero.png';
+// import heroImgWebp from '/assets/hero.webp';
 
 function HeroSection() {
     const [ t ] = useTranslation();
