@@ -1,0 +1,108 @@
+@use "../../styles/mixins";
+@use "../../styles/variables";
+
+.announcement {
+  &__wrapper {
+    @include mixins.rm(1024) {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 30px;
+    }
+
+    @include mixins.rm(1220) {
+      gap: 60px;
+    }
+  }
+
+  &__content {
+    @include mixins.rm(1024) {
+      max-width: 604px;
+    }
+  }
+
+  & picture {
+    @include mixins.rm(1024) {
+      flex-shrink: 0;
+      flex-basis: calc(50% - 15px);
+    }
+
+    @include mixins.rm(1220) {
+      flex-basis: calc(46% - 30px);
+    }
+
+    @include mixins.rm(1440) {
+      flex-basis: auto;
+    }
+  }
+
+  &__img {
+    width: 400px;
+    margin: 0 auto 30px;
+
+    @include mixins.rm(1024) {
+      width: 100%;
+      margin: 0;
+    }
+
+    @include mixins.rm(1440) {
+      width: 545px;
+    }
+  }
+
+  &__text {
+    font-family: variables.$font-italic;
+    font-size: 18px;
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 40px;
+
+    @include mixins.rm(480) {
+      font-size: 22px;
+    }
+
+    @include mixins.rm(640) {
+      font-size: 26px;
+    }
+
+    @include mixins.rm(768) {
+      font-size: 30px;
+    }
+
+    @include mixins.rm(1024) {
+      font-size: 32px;
+      text-align: left;
+    }
+
+    @include mixins.rm(1220) {
+      font-size: 36px;
+    }
+
+    @include mixins.rm(1440) {
+      font-size: 40px;
+      margin-bottom: 56px;
+    }
+  }
+
+  &__socials {
+    @include mixins.rm(480) {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+    }
+
+    & .social-card {
+      @include mixins.rm(480) {
+        flex-basis: calc(50% - 15px);
+      }
+
+      &:not(:last-child) {
+        margin-bottom: 30px;
+
+        @include mixins.rm(480) {
+          margin: 0;
+        }
+      }
+    }
+  }
+}

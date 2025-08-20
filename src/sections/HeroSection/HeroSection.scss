@@ -1,0 +1,173 @@
+@use "../../styles/mixins";
+@use "../../styles/variables";
+
+.hero {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  @include mixins.rm(768) {
+    position: static;
+    justify-content: flex-end;
+    max-height: 440px;
+  }
+
+  @include mixins.rm(1024) {
+    max-height: 540px;
+  }
+
+  @include mixins.rm(1220) {
+    max-height: 600px;
+  }
+
+  @include mixins.rm(1440) {
+    max-height: 698px;
+  }
+
+  &__wrapper {
+    @include mixins.rm(768) {
+      position: relative;
+    }
+  }
+
+  &__content {
+    z-index: 2;
+    position: relative;
+
+    @include mixins.rm(768) {
+      padding-bottom: 20px;
+    }
+
+    @include mixins.rm(1024) {
+      padding-bottom: 26px;
+    }
+
+    @include mixins.rm(1220) {
+      padding-bottom: 32px;
+    }
+
+    @include mixins.rm(1440) {
+      padding-bottom: 36px;
+    }
+  }
+
+  &__title {
+    font-family: variables.$font-bold;
+    font-weight: 800;
+    line-height: 1;
+    font-size: 38px;
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 26px;
+
+    @include mixins.rm(480) {
+      font-size: 48px;
+    }
+
+    @include mixins.rm(640) {
+      font-size: 58px;
+    }
+
+    @include mixins.rm(768) {
+      font-size: 68px;
+      text-align: left;
+    }
+
+    @include mixins.rm(1024) {
+      font-size: 78px;
+      margin-bottom: 30px;
+    }
+
+    @include mixins.rm(1220) {
+      font-size: 88px;
+      margin-bottom: 34px;
+    }
+
+    @include mixins.rm(1440) {
+      font-size: 98px;
+      margin-bottom: 38px;
+    }
+
+    span {
+      font-size: 1.15em;
+      font-family: variables.$font-italic;
+      font-style: italic;
+      line-height: 0;
+    }
+  }
+
+  &__btn {
+    margin-inline: auto;
+    @include mixins.button-style(inherit, 6px 16px, 5px);
+
+    @include mixins.rm(480) {
+      @include mixins.button-style(18px, 10px 20px, 5px);
+    }
+
+    @include mixins.rm(768) {
+      @include mixins.button-style(18px, 12px 22px, 5px);
+      margin: 0;
+    }
+
+    @include mixins.rm(768) {
+      @include mixins.button-style(20px, 16px 26px, 10px);
+    }
+
+    @include mixins.rm(1024) {
+      @include mixins.button-style(22px, 20px 30px, 10px);
+    }
+
+    @include mixins.rm(1440) {
+      @include mixins.button-style(24px, 24px 35px, 10px);
+    }
+  }
+
+  &__bg {
+    z-index: 1;
+    position: absolute;
+    inset: 0;
+
+    @include mixins.rm(768) {
+      aspect-ratio: 740/765;
+      width: 58%;
+      inset: auto;
+      bottom: 0;
+      right: -6%;
+    }
+
+    @include mixins.rm(1024) {
+      width: 54%;
+      right: 40px;
+    }
+
+    @include mixins.rm(1220) {
+      width: 56%;
+      right: 50px;
+    }
+
+    @include mixins.rm(1440) {
+      width: 52%;
+      right: 100px;
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.4);
+
+      @include mixins.rm(768) {
+        content: none;
+        display: none;
+      }
+    }
+  }
+
+  &__img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+}

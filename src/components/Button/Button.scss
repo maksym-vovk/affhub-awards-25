@@ -1,0 +1,16 @@
+@use "../../styles/mixins";
+@use "../../styles/variables";
+
+.button {
+  position: relative;
+  font-family: variables.$font-bold;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: variables.$black-color;
+  background: #fff;
+  transition: .3s ease;
+
+  &:hover {
+    transform: scale(1.05);
+  }
+}

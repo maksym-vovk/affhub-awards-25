@@ -1,0 +1,35 @@
+@use '../../styles/mixins';
+@use '../../styles/variables';
+
+.auth-switcher {
+  display: flex;
+  //align-items: center;
+  gap: 6px;
+  min-height: 60px;
+  max-width: 347px;
+  width: 100%;
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  //border-radius: 100px;
+  border-radius: 5px;
+  padding: 6px;
+
+  &__btn {
+    font-family: variables.$font-regular;
+    font-size: inherit;
+    width: 50%;
+    color: white;
+    background: transparent;
+    border-radius: 5px;
+    //border-radius: 100px;
+    cursor: pointer;
+    padding: 6px;
+
+    &.active {
+      color: black;
+      background: white;
+      //background: linear-gradient(100deg, #FF00D4, #6A00FF, #0FF, #FFA800);
+      //background-size: 250% 100%;
+      //background-position: 0 0;
+    }
+  }
+}

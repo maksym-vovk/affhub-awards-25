@@ -1,0 +1,32 @@
+@font-face {
+  font-display: swap;
+  font-family: 'Unbounded';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../assets/fonts/unbounded-v11-cyrillic_latin-regular.woff2') format('woff2');
+}
+
+@font-face {
+  font-display: swap;
+  font-family: 'Unbounded';
+  font-style: normal;
+  font-weight: 800;
+  src: url('../assets/fonts/unbounded-v11-cyrillic_latin-800.woff2') format('woff2');
+}
+
+@font-face {
+  font-display: swap;
+  font-family: 'STIX Two Text';
+  font-style: italic;
+  font-weight: 400;
+  src: url('../assets/fonts/stix-two-text-v17-cyrillic_latin-italic.woff2') format('woff2'),
+  url('../assets/fonts/stix-two-text-v17-cyrillic_latin-italic.woff') format('woff');;
+}
+
+@font-face {
+  font-display: swap;
+  font-family: 'e-Ukraine Head';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../assets/fonts/e-UkraineHead-Regular.woff2') format('woff2');
+}

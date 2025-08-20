@@ -1,0 +1,41 @@
+@use "../../styles/mixins";
+@use "../../styles/variables";
+
+.header {
+  z-index: 10;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  backdrop-filter: blur(16px);
+  transition: all .5s ease-in-out;
+  padding: 15px 0;
+
+  @include mixins.rm(1024) {
+    padding: 20px 0;
+  }
+
+  &--hidden {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+
+  &__wrapper, &__controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 14px;
+  }
+
+  &__btn {
+    @include mixins.button-style(inherit, 6px 16px, 5px);
+
+    @include mixins.rm(768) {
+      @include mixins.button-style(18px, 8px 20px, 5px);
+    }
+
+    @include mixins.rm(1024) {
+      @include mixins.button-style(20px, 10px 24px, 10px);
+    }
+  }
+}

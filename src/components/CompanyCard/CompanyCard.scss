@@ -1,0 +1,388 @@
+@use '../../styles/mixins';
+@use '../../styles/variables';
+
+.company {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 14px;
+  background: linear-gradient(0deg, #0f0f0f, #0f0f0f, variables.$card-gradient-start, variables.$shadow);
+  background-size: 100% 290%;
+  background-position: 0 99%;
+  transition: all 0.4s ease-in-out;
+  padding: 14px 12px;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+
+  &::before {
+    content: '';
+    display: block;
+    width: calc(100% - 2px);
+    height: calc(100% - 2px);
+    position: absolute;
+    top: 1px;
+    left: 1px;
+    background: #0f0f0f;
+    border-radius: inherit;
+    pointer-events: none;
+  }
+
+  @include mixins.rm(640) {
+    width: calc(50% - 5px);
+    border-radius: 18px;
+    padding: 15px;
+  }
+
+  @include mixins.rm(768) {
+    width: calc(50% - 10px);
+    border-radius: 22px;
+    padding: 20px;
+  }
+
+  @include mixins.rm(1024) {
+    width: calc((100% / 3) - (25px * 2 / 3));
+    border-radius: 26px;
+    padding: 20px 24px;
+  }
+
+  @include mixins.rm(1220) {
+    border-radius: 30px;
+    width: calc((100% / 4) - (32px * 3 / 4));
+  }
+
+  &:hover {
+    background-position: 0 0;
+    box-shadow: 0 10px 20px 2px variables.$shadow;
+    //box-shadow: 0 14px 80px 0 #6A00FF;
+  }
+
+  &.voted {
+    background: #0f0f0f;
+
+    @include mixins.rm(1024) {
+      background: linear-gradient(0deg, #000, #000, variables.$card-gradient-start, variables.$shadow);
+      background-size: 100% 290%;
+      background-position: 0 0%;
+    }
+
+    &::before {
+      display: flex;
+
+      @include mixins.rm(1024) {
+        display: flex;
+      }
+    }
+  }
+
+  &.voted:hover &__overlay {
+    @include mixins.rm(1024) {
+      opacity: 0;
+    }
+  }
+
+  &.voted &__button {
+    display: none;
+  }
+
+  &.voted &__desc {
+    margin-bottom: 0;
+  }
+
+  &.voted &-status {
+    @include mixins.rm(1024) {
+      display: flex;
+    }
+  }
+
+  &--new-dir &__body::before {
+    content: attr(data-order);
+  }
+
+  &--new-dir.company--add-zero &__body::before {
+    content: "0" attr(data-order);
+  }
+
+  &--add-zero &__body::before {
+    content: "0" counter(company);
+  }
+
+  &__body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    position: relative;
+    z-index: 2;
+
+    &::before {
+      counter-increment: company;
+      content: counter(company);
+      display: block;
+      align-self: flex-start;
+      flex-shrink: 0;
+      font-size: 12px;
+      line-height: 1;
+      font-weight: 700;
+      text-align: center;
+      margin-bottom: 16px;
+      padding: 10px;
+      background: rgba(255, 255, 255, 0.10);
+      border-radius: 50%;
+      aspect-ratio: 1/1;
+    }
+  }
+
+  &__img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 190px;
+    height: 60px;
+    min-height: 60px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 10px;
+
+    @include mixins.rm(640) {
+      margin-bottom: 15px;
+    }
+
+    @include mixins.rm(1024) {
+      margin-bottom: 20px;
+    }
+
+    @include mixins.rm(1220) {
+      margin-bottom: 24px;
+    }
+  }
+
+  &__logo {
+    display: block;
+    object-fit: contain;
+    width: 190px;
+    height: 100%;
+    max-width: 100%;
+    max-height: 100%;
+    margin: auto;
+  }
+
+  &__gallery {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+
+    @include mixins.rm(640) {
+      margin-bottom: 15px;
+    }
+
+    @include mixins.rm(1024) {
+      margin-bottom: 20px;
+    }
+
+    @include mixins.rm(1220) {
+      margin-bottom: 24px;
+    }
+  }
+
+  &__avatar {
+    display: block;
+    background: #2b2b2b;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+
+    @include mixins.rm(1024) {
+      width: 86px;
+      height: 86px;
+    }
+  }
+
+  &__name {
+    display: block;
+    font-family: variables.$font-italic;
+    text-transform: uppercase;
+    font-size: 16px;
+    line-height: 1;
+    text-align: center;
+    margin-bottom: 6px;
+    //margin-bottom: 17px;
+
+    @include mixins.rm(1024) {
+      font-size: 20px;
+    }
+  }
+
+  &__desc-wrapper {
+    // Gradient overlays for scroll hint
+    position: relative;
+    z-index: 0;
+    margin-bottom: 6px;
+    padding: 10px 0;
+    //margin-bottom: 17px;
+
+    &--shadow_top, &--shadow_bottom {
+      &::before,
+      &::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        width: 100%;
+        height: 24px;
+        pointer-events: none;
+        z-index: 1;
+      }
+
+      &::before {
+        top: 0;
+        background: linear-gradient(to bottom, #0f0f0f 0%, rgba(34,34,34,0) 100%);
+      }
+
+      &::after {
+        bottom: 0;
+        background: linear-gradient(to top, #0f0f0f 0%, rgba(34,34,34,0) 100%);
+      }
+    }
+  }
+
+  &__desc {
+    font-size: 14px;
+    line-height: 1.8;
+    text-align: center;
+    opacity: .4;
+    //margin-bottom: 10px;
+    //margin-bottom: 17px;
+    width: 100%;
+    //height: 100%;
+    height: 140px;
+    overflow: auto;
+
+    @include mixins.rm(1024) {
+      font-size: 16px;
+    }
+
+    // Custom cross-browser scrollbar
+    scrollbar-width: thin;
+    scrollbar-color: gray #222;
+
+    &::-webkit-scrollbar {
+      width: 6px;
+      background: #222;
+      border-radius: 6px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: gray;
+      border-radius: 6px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background: #222;
+      border-radius: 6px;
+    }
+
+    &--bold {
+      font-weight: 700;
+      opacity: 1;
+
+      & br {
+        display: none;
+
+        @include mixins.rm(1024) {
+          display: block;
+        }
+      }
+    }
+  }
+
+  &__overlay {
+    max-width: 150px;
+    width: 100%;
+
+    &.hidden {
+      @include mixins.rm(1024) {
+        display: none;
+      }
+    }
+
+    @include mixins.rm(1024) {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 14px;
+      border: 1px solid rgba(255, 255, 255, 0.10);
+      background: rgba(0, 0, 0, 0.50);
+      backdrop-filter: blur(7px);
+      max-width: none;
+      transition: .3s ease-in-out;
+      opacity: 0;
+      pointer-events: none;
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+    }
+  }
+
+  &__votes {
+    display: block;
+    text-align: center;
+    margin-top: 17px;
+    position: relative;
+    z-index: 2;
+
+    &::after {
+      content: '%';
+    }
+  }
+
+  &__button {
+    width: 100%;
+
+    @include mixins.button-style(inherit, 6px 16px, 5px);
+
+    @include mixins.rm(768) {
+      @include mixins.button-style(inherit, 8px 20px, 5px);
+    }
+
+    @include mixins.rm(1024) {
+      @include mixins.button-style(inherit, 10px 24px, 10px);
+    }
+    //font-size: 16px;
+    ////font-weight: 500;
+    ////background: linear-gradient(100deg, #FF00D4, #6A00FF, #0FF, #FFA800);
+    ////background-size: 250% 100%;
+    ////background-position: 0 0;
+    ////border: none;
+    //width: 100%;
+    //padding: 10px;
+    //
+    //&:hover {
+    //  //color: black;
+    //  //background-position: 100% 0;
+    //}
+    //
+    //@include mixins.rm(1024) {
+    //  padding: 14px;
+    //}
+  }
+
+  &-status {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+
+    &__svg {
+      flex-shrink: 0;
+      width: 30px;
+      height: 30px;
+    }
+  }
+}

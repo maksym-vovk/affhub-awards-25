@@ -1,0 +1,46 @@
+@use "../../styles/mixins";
+@use "../../styles/variables";
+
+.nominations {
+  @include mixins.rm(1220) {
+    padding-top: 75px;
+    padding-bottom: 60px;
+  }
+
+  @include mixins.rm(1440) {
+    padding-top: 87px;
+    padding-bottom: 70px;
+  }
+
+  &__title {
+    font-family: variables.$font-bold;
+    font-size: 38px;
+    font-weight: 800;
+    text-transform: uppercase;
+    line-height: 1;
+    margin-bottom: 30px;
+
+    @include mixins.rm(480) {
+      font-size: 52px;
+      margin-bottom: 40px;
+    }
+
+    @include mixins.rm(640) {
+      margin-bottom: 50px;
+    }
+
+    @include mixins.rm(768) {
+      font-size: 60px;
+    }
+
+    @include mixins.rm(1024) {
+      font-size: 80px;
+      margin-bottom: 70px;
+    }
+
+    @include mixins.rm(1220) {
+      font-size: 96px;
+      margin-bottom: 80px;
+    }
+  }
+}

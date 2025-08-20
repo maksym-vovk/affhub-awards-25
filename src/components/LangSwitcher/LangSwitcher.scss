@@ -1,0 +1,62 @@
+@use "../../styles/mixins";
+@use "../../styles/variables";
+
+.lang-switcher {
+  position: relative;
+  display: inline-block;
+
+  &__selected {
+    font-family: variables.$font-bold;
+    background: #fff;
+    color: #222;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 6px 28px 6px 12px;
+    font-size: 16px;
+    cursor: pointer;
+    min-width: 60px;
+    position: relative;
+  }
+
+  &__arrow {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    width: 8px;
+    height: 8px;
+    border-right: 2px solid #222;
+    border-bottom: 2px solid #222;
+    transform: translateY(-50%) rotate(45deg);
+    pointer-events: none;
+  }
+
+  &__dropdown {
+    position: absolute;
+    left: 0;
+    top: 100%;
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-top: 4px;
+    min-width: 100%;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    z-index: 10;
+    padding: 4px 0;
+  }
+
+  &__option {
+    font-family: variables.$font-bold;
+    background: none;
+    border: none;
+    color: #222;
+    padding: 8px 16px;
+    width: 100%;
+    text-align: left;
+    font-size: 16px;
+    cursor: pointer;
+
+    &:hover, .active {
+      background: #f0f0f0;
+    }
+  }
+}

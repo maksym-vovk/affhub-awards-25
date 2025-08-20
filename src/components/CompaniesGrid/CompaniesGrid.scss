@@ -1,0 +1,88 @@
+@use '../../styles/mixins';
+
+.companies {
+  counter-reset: company;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-top: 30px;
+  padding-bottom: 10px;
+
+  @include mixins.rm(640) {
+    flex-direction: row;
+    flex-wrap: wrap;
+    //align-items: center;
+    justify-content: center;
+  }
+
+  @include mixins.rm(768) {
+    gap: 20px;
+    align-items: normal;
+  }
+
+  @include mixins.rm(1024) {
+    gap: 25px;
+    padding-top: 48px;
+    padding-bottom: 18px;
+  }
+
+  @include mixins.rm(1220) {
+    gap: 32px;
+  }
+
+  &__message {
+    display: none;
+    text-align: center;
+    //margin-bottom: 10px
+
+    //@include mixins.rm(768) {
+    //  margin-bottom: 15px;
+    //}
+  }
+
+  &__category {
+    display: none;
+
+    &.active {
+      //moved to root
+    }
+
+    &.disabled {
+      pointer-events: none;
+
+      .company__overlay {
+        display: none;
+      }
+    }
+
+    &.disabled.active {
+      flex-direction: column;
+      align-items: center;
+
+      @include mixins.rm(1024) {
+        flex-direction: row;
+        align-items: stretch;
+      }
+    }
+
+    &.disabled .company:not(.voted) {
+      display: none;
+
+      @include mixins.rm(1024) {
+        display: flex;
+      }
+    }
+
+    &.disabled .companies__message {
+      display: block;
+
+      @include mixins.rm(1024) {
+        display: none;
+      }
+    }
+
+    &.disabled .company__button {
+      display: none;
+    }
+  }
+}

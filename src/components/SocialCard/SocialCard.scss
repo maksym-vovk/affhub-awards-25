@@ -1,0 +1,33 @@
+@use "../../styles/variables";
+
+.social-card {
+  display: block;
+
+  &:hover .social-card__img {
+    transform: scale(1.1);
+  }
+
+  &__logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    aspect-ratio: 287/154;
+    background: variables.$gray-color;
+    //background: red;
+    margin-bottom: 14px;
+  }
+
+  &__img {
+    width: 26%;
+    transition: transform .3s ease-in-out;
+  }
+
+  &__name {
+    display: block;
+    font-family: variables.$font-bold;
+    font-weight: 800;
+    text-transform: uppercase;
+    text-align: center;
+    color: white;
+  }
+}

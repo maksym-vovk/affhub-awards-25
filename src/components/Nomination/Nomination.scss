@@ -1,0 +1,21 @@
+@use "../../styles/mixins";
+@use "../../styles/variables";
+
+.nomination {
+  position: relative;
+
+  &[data-nomination="influencer"] {
+    & .company__img {
+      min-height: 200px;
+    }
+
+    & .company__logo {
+      object-fit: cover;
+      border-radius: 6px;
+    }
+  }
+
+  &:not(:last-child) {
+    margin-bottom: 100px;
+  }
+}

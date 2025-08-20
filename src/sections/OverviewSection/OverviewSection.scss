@@ -1,0 +1,66 @@
+@use "../../styles/mixins";
+@use "../../styles/variables";
+
+.overview {
+  @include mixins.rm(1220) {
+    padding-top: 150px;
+    padding-bottom: 75px;
+  }
+
+  @include mixins.rm(1440) {
+    padding-top: 194px;
+    padding-bottom: 87px;
+  }
+
+  &__wrapper {
+    @include mixins.rm(768) {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 30px;
+    }
+  }
+
+  &__content {
+    @include mixins.rm(768) {
+      max-width: 528px;
+    }
+  }
+
+  & picture {
+    @include mixins.rm(768) {
+      flex-shrink: 0;
+      flex-basis: calc(50% - 15px);
+    }
+  }
+
+  &__img {
+    width: 400px;
+    margin: 0 auto 30px;
+
+    @include mixins.rm(768) {
+      width: 100%;
+      margin: 0;
+    }
+  }
+
+  &__text {
+    &:not(:last-child) {
+      margin-bottom: 20px;
+
+      @include mixins.rm(768) {
+        margin-bottom: 30px;
+      }
+
+      @include mixins.rm(1024) {
+        margin-bottom: 40px;
+      }
+    }
+
+    &--remark {
+      font-size: 1.25em;
+      font-family: variables.$font-italic;
+      text-transform: uppercase;
+    }
+  }
+}
