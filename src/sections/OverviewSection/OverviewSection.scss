@@ -58,8 +58,9 @@
     }
 
     &--remark {
-      font-size: 1.25em;
       font-family: variables.$font-italic;
+      font-size: 1.25em;
+      font-style: italic;
       text-transform: uppercase;
     }
   }
