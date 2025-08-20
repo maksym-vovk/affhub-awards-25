@@ -1637,5 +1637,31 @@
     "globalErrors": {
 
     }
+  },
+  "faq": {
+    "title": "Проблеми з авторизацією",
+    "subtitle": "Оберіть проблему щоб повідомити нам:",
+    "letter": {
+      "emails": ["maksym.vovk@redi.partners", "s.batanin@redi.partners"],
+      "subject": "Affhub Bug Report",
+      "body": {
+        "markers": {
+          "problem": "Проблема",
+          "email": "Електронна пошта",
+          "phone": "Номер телефону"
+        },
+        "topics": {
+          "noEmail": "Не приходить лист на пошту.",
+          "wrongEmailCode": "Код з пошти — неправильний.",
+          "noPhoneCode": "Телефонний код не приходить.",
+          "wrongPhoneCode": "Надходить невірний телефонний код."
+        },
+        "userData": {
+          "hero": "Під час реєстрації я вказав дані:",
+          "email": "example@mail.com",
+          "phone": "+380XXXXXXXXX"
+        }
+      }
+    }
   }
 }

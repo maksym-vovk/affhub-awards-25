@@ -20,8 +20,9 @@ function LoginForm() {
                     .required(t('modal.validation.email.required'))
                     .matches(/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/, t('modal.validation.email.matches')),
             })}
-            onSubmit={(values) => {
+            onSubmit={(values, {resetForm}) => {
                 console.log('Form submitted with values:', JSON.stringify(values, null, 2));
+                resetForm();
             }}
         >
             <>

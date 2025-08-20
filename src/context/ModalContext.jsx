@@ -1,12 +1,11 @@
 import {createContext, useCallback, useContext, useState} from "react";
-import ModalRoot from "../components/ModalRoot/ModalRoot.jsx";
 
 export const ModalContext = createContext()
 
 export const ModalProvider = ({ children }) => {
     const [modal, setModal] = useState({
         isOpen: true,
-        type: 'emailOtp',
+        type: 'login',
         props: {}
     });
 
@@ -25,7 +24,6 @@ export const ModalProvider = ({ children }) => {
     return (
         <ModalContext.Provider value={{ ...modal, openModal, closeModal, changeModalType }}>
             {children}
-            <ModalRoot/>
         </ModalContext.Provider>
     )
 }

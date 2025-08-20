@@ -7,6 +7,8 @@ import OverviewSection from "./sections/OverviewSection/OverviewSection.jsx";
 import AnnouncementSection from "./sections/AnnouncementSection/AnnouncementSection.jsx";
 import Footer from "./components/Footer/Footer.jsx";
 import ContextProviders from "./context/ContextProviders.jsx";
+import ModalRoot from "./components/ModalRoot/ModalRoot.jsx";
+import FaqModal from "./components/FaqModal/FaqModal.jsx";
 
 function App() {
     return (
@@ -19,6 +21,9 @@ function App() {
                 <AnnouncementSection/>
             </LandingPage>
             <Footer/>
+
+            <ModalRoot/>
+            <FaqModal/>
         </ContextProviders>
     );
 }

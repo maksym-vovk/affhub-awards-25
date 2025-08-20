@@ -8,16 +8,11 @@ import LoginForm from "../LoginForm/LoginForm.jsx";
 import OtpForm from "../OtpForm/OtpForm.jsx";
 import SocialForm from "../SocialForm/SocialForm.jsx";
 import FormError from "../FormError/FormError.jsx";
-import {useTranslation} from "react-i18next";
-import FormSwitcher from "../FormSwitcher/FormSwitcher.jsx";
 
 function ModalRoot() {
-    const { t } = useTranslation();
-    const { isOpen, type, props, closeModal, changeModalType } = useModal()
+    const { isOpen, type, closeModal } = useModal()
 
     // if (!isOpen) return null;
-
-    const isAuthType = type === 'login' || type === 'register'
 
     const MODAL_COMPONENTS = {
         login: <LoginForm />,
@@ -29,7 +24,9 @@ function ModalRoot() {
     }
 
     return (
-        <div className={`popup ${isOpen ? 'active' : ''}`}>
+        <div
+            className={`popup ${isOpen ? 'active' : ''}`}
+        >
             <div className="container">
                 <div className="popup__wrapper">
                     <div className="popup__header">

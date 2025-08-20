@@ -46,8 +46,9 @@ function SignupForm() {
                     .required(t('modal.validation.phone.required'))
                     .matches(/^\+380\d{9}$/, t('modal.validation.phone.matches'))
             })}
-            onSubmit={(values) => {
+            onSubmit={(values, {resetForm}) => {
                 console.log('Form submitted with values:', JSON.stringify(values, null, 2));
+                resetForm();
             }}
         >
             <>
