@@ -1605,6 +1605,8 @@
     "placeholders": {
       "name": "Name",
       "email": "Email",
+      "password": "Password",
+      "repeatPassword": "Repeat password",
       "phone": "Phone",
       "otp": "Code"
     },
@@ -1616,13 +1618,22 @@
     },
     "validation": {
       "name": {
-        "required": "Field cannot be empty!",
-        "matches": ""
+        "required": "Field cannot be empty!"
       },
       "email": {
         "test": "You entered an incorrect email",
         "required": "Field cannot be empty!",
         "matches": "Must contain a domain with a dot and TLD"
+      },
+      "password": {
+        "required": "Field cannot be empty!",
+        "min": "Password must be at least 8 characters long",
+        "max": "Password must not exceed 20 characters",
+        "matches": "Password must contain at least one uppercase letter, one lowercase letter, one number, and one special character (@$!%*?&)"
+      },
+      "repeatPassword": {
+        "oneOf": "Passwords must match",
+        "required": "Field cannot be empty!"
       },
       "phone": {
         "required": "Field cannot be empty!",

@@ -1,6 +1,6 @@
 import "./SignupForm.scss"
 
-import { Form, Formik } from "formik";
+import {Form, Formik} from "formik";
 import * as Yup from 'yup';
 import FormField from "../FormField/FormField.jsx";
 import Button from "../Button/Button.jsx";
@@ -25,13 +25,13 @@ function SignupForm() {
         name: Yup.string()
             .required(t('modal.validation.name.required')),
         password: Yup.string()
-            .required('Поле не може бути порожнім')
-            .min(8, 'Пароль повинен містити щонайменше 8 символів')
-            .max(20, 'Пароль повинен містити не більше 20 символів')
-            .matches(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/, 'Пароль повинен включати принаймні одну літеру в нижньому регістрі, одну літеру в верхньому регістрі, одну цифру та один спеціальний символ (@$!%*?&)'),
+            .required(t('modal.validation.password.required'))
+            .min(8, t('modal.validation.password.min'))
+            .max(20, t('modal.validation.password.max'))
+            .matches(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/, t('modal.validation.password.matches')),
         repeatPassword: Yup.string()
-            .oneOf([Yup.ref('password'), null], 'Passwords must match')
-            .required('Please repeat your password'),
+            .oneOf([Yup.ref('password'), null], t('modal.validation.repeatPassword.oneOf'))
+            .required(t('modal.validation.repeatPassword.required')),
         email: Yup.string()
             .email(t('modal.validation.email.test'))
             .required(t('modal.validation.email.required'))
@@ -56,6 +56,10 @@ function SignupForm() {
         }
 
         e.target.value = cleaned;
+    }
+
+    function handlePasswordInput(e) {
+        e.target.value = e.target.value.trim();
     }
 
     return (
@@ -101,18 +105,18 @@ function SignupForm() {
                     <FormField
                         name="password"
                         type={isPasswordVisible ? "text" : "password"}
-                        placeholder="Пароль"
+                        placeholder={t('modal.placeholders.password')}
                         isPasswordVisible={isPasswordVisible}
                         setIsPasswordVisible={setIsPasswordVisible}
-                        onInput={(e) => e.target.value = e.target.value.trim()}
+                        onInput={handlePasswordInput}
                     />
                     <FormField
                         name="repeatPassword"
                         type={isRepeatPasswordVisible ? "text" : "password"}
-                        placeholder="Repeat password"
+                        placeholder={t('modal.placeholders.repeatPassword')}
                         isPasswordVisible={isRepeatPasswordVisible}
                         setIsPasswordVisible={setIsRepeatPasswordVisible}
-                        onInput={(e) => e.target.value = e.target.value.trim()}
+                        onInput={handlePasswordInput}
                     />
                     <FormField
                         name="phoneNumber"
