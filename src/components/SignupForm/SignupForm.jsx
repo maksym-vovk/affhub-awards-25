@@ -14,12 +14,10 @@ import {useModal} from "../../context/ModalProvider.jsx";
 
 function SignupForm() {
     const { t } = useTranslation();
-    const [loading, setLoading] = useLoader()
+    const [setLoading] = useLoader()
     const {openModal, closeModalWithDelay} = useModal()
     const [isPasswordVisible, setIsPasswordVisible] = useState(false);
     const [isRepeatPasswordVisible, setIsRepeatPasswordVisible] = useState(false);
-
-    console.log(setLoading);
 
     const signupSchema = Yup.object({
         name: Yup.string()

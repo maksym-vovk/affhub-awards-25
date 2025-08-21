@@ -10,12 +10,13 @@ function FormField({ isPasswordVisible, setIsPasswordVisible, ...props }) {
 
     return (
         <div className={`popup-field ${isPassword ? 'popup-field--password' : ''}`}>
-            <label className="popup-field__label">
+            <div className="popup-field__wrapper">
                 <input
-                    className="popup-field__input"
+                    className={`popup-field__input ${isError ? 'popup-field__input--error': ''}`}
                     {...props}
                     {...field}
                     autoComplete="on"
+                    aria-label={props.placeholder || "Input field"}
                 />
                 {isPassword && (
                     <PasswordButton
@@ -23,7 +24,7 @@ function FormField({ isPasswordVisible, setIsPasswordVisible, ...props }) {
                         setIsPasswordVisible={setIsPasswordVisible}
                     />
                 )}
-            </label>
+            </div>
             <p className={`popup-field__error ${isError ? 'active': ''}`}>{isError ? meta.error : 'Empty'}</p>
         </div>
     )
