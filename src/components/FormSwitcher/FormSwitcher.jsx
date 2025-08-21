@@ -16,8 +16,8 @@ function FormSwitcher() {
                 {t('modal.switcher.login')}
             </Button>
             <Button
-                className={`auth-switcher__btn ${type === 'register' ? 'active' : ''}`}
-                onClick={() => changeModalType('register')}
+                className={`auth-switcher__btn ${type === 'signup' ? 'active' : ''}`}
+                onClick={() => changeModalType('signup')}
             >
                 {t('modal.switcher.signup')}
             </Button>

@@ -101,6 +101,7 @@
 
   &__btn {
     margin-inline: auto;
+
     @include mixins.button-style(inherit, 6px 16px, 5px);
 
     @include mixins.rm(480) {

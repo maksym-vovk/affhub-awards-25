@@ -1,7 +1,7 @@
 {
   "common": {
-    "loginButton": "Вхід",
-    "voteButton": "Голосувати"
+    "loginButton": "Login",
+    "voteButton": "Vote"
   },
   "hero": {
     "title": {
@@ -11,22 +11,22 @@
     }
   },
   "overview": {
-    "text": "Український ринок affilate-маркетингу показав значний прогрес у 2025 році. Зʼявилася купа нових проєктів, ми побачили злети та падіння, безліч топових колаборацій та нових форматів роботи. Тому наша задача — відзначити всіх, хто був причетний до розвитку індустрії",
-    "remark": "Але звісно ж, можливість обрати найкращих у своїх сферах ми надаємо саме вам"
+    "text": "The Ukrainian affiliate marketing market has shown significant progress in 2025. A lot of new projects have appeared, we have seen rises and falls, many top collaborations and new formats of work. Therefore, our task is to recognize everyone who contributed to the development of the industry.",
+    "remark": "But of course, the opportunity to choose the best in their fields is given to you."
   },
   "nominations": {
-    "title": "Номінації",
+    "title": "Nominations",
     "list": [
       {
         "tag": "best-partner",
-        "title": "Найкраща партнерська програма",
+        "title": "Best Affiliate Program",
         "categories": [
           {
-            "name": "гемблiнг",
+            "name": "gambling",
             "tag": "gambling",
             "companies": [
               {
-                "percent": 0.06,
+                "percent": 0,
                 "name": "Traffic Cake",
                 "tag": "traffic-cake",
                 "link": "https://trafficake.com/uk/",
@@ -34,7 +34,7 @@
                 "desc": "Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not."
               },
               {
-                "percent": 4.06,
+                "percent": 0,
                 "name": "V.Partners",
                 "tag": "v-partners",
                 "link": "https://v.partners/",
@@ -42,7 +42,7 @@
                 "desc": "Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not."
               },
               {
-                "percent": 0.47,
+                "percent": 0,
                 "name": "Affstellar ",
                 "tag": "affstellar ",
                 "link": "https://affstellar.com/",
@@ -50,7 +50,7 @@
                 "desc": "Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not."
               },
               {
-                "percent": 0.04,
+                "percent": 0,
                 "name": "Datify.Link",
                 "tag": "datifylink",
                 "link": "https://datify.link/uk",
@@ -58,7 +58,7 @@
                 "desc": "Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not."
               },
               {
-                "percent": 0.14,
+                "percent": 0,
                 "name": "Big Traff Partners",
                 "tag": "big-traff-part",
                 "link": "https://bigtraff.partners/",
@@ -66,7 +66,7 @@
                 "desc": "Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not."
               },
               {
-                "percent": 0.02,
+                "percent": 0,
                 "name": "DEPHOUSE",
                 "tag": "dephouse",
                 "link": "https://dephouse.club/",
@@ -74,7 +74,7 @@
                 "desc": "Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not."
               },
               {
-                "percent": 1.77,
+                "percent": 0,
                 "name": "Slots City Partners",
                 "tag": "slots",
                 "link": "https://www.instagram.com/sc__partners/?refcode=aff_66cd812e2c7ad40001ed9fa0_884&subid=s1__s2_affhub_s3_landing_s4_cpa_voice2024_s5_&utm_source=CPA&utm_medium=884&utm_campaign=66cd812e2c7ad40001ed9fa0&utm_content=_affhub_landing_cpa_voice2024_",
@@ -82,7 +82,7 @@
                 "desc": "Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not."
               },
               {
-                "percent": 1.98,
+                "percent": 0,
                 "name": "SharkLink",
                 "tag": "sharklink",
                 "link": "https://gambling.sharklink.org/",
@@ -90,7 +90,7 @@
                 "desc": "Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not."
               },
               {
-                "percent": 0.39,
+                "percent": 0,
                 "name": "21stGOLD",
                 "tag": "21st-gold",
                 "link": "https://21st.gold",
@@ -98,7 +98,7 @@
                 "desc": "Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not."
               },
               {
-                "percent": 5.61,
+                "percent": 0,
                 "name": "1win Partners",
                 "tag": "1win-partners",
                 "link": "https://1w.run/ua/",
@@ -106,7 +106,7 @@
                 "desc": "Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not."
               },
               {
-                "percent": 5.15,
+                "percent": 0,
                 "name": "Gambeat",
                 "tag": "gambeat",
                 "link": "https://gambeat.io/?utm_source=affhubvoice&utm_medium=affhubvoice&utm_campaign=affhubvoice",
@@ -114,7 +114,7 @@
                 "desc": "Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not."
               },
               {
-                "percent": 0.10,
+                "percent": 0,
                 "name": "Affter",
                 "tag": "affter",
                 "link": "https://affter.com/",
@@ -122,7 +122,7 @@
                 "desc": "Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not."
               },
               {
-                "percent": 0.49,
+                "percent": 0,
                 "name": "Wild Wild Partners",
                 "tag": "wild-wild-partners",
                 "link": "https://wildwild.partners/",
@@ -130,7 +130,7 @@
                 "desc": "Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not."
               },
               {
-                "percent": 28.47,
+                "percent": 0,
                 "name": "MB Partners",
                 "tag": "mb-partners",
                 "link": "https://mb.partners/signup?ref=affhubcpavoice",
@@ -138,7 +138,7 @@
                 "desc": "Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not."
               },
               {
-                "percent": 0.06,
+                "percent": 0,
                 "name": "Play.Partners",
                 "tag": "playpartners",
                 "link": "https://play.partners/",
@@ -146,7 +146,7 @@
                 "desc": "Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not."
               },
               {
-                "percent": 15.52,
+                "percent": 0,
                 "name": "AFFPRO",
                 "tag": "affpro",
                 "link": "https://aff-pro.com/",
@@ -154,7 +154,7 @@
                 "desc": "Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not."
               },
               {
-                "percent": 1.44,
+                "percent": 0,
                 "name": "PlayCash",
                 "tag": "playcash",
                 "link": "https://playcash.network/en/",
@@ -162,7 +162,7 @@
                 "desc": "Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not."
               },
               {
-                "percent": 0.04,
+                "percent": 0,
                 "name": "JimPartners",
                 "tag": "jimpartners",
                 "link": "https://jimpartners.com/",
@@ -170,7 +170,7 @@
                 "desc": "Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not."
               },
               {
-                "percent": 0.06,
+                "percent": 0,
                 "name": "SuperGra Affiliates",
                 "tag": "supergra-affiliates",
                 "link": "https://graaffiliates.com/uk",
@@ -178,7 +178,7 @@
                 "desc": "Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not."
               },
               {
-                "percent": 0.35,
+                "percent": 0,
                 "name": "DS Partners",
                 "tag": "ds-partners",
                 "link": "https://www.dspartners.pro/",
@@ -186,7 +186,7 @@
                 "desc": "Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not."
               },
               {
-                "percent": 0.21,
+                "percent": 0,
                 "name": "Vortex",
                 "tag": "vortex",
                 "link": "https://vortexads.com/",
@@ -194,7 +194,7 @@
                 "desc": "Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not."
               },
               {
-                "percent": 0.02,
+                "percent": 0,
                 "name": "Yellana",
                 "tag": "yellana",
                 "link": "https://yellana.co/",
@@ -202,7 +202,7 @@
                 "desc": "Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not."
               },
               {
-                "percent": 0.19,
+                "percent": 0,
                 "name": "Growe Partners",
                 "tag": "growe-partners",
                 "link": "https://growe.partners/",
@@ -210,7 +210,7 @@
                 "desc": "Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not."
               },
               {
-                "percent": 3.44,
+                "percent": 0,
                 "name": "One Partners",
                 "tag": "one-partners",
                 "link": "https://onepartners.io/",
@@ -218,7 +218,7 @@
                 "desc": "Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not."
               },
               {
-                "percent": 0.54,
+                "percent": 0,
                 "name": "CG Solutions ",
                 "tag": "cgs",
                 "link": "https://cgs.group/",
@@ -234,7 +234,7 @@
                 "desc": "Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not."
               },
               {
-                "percent": 0.87,
+                "percent": 0,
                 "name": "Win-Offers",
                 "tag": "win-offers",
                 "link": "https://win-offers.com/",
@@ -242,7 +242,7 @@
                 "desc": "Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not."
               },
               {
-                "percent": 0.43,
+                "percent": 0,
                 "name": "Gorilla Partners",
                 "tag": "gorilla-partners",
                 "link": "https://gorilla.partners/",
@@ -250,7 +250,7 @@
                 "desc": "Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not."
               },
               {
-                "percent": 27.81,
+                "percent": 0,
                 "name": "KuPartners",
                 "tag": "kupartners",
                 "link": "https://www.ku.partners/",
@@ -268,11 +268,11 @@
             ]
           },
           {
-            "name": "беттiнг",
+            "name": "betting",
             "tag": "betting",
             "companies": [
               {
-                "percent": 0.84,
+                "percent": 0,
                 "name": "Traffic Cake",
                 "tag": "traffic-cake",
                 "link": "https://trafficake.com/uk/",
@@ -280,7 +280,7 @@
                 "desc": "Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not."
               },
               {
-                "percent": 5.02,
+                "percent": 0,
                 "name": "Affter",
                 "tag": "affter",
                 "link": "https://affter.com/",
@@ -288,7 +288,7 @@
                 "desc": "Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not."
               },
               {
-                "percent": 0.84,
+                "percent": 0,
                 "name": "Play.Partners",
                 "tag": "playpartners",
                 "link": "https://play.partners/",
@@ -296,7 +296,7 @@
                 "desc": "Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not."
               },
               {
-                "percent": 34.73,
+                "percent": 0,
                 "name": "PlayCash",
                 "tag": "playcash",
                 "link": "https://playcash.network/en/",
@@ -304,7 +304,7 @@
                 "desc": "Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not."
               },
               {
-                "percent": 38.08,
+                "percent": 0,
                 "name": "Growe Partners",
                 "tag": "growe-partners",
                 "link": "https://growe.partners/",
@@ -312,7 +312,7 @@
                 "desc": "Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not."
               },
               {
-                "percent": 3.77,
+                "percent": 0,
                 "name": "CG Solutions ",
                 "tag": "cgs",
                 "link": "https://cgs.group/",
@@ -320,7 +320,7 @@
                 "desc": "Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not."
               },
               {
-                "percent": 16.74,
+                "percent": 0,
                 "name": "V.Partners",
                 "tag": "v-partners",
                 "link": "https://v.partners/",
@@ -338,11 +338,11 @@
             ]
           },
           {
-            "name": "нутра",
+            "name": "nutra",
             "tag": "nutra",
             "companies": [
               {
-                "percent": 45.84,
+                "percent": 0,
                 "name": "Everad",
                 "tag": "everad",
                 "link": "https://everad.com/",
@@ -350,7 +350,7 @@
                 "desc": "Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not."
               },
               {
-                "percent": 1.42,
+                "percent": 0,
                 "name": "TraffCore",
                 "tag": "traffcore",
                 "link": "https://traffcore.com/en",
@@ -358,7 +358,7 @@
                 "desc": "Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not."
               },
               {
-                "percent": 13.59,
+                "percent": 0,
                 "name": "Arknet",
                 "tag": "arknet",
                 "link": "https://arknet.group",
@@ -366,7 +366,7 @@
                 "desc": "Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not."
               },
               {
-                "percent": 3.65,
+                "percent": 0,
                 "name": "Hamsters",
                 "tag": "hamsters",
                 "link": "https://hamsters.run",
@@ -374,7 +374,7 @@
                 "desc": "Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not."
               },
               {
-                "percent": 1.01,
+                "percent": 0,
                 "name": "WhoCPA",
                 "tag": "who-cpa",
                 "link": "https://whocpa.asia/ua",
@@ -382,7 +382,7 @@
                 "desc": "Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not."
               },
               {
-                "percent": 34.28,
+                "percent": 0,
                 "name": "OMNI CPA",
                 "tag": "omni-cpa",
                 "link": "https://cpaomni.com/",
@@ -390,7 +390,7 @@
                 "desc": "Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not."
               },
               {
-                "percent": 0.20,
+                "percent": 0,
                 "name": "Reacheffect",
                 "tag": "reacheffect",
                 "link": "https://reacheffect.com/ru/top-reklamnaj%d0%b0-set-s-push-uvedomlenijami/",
@@ -400,11 +400,11 @@
             ]
           },
           {
-            "name": "дейтiнг",
+            "name": "dating",
             "tag": "dating",
             "companies": [
               {
-                "percent": 3.15,
+                "percent": 0,
                 "name": "TRAFORCE",
                 "tag": "traforce",
                 "link": "https://traforce.com",
@@ -412,7 +412,7 @@
                 "desc": "Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not."
               },
               {
-                "percent": 0.19,
+                "percent": 0,
                 "name": "Datify.Link",
                 "tag": "datifylink",
                 "link": "https://datify.link/uk",
@@ -420,7 +420,7 @@
                 "desc": "Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not."
               },
               {
-                "percent": 1.11,
+                "percent": 0,
                 "name": "TraffCore",
                 "tag": "traffcore",
                 "link": "https://traffcore.com/en",
@@ -428,7 +428,7 @@
                 "desc": "Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not."
               },
               {
-                "percent": 1.85,
+                "percent": 0,
                 "name": "Vortex",
                 "tag": "vortex",
                 "link": "https://vortexads.com/",
@@ -436,7 +436,7 @@
                 "desc": "Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not."
               },
               {
-                "percent": 48.89,
+                "percent": 0,
                 "name": "ClickDealer",
                 "tag": "clickdealer",
                 "link": "https://www.clickdealer.com/",
@@ -444,7 +444,7 @@
                 "desc": "Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not."
               },
               {
-                "percent": 22.22,
+                "percent": 0,
                 "name": "C3PA",
                 "tag": "c3pa",
                 "link": "https://c3pa.net/",
@@ -452,7 +452,7 @@
                 "desc": "Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not."
               },
               {
-                "percent": 8.70,
+                "percent": 0,
                 "name": "CPARK",
                 "tag": "cpark",
                 "link": "https://cpark.pro/?campaign_id=affhub reward&campaign_source=website",
@@ -460,7 +460,7 @@
                 "desc": "Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not."
               },
               {
-                "percent": 3.70,
+                "percent": 0,
                 "name": "Cpamatica",
                 "tag": "cpamatica",
                 "link": "https://cpamatica.io",
@@ -468,7 +468,7 @@
                 "desc": "Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not."
               },
               {
-                "percent": 9.63,
+                "percent": 0,
                 "name": "AdsEmpire",
                 "tag": "ads-empire",
                 "link": "https://adsempire.com/",
@@ -494,11 +494,11 @@
             ]
           },
           {
-            "name": "крипто",
+            "name": "crypto",
             "tag": "crypto",
             "companies": [
               {
-                "percent": 51.61,
+                "percent": 0,
                 "name": "TraffCore",
                 "tag": "traffcore",
                 "link": "https://traffcore.com/en",
@@ -506,7 +506,7 @@
                 "desc": "Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not."
               },
               {
-                "percent": 33.87,
+                "percent": 0,
                 "name": "SalesDoubler",
                 "tag": "salesdoubler",
                 "link": "https://salesdoubler.pro",
@@ -514,7 +514,7 @@
                 "desc": "Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not."
               },
               {
-                "percent": 14.52,
+                "percent": 0,
                 "name": "Need for Leads",
                 "tag": "need-for-leads",
                 "link": "https://www.instagram.com/need_for_leads?igsh=emd1cWtiaGIxZjF4",
@@ -524,11 +524,11 @@
             ]
           },
           {
-            "name": "свіпи",
+            "name": "sweepstakes",
             "tag": "sweepstakes",
             "companies": [
               {
-                "percent": 7.93,
+                "percent": 0,
                 "name": "TraffCore",
                 "tag": "traffcore",
                 "link": "https://traffcore.com/en",
@@ -536,7 +536,7 @@
                 "desc": "Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not."
               },
               {
-                "percent": 34.15,
+                "percent": 0,
                 "name": "Sweeply",
                 "tag": "sweeply",
                 "link": "https://sweeply.pro",
@@ -544,7 +544,7 @@
                 "desc": "Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not."
               },
               {
-                "percent": 8.54,
+                "percent": 0,
                 "name": "Play.Partners",
                 "tag": "playpartners",
                 "link": "https://play.partners/",
@@ -552,7 +552,7 @@
                 "desc": "Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not."
               },
               {
-                "percent": 47.56,
+                "percent": 0,
                 "name": "XSTER",
                 "tag": "xster",
                 "link": "https://xster.network/?campaign_id=affhub reward&campaign_source=website",
@@ -565,15 +565,15 @@
       },
       {
         "tag": "best-arbitration-team",
-        "title": "Найкраща арбітражна команда",
+        "title": "Best Arbitrage Team",
         "backgroundName": "",
         "categories": [
           {
-            "name": "гемблiнг",
+            "name": "gambling",
             "tag": "gambling",
             "companies": [
               {
-                "percent": 1.36,
+                "percent": 0,
                 "name": "Improve Team",
                 "tag": "improve-team",
                 "link": "https://t.me/improveteam",
@@ -581,7 +581,7 @@
                 "desc": "Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not."
               },
               {
-                "percent": 1.88,
+                "percent": 0,
                 "name": "Fellow’s",
                 "tag": "fellows",
                 "link": "https://fellows.team/",
@@ -589,7 +589,7 @@
                 "desc": "Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not."
               },
               {
-                "percent": 1.91,
+                "percent": 0,
                 "name": "Traffic Squad",
                 "tag": "traffic-squad",
                 "link": "https://tsquad.net/",
@@ -597,7 +597,7 @@
                 "desc": "Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not."
               },
               {
-                "percent": 0.71,
+                "percent": 0,
                 "name": "Already Media",
                 "tag": "alreadymedia",
                 "link": "https://alreadymedia.com/",
@@ -605,7 +605,7 @@
                 "desc": "Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not."
               },
               {
-                "percent": 4.08,
+                "percent": 0,
                 "name": "SharkLink",
                 "tag": "sharklink",
                 "link": "https://gambling.sharklink.org/",
@@ -613,7 +613,7 @@
                 "desc": "Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not."
               },
               {
-                "percent": 0.74,
+                "percent": 0,
                 "name": "21stGOLD",
                 "tag": "21st-gold",
                 "link": "https://21st.gold",
@@ -621,7 +621,7 @@
                 "desc": "Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not."
               },
               {
-                "percent": 11.36,
+                "percent": 0,
                 "name": "Trident Media",
                 "tag": "trident-media",
                 "link": "https://trident-media.agency",
@@ -629,7 +629,7 @@
                 "desc": "Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not."
               },
               {
-                "percent": 26.34,
+                "percent": 0,
                 "name": "One Media",
                 "tag": "one-media",
                 "link": "https://www.instagram.com/onemedia.io",
@@ -637,7 +637,7 @@
                 "desc": "Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not."
               },
               {
-                "percent": 6.58,
+                "percent": 0,
                 "name": "AFFPRO",
                 "tag": "affpro",
                 "link": "https://affpro.media",
@@ -645,7 +645,7 @@
                 "desc": "Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not."
               },
               {
-                "percent": 44.86,
+                "percent": 0,
                 "name": "KupetsTeam",
                 "tag": "kupets-team",
                 "link": "https://t.me/KupetsTeam",
@@ -653,7 +653,7 @@
                 "desc": "Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not."
               },
               {
-                "percent": 0.12,
+                "percent": 0,
                 "name": "Reacheffect",
                 "tag": "reacheffect",
                 "link": "https://reacheffect.com/ru/top-reklamnaj%d0%b0-set-s-push-uvedomlenijami/",
@@ -661,7 +661,7 @@
                 "desc": "Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not."
               },
               {
-                "percent": 0.06,
+                "percent": 0,
                 "name": "AdKey.Agency",
                 "tag": "adkey-agency",
                 "link": "https://adkey.agency",
@@ -671,11 +671,11 @@
             ]
           },
           {
-            "name": "беттiнг",
+            "name": "betting",
             "tag": "betting",
             "companies": [
               {
-                "percent": 31.50,
+                "percent": 0,
                 "name": "Fellow’s",
                 "tag": "fellows",
                 "link": "https://fellows.team/",
@@ -683,7 +683,7 @@
                 "desc": "Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not."
               },
               {
-                "percent": 68.50,
+                "percent": 0,
                 "name": "Already Media",
                 "tag": "alreadymedia",
                 "link": "https://alreadymedia.com/",
@@ -701,11 +701,11 @@
             ]
           },
           {
-            "name": "нутра",
+            "name": "nutra",
             "tag": "nutra",
             "companies": [
               {
-                "percent": 10.86,
+                "percent": 0,
                 "name": "Space Profit Team",
                 "tag": "space-profit-team",
                 "link": "https://www.instagram.com/spaceprofit?igsh=Yzc4anZxejFkNGpy&utm_source=qr",
@@ -713,7 +713,7 @@
                 "desc": "Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not."
               },
               {
-                "percent": 14.48,
+                "percent": 0,
                 "name": "Arknet",
                 "tag": "arknet",
                 "link": "https://arknet.group",
@@ -721,7 +721,7 @@
                 "desc": "Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not."
               },
               {
-                "percent": 71.49,
+                "percent": 0,
                 "name": "One Media",
                 "tag": "one-media",
                 "link": "https://www.instagram.com/onemedia.io",
@@ -729,7 +729,7 @@
                 "desc": "Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not."
               },
               {
-                "percent": 3.17,
+                "percent": 0,
                 "name": "Hamsters",
                 "tag": "hamsters",
                 "link": "https://hamsters.run",
@@ -747,11 +747,11 @@
             ]
           },
           {
-            "name": "дейтiнг",
+            "name": "dating",
             "tag": "dating",
             "companies": [
               {
-                "percent": 85.11,
+                "percent": 0,
                 "name": "OceanLeads",
                 "tag": "ocean-leads",
                 "link": "https://www.oceanleads.online",
@@ -759,7 +759,7 @@
                 "desc": "Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not."
               },
               {
-                "percent": 8.51,
+                "percent": 0,
                 "name": "VOALAX",
                 "tag": "voalax",
                 "link": "https://voalax.com",
@@ -767,7 +767,7 @@
                 "desc": "Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not."
               },
               {
-                "percent": 6.38,
+                "percent": 0,
                 "name": "Reacheffect",
                 "tag": "reacheffect",
                 "link": "https://reacheffect.com/ru/top-reklamnaj%d0%b0-set-s-push-uvedomlenijami/",
@@ -777,11 +777,11 @@
             ]
           },
           {
-            "name": "крипто",
+            "name": "crypto",
             "tag": "crypto",
             "companies": [
               {
-                "percent": 100,
+                "percent": 0,
                 "name": "Need for Leads",
                 "tag": "need-for-leads",
                 "link": "https://www.instagram.com/need_for_leads?igsh=emd1cWtiaGIxZjF4",
@@ -794,7 +794,7 @@
       },
       {
         "tag": "best-arbitration-service",
-        "title": "Найкращий арбітражний сервіс",
+        "title": "Best Arbitrage Service",
         "backgroundName": "",
         "categories": [
           {
@@ -802,7 +802,7 @@
             "tag": "no-category",
             "companies": [
               {
-                "percent": 38.78,
+                "percent": 0,
                 "name": "Wild Wild Apps",
                 "tag": "wild-wild-apps",
                 "link": "https://wildwildapps.com/",
@@ -810,7 +810,7 @@
                 "desc": "Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not."
               },
               {
-                "percent": 8.65,
+                "percent": 0,
                 "name": "ONE BOT",
                 "tag": "one-bot",
                 "link": "https://onebot.tech/",
@@ -818,7 +818,7 @@
                 "desc": "Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not."
               },
               {
-                "percent": 1.28,
+                "percent": 0,
                 "name": "TRUST SHOP",
                 "tag": "trustshop",
                 "link": "https://trustshop.agency/",
@@ -826,7 +826,7 @@
                 "desc": "Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not."
               },
               {
-                "percent": 10.58,
+                "percent": 0,
                 "name": "Proxygan",
                 "tag": "proxygan",
                 "link": "https://proxygan.com/",
@@ -834,7 +834,7 @@
                 "desc": "Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not."
               },
               {
-                "percent": 16.35,
+                "percent": 0,
                 "name": "UA SOCKS",
                 "tag": "ua-socks",
                 "link": "https://uasocks.net/#login",
@@ -842,7 +842,7 @@
                 "desc": "Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not."
               },
               {
-                "percent": 8.97,
+                "percent": 0,
                 "name": "Cloaking House",
                 "tag": "cloaking-house",
                 "link": "https://cloaking.house/login",
@@ -850,7 +850,7 @@
                 "desc": "Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not."
               },
               {
-                "percent": 5.45,
+                "percent": 0,
                 "name": "Account Hub",
                 "tag": "account-hub",
                 "link": "https://t.me/orenda_AccountHUB",
@@ -858,7 +858,7 @@
                 "desc": "Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not."
               },
               {
-                "percent": 6.17,
+                "percent": 0,
                 "name": "TD APPS",
                 "tag": "td-apps",
                 "link": "https://www.instagram.com/td_apps/",
@@ -874,7 +874,7 @@
                 "desc": "Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not."
               },
               {
-                "percent": 0.80,
+                "percent": 0,
                 "name": "2B Digital",
                 "tag": "2b-digital",
                 "link": "https://2bdigital.website",
@@ -887,14 +887,14 @@
       },
       {
         "tag": "influencer",
-        "title": "Інфлюєнсер року",
+        "title": "Influencer of the Year",
         "categories": [
           {
             "name": "no-category",
             "tag": "no-category",
             "companies": [
               {
-                "percent": 20.17,
+                "percent": 0,
                 "name": "Алла Панченко",
                 "tag": "alla-panchenko",
                 "link": "https://www.instagram.com/alla_pancha",
@@ -902,7 +902,7 @@
                 "desc": "Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not."
               },
               {
-                "percent": 43.10,
+                "percent": 0,
                 "name": "Роман Корчак",
                 "tag": "roman-korchak",
                 "link": "https://t.me/real_target",
@@ -910,7 +910,7 @@
                 "desc": "Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not."
               },
               {
-                "percent": 33.16,
+                "percent": 0,
                 "name": "Artem.cpa",
                 "tag": "artem-cpa",
                 "link": "https://igamepanda.com/ua/",
@@ -918,7 +918,7 @@
                 "desc": "Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not."
               },
               {
-                "percent": 2.98,
+                "percent": 0,
                 "name": "Андрій Радченко",
                 "tag": "andriy-radchenko",
                 "link": "https://www.instagram.com/radchenko_live?igsh=ZWVyN2l2cnE2NTN6",
@@ -926,7 +926,7 @@
                 "desc": "Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not."
               },
               {
-                "percent": 0.60,
+                "percent": 0,
                 "name": "Артур Жуков",
                 "tag": "arthur-zhukov",
                 "link": "https://www.instagram.com/zhukov.arthur/",
@@ -939,7 +939,7 @@
       },
       {
         "tag": "collaboration-of-the-year",
-        "title": "Колаборація року",
+        "title": "Collaboration of the Year",
         "backgroundName": "sphere",
         "categories": [
           {
@@ -947,7 +947,7 @@
             "tag": "no-category",
             "companies": [
               {
-                "percent": 12.90,
+                "percent": 0,
                 "name": "Space Profit Team",
                 "tag": "space-profit-team",
                 "link": "https://www.instagram.com/spaceprofit?igsh=Yzc4anZxejFkNGpy&utm_source=qr",
@@ -955,7 +955,7 @@
                 "desc": "Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not."
               },
               {
-                "percent": 32.06,
+                "percent": 0,
                 "name": "ClickDealer",
                 "tag": "clickdealer",
                 "link": "https://www.clickdealer.com/",
@@ -963,7 +963,7 @@
                 "desc": "Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not."
               },
               {
-                "percent": 42.90,
+                "percent": 0,
                 "name": "One Partners",
                 "tag": "one-partners",
                 "link": "https://onepartners.io/",
@@ -971,7 +971,7 @@
                 "desc": "Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not."
               },
               {
-                "percent": 10.75,
+                "percent": 0,
                 "name": "Arbitrage Up",
                 "tag": "arbitrageup",
                 "link": "https://arbitrageup.net/",
@@ -979,7 +979,7 @@
                 "desc": "Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not."
               },
               {
-                "percent": 1.40,
+                "percent": 0,
                 "name": "HR Community",
                 "tag": "hr-community",
                 "link": "https://www.instagram.com/hr.community.ua?igsh=MjI5bXBuYWZrYnE0",
@@ -992,14 +992,14 @@
       },
       {
         "tag": "best-pr-campaign",
-        "title": "Найкраща PR-кампанія року",
+        "title": "Best PR Campaign of the Year",
         "categories": [
           {
             "name": "no-category",
             "tag": "no-category",
             "companies": [
               {
-                "percent": 16.77,
+                "percent": 0,
                 "name": "HolyTraff",
                 "tag": "holytraff",
                 "link": "https://holytraff.com",
@@ -1007,7 +1007,7 @@
                 "desc": "Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not."
               },
               {
-                "percent": 4.87,
+                "percent": 0,
                 "name": "Space Profit Team",
                 "tag": "space-profit-team",
                 "link": "https://www.instagram.com/spaceprofit?igsh=Yzc4anZxejFkNGpy&utm_source=qr",
@@ -1015,7 +1015,7 @@
                 "desc": "Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not."
               },
               {
-                "percent": 9.11,
+                "percent": 0,
                 "name": "1win Partners",
                 "tag": "1win-partners",
                 "link": "https://1w.run/ua/",
@@ -1023,7 +1023,7 @@
                 "desc": "Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not."
               },
               {
-                "percent": 27.43,
+                "percent": 0,
                 "name": "Gambeat",
                 "tag": "gambeat",
                 "link": "https://gambeat.io/?utm_source=affhubvoice&utm_medium=affhubvoice&utm_campaign=affhubvoice",
@@ -1031,7 +1031,7 @@
                 "desc": "Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not."
               },
               {
-                "percent": 1.14,
+                "percent": 0,
                 "name": "Affter",
                 "tag": "affter",
                 "link": "https://affter.com/",
@@ -1039,7 +1039,7 @@
                 "desc": "Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not."
               },
               {
-                "percent": 13.98,
+                "percent": 0,
                 "name": "PIN-UP Partners",
                 "tag": "pinup",
                 "link": "https://pin-up.partners",
@@ -1047,7 +1047,7 @@
                 "desc": "Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not."
               },
               {
-                "percent": 2.28,
+                "percent": 0,
                 "name": "One Partners",
                 "tag": "one-partners",
                 "link": "https://onepartners.io/",
@@ -1055,7 +1055,7 @@
                 "desc": "Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not."
               },
               {
-                "percent": 16.67,
+                "percent": 0,
                 "name": "Arbitrage Up",
                 "tag": "arbitrageup",
                 "link": "https://arbitrageup.net/",
@@ -1063,7 +1063,7 @@
                 "desc": "Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not."
               },
               {
-                "percent": 3.83,
+                "percent": 0,
                 "name": "AFFPRO",
                 "tag": "affpro",
                 "link": "https://aff-pro.com/",
@@ -1071,7 +1071,7 @@
                 "desc": "Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not."
               },
               {
-                "percent": 1.35,
+                "percent": 0,
                 "name": "Affiliate Journalist",
                 "tag": "affiliate-journalist",
                 "link": "https://t.me/affwriter",
@@ -1079,7 +1079,7 @@
                 "desc": "Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not."
               },
               {
-                "percent": 2.28,
+                "percent": 0,
                 "name": "OMNI CPA",
                 "tag": "omni-cpa",
                 "link": "https://cpaomni.com/",
@@ -1087,7 +1087,7 @@
                 "desc": "Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not."
               },
               {
-                "percent": 0.10,
+                "percent": 0,
                 "name": "HR Community",
                 "tag": "hr-community",
                 "link": "https://www.instagram.com/hr.community.ua?igsh=MjI5bXBuYWZrYnE0",
@@ -1095,7 +1095,7 @@
                 "desc": "Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not."
               },
               {
-                "percent": 0.10,
+                "percent": 0,
                 "name": "One One Agency",
                 "tag": "one-one-agency",
                 "link": "https://www.instagram.com/one.one_agency?igsh=MTY2eDIwaXNmMjkzYg==",
@@ -1103,7 +1103,7 @@
                 "desc": "Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not."
               },
               {
-                "percent": 0.10,
+                "percent": 0,
                 "name": "AdKey.Agency",
                 "tag": "adkey-agency",
                 "link": "https://adkey.agency",
@@ -1116,14 +1116,14 @@
       },
       {
         "tag": "donat",
-        "title": "Донат року",
+        "title": "Donation of the Year",
         "categories": [
           {
             "name": "no-category",
             "tag": "no-category",
             "companies": [
               {
-                "percent": 14.65,
+                "percent": 0,
                 "name": "Arknet",
                 "tag": "arknet",
                 "link": "https://arknet.group",
@@ -1131,7 +1131,7 @@
                 "desc": "Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not."
               },
               {
-                "percent": 4.55,
+                "percent": 0,
                 "name": "FAVBET",
                 "tag": "favbet",
                 "link": "https://www.favbet.ua/uk/",
@@ -1139,7 +1139,7 @@
                 "desc": "Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not."
               },
               {
-                "percent": 2.98,
+                "percent": 0,
                 "name": "Everad",
                 "tag": "everad",
                 "link": "https://everad.com/",
@@ -1147,7 +1147,7 @@
                 "desc": "Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not."
               },
               {
-                "percent": 5.05,
+                "percent": 0,
                 "name": "Traffic Squad",
                 "tag": "traffic-squad",
                 "link": "https://tsquad.net/",
@@ -1155,7 +1155,7 @@
                 "desc": "Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not."
               },
               {
-                "percent": 8.03,
+                "percent": 0,
                 "name": "Slots City Partners",
                 "tag": "slots",
                 "link": "https://www.instagram.com/sc__partners/?refcode=aff_66cd812e2c7ad40001ed9fa0_884&subid=s1__s2_affhub_s3_landing_s4_cpa_voice2024_s5_&utm_source=CPA&utm_medium=884&utm_campaign=66cd812e2c7ad40001ed9fa0&utm_content=_affhub_landing_cpa_voice2024_",
@@ -1163,7 +1163,7 @@
                 "desc": "Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not."
               },
               {
-                "percent": 3.97,
+                "percent": 0,
                 "name": "DID Global",
                 "tag": "did-global",
                 "link": "https://didglobal.biz/",
@@ -1171,7 +1171,7 @@
                 "desc": "Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not."
               },
               {
-                "percent": 24.50,
+                "percent": 0,
                 "name": "AFFPRO",
                 "tag": "affpro",
                 "link": "https://aff-pro.com/",
@@ -1179,7 +1179,7 @@
                 "desc": "Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not."
               },
               {
-                "percent": 30.63,
+                "percent": 0,
                 "name": "Trident Media",
                 "tag": "trident-media",
                 "link": "https://trident-media.agency",
@@ -1187,7 +1187,7 @@
                 "desc": "Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not."
               },
               {
-                "percent": 1.66,
+                "percent": 0,
                 "name": "Affiliate Networking Series (ANS)",
                 "tag": "ans-company",
                 "link": "https://www.instagram.com/ans_affiliate_networking/",
@@ -1195,7 +1195,7 @@
                 "desc": "Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not."
               },
               {
-                "percent": 2.32,
+                "percent": 0,
                 "name": "Hamsters",
                 "tag": "hamsters",
                 "link": "https://hamsters.run",
@@ -1203,7 +1203,7 @@
                 "desc": "Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not."
               },
               {
-                "percent": 1.66,
+                "percent": 0,
                 "name": "White Rhino Partners",
                 "tag": "white-rhino-partners",
                 "link": "https://whiterhinopartners.com/",
@@ -1216,7 +1216,7 @@
       },
       {
         "tag": "breakthrough-of-the-year",
-        "title": "Прорив року",
+        "title": "Breakthrough of the Year",
         "backgroundName": "",
         "categories": [
           {
@@ -1224,7 +1224,7 @@
             "tag": "no-category",
             "companies": [
               {
-                "percent": 6.70,
+                "percent": 0,
                 "name": "HolyTraff",
                 "tag": "holytraff",
                 "link": "https://holytraff.com",
@@ -1232,7 +1232,7 @@
                 "desc": "Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not."
               },
               {
-                "percent": 0.38,
+                "percent": 0,
                 "name": "Already Media",
                 "tag": "alreadymedia",
                 "link": "https://alreadymedia.com/",
@@ -1240,7 +1240,7 @@
                 "desc": "Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not."
               },
               {
-                "percent": 5.80,
+                "percent": 0,
                 "name": "SharkLink",
                 "tag": "sharklink",
                 "link": "https://gambling.sharklink.org/",
@@ -1248,7 +1248,7 @@
                 "desc": "Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not."
               },
               {
-                "percent": 0.76,
+                "percent": 0,
                 "name": "21stGOLD",
                 "tag": "21st-gold",
                 "link": "https://21st.gold",
@@ -1256,7 +1256,7 @@
                 "desc": "Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not."
               },
               {
-                "percent": 10.65,
+                "percent": 0,
                 "name": "Gambeat",
                 "tag": "gambeat",
                 "link": "https://gambeat.io/?utm_source=affhubvoice&utm_medium=affhubvoice&utm_campaign=affhubvoice",
@@ -1264,7 +1264,7 @@
                 "desc": "Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not."
               },
               {
-                "percent": 0.71,
+                "percent": 0,
                 "name": "Affter",
                 "tag": "affter",
                 "link": "https://affter.com/",
@@ -1272,7 +1272,7 @@
                 "desc": "Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not."
               },
               {
-                "percent": 0.29,
+                "percent": 0,
                 "name": "Sweeply",
                 "tag": "sweeply",
                 "link": "https://sweeply.pro",
@@ -1280,7 +1280,7 @@
                 "desc": "Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not."
               },
               {
-                "percent": 1.57,
+                "percent": 0,
                 "name": "Wild Wild Partners",
                 "tag": "wild-wild-partners",
                 "link": "https://wildwild.partners/",
@@ -1288,7 +1288,7 @@
                 "desc": "Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not."
               },
               {
-                "percent": 37.36,
+                "percent": 0,
                 "name": "MB Partners",
                 "tag": "mb-partners",
                 "link": "https://mb.partners/signup?ref=affhubcpavoice",
@@ -1296,7 +1296,7 @@
                 "desc": "Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not."
               },
               {
-                "percent": 0.14,
+                "percent": 0,
                 "name": "Play.Partners",
                 "tag": "playpartners",
                 "link": "https://play.partners/",
@@ -1304,7 +1304,7 @@
                 "desc": "Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not."
               },
               {
-                "percent": 8.56,
+                "percent": 0,
                 "name": "PLASH",
                 "tag": "plash",
                 "link": "https://t.me/plash_blog",
@@ -1312,7 +1312,7 @@
                 "desc": "Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not."
               },
               {
-                "percent": 0.62,
+                "percent": 0,
                 "name": "Buyer Media",
                 "tag": "buyer-media",
                 "link": "https://www.instagram.com/buyer__media?igsh=MnBkeDloOWdxZ3Jo",
@@ -1320,7 +1320,7 @@
                 "desc": "Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not."
               },
               {
-                "percent": 0.95,
+                "percent": 0,
                 "name": "Proxygan",
                 "tag": "proxygan",
                 "link": "https://proxygan.com/",
@@ -1328,7 +1328,7 @@
                 "desc": "Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not."
               },
               {
-                "percent": 1.76,
+                "percent": 0,
                 "name": "Casino.ua",
                 "tag": "casino-ua",
                 "link": "https://casino.ua/",
@@ -1336,7 +1336,7 @@
                 "desc": "Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not."
               },
               {
-                "percent": 1.52,
+                "percent": 0,
                 "name": "PANCH AGENCY",
                 "tag": "panch-agency",
                 "link": "https://www.instagram.com/panch_agency",
@@ -1344,7 +1344,7 @@
                 "desc": "Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not."
               },
               {
-                "percent": 3.33,
+                "percent": 0,
                 "name": "Arknet",
                 "tag": "arknet",
                 "link": "https://arknet.group",
@@ -1352,7 +1352,7 @@
                 "desc": "Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not."
               },
               {
-                "percent": 0.24,
+                "percent": 0,
                 "name": "SuperGra Affiliates",
                 "tag": "supergra-affiliates",
                 "link": "https://graaffiliates.com/uk",
@@ -1360,7 +1360,7 @@
                 "desc": "Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not."
               },
               {
-                "percent": 0.19,
+                "percent": 0,
                 "name": "Growe Partners",
                 "tag": "growe-partners",
                 "link": "https://growe.partners/",
@@ -1368,7 +1368,7 @@
                 "desc": "Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not."
               },
               {
-                "percent": 8.46,
+                "percent": 0,
                 "name": "One Media",
                 "tag": "one-media",
                 "link": "https://www.instagram.com/onemedia.io",
@@ -1376,7 +1376,7 @@
                 "desc": "Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not."
               },
               {
-                "percent": 0.67,
+                "percent": 0,
                 "name": "Hamsters",
                 "tag": "hamsters",
                 "link": "https://hamsters.run",
@@ -1384,7 +1384,7 @@
                 "desc": "Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not."
               },
               {
-                "percent": 1.38,
+                "percent": 0,
                 "name": "Win-Offers",
                 "tag": "win-offers",
                 "link": "https://win-offers.com/",
@@ -1392,7 +1392,7 @@
                 "desc": "Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not."
               },
               {
-                "percent": 0.19,
+                "percent": 0,
                 "name": "VIBES",
                 "tag": "vibes",
                 "link": "https://www.instagram.com/vibes_arbitrage/profilecard/?igsh=a3NtcDB1dHZ0NnNq",
@@ -1400,7 +1400,7 @@
                 "desc": "Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not."
               },
               {
-                "percent": 0.24,
+                "percent": 0,
                 "name": "Affbox Media",
                 "tag": "affbox-media",
                 "link": "https://affbox.media/",
@@ -1408,7 +1408,7 @@
                 "desc": "Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not."
               },
               {
-                "percent": 1.09,
+                "percent": 0,
                 "name": "Affiliate Journalist",
                 "tag": "affiliate-journalist",
                 "link": "https://t.me/affwriter",
@@ -1416,7 +1416,7 @@
                 "desc": "Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not."
               },
               {
-                "percent": 1.81,
+                "percent": 0,
                 "name": "Gorilla Partners",
                 "tag": "gorilla-partners",
                 "link": "https://gorilla.partners/",
@@ -1424,7 +1424,7 @@
                 "desc": "Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not."
               },
               {
-                "percent": 0.67,
+                "percent": 0,
                 "name": "OMNI CPA",
                 "tag": "omni-cpa",
                 "link": "https://cpaomni.com/",
@@ -1432,7 +1432,7 @@
                 "desc": "Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not."
               },
               {
-                "percent": 0.14,
+                "percent": 0,
                 "name": "AdeptiAds",
                 "tag": "adepti-ads",
                 "link": "https://adeptiads.com",
@@ -1440,7 +1440,7 @@
                 "desc": "Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not."
               },
               {
-                "percent": 0.14,
+                "percent": 0,
                 "name": "HR Community",
                 "tag": "hr-community",
                 "link": "https://www.instagram.com/hr.community.ua?igsh=MjI5bXBuYWZrYnE0",
@@ -1448,7 +1448,7 @@
                 "desc": "Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not."
               },
               {
-                "percent": 0.24,
+                "percent": 0,
                 "name": "One One Agency",
                 "tag": "one-one-agency",
                 "link": "https://www.instagram.com/one.one_agency?igsh=MTY2eDIwaXNmMjkzYg==",
@@ -1456,7 +1456,7 @@
                 "desc": "Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not."
               },
               {
-                "percent": 0.19,
+                "percent": 0,
                 "name": "AdKey.Agency",
                 "tag": "adkey-agency",
                 "link": "https://adkey.agency",
@@ -1464,7 +1464,7 @@
                 "desc": "Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not."
               },
               {
-                "percent": 0.43,
+                "percent": 0,
                 "name": "Need for Leads",
                 "tag": "need-for-leads",
                 "link": "https://www.instagram.com/need_for_leads?igsh=emd1cWtiaGIxZjF4",
@@ -1472,7 +1472,7 @@
                 "desc": "Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not."
               },
               {
-                "percent": 0.29,
+                "percent": 0,
                 "name": "Жіночий погляд на Гемблінг",
                 "tag": "womans-view",
                 "link": "https://t.me/womensgambling",
@@ -1485,7 +1485,7 @@
       },
       {
         "tag": "employer-of-the-year",
-        "title": "Роботодавець року",
+        "title": "Employer of the Year",
         "backgroundName": "radiance",
         "categories": [
           {
@@ -1493,7 +1493,7 @@
             "tag": "no-category",
             "companies": [
               {
-                "percent": 21.15,
+                "percent": 0,
                 "name": "1win Partners",
                 "tag": "1win-partners",
                 "link": "https://1w.run/ua/",
@@ -1501,7 +1501,7 @@
                 "desc": "Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not."
               },
               {
-                "percent": 24.20,
+                "percent": 0,
                 "name": "PLASH",
                 "tag": "plash",
                 "link": "https://t.me/plash_blog",
@@ -1509,7 +1509,7 @@
                 "desc": "Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not."
               },
               {
-                "percent": 3.12,
+                "percent": 0,
                 "name": "Casino.ua",
                 "tag": "casino-ua",
                 "link": "https://casino.ua/",
@@ -1517,7 +1517,7 @@
                 "desc": "Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not."
               },
               {
-                "percent": 25.14,
+                "percent": 0,
                 "name": "Trident Media",
                 "tag": "trident-media",
                 "link": "https://trident-media.agency",
@@ -1525,7 +1525,7 @@
                 "desc": "Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not."
               },
               {
-                "percent": 0.56,
+                "percent": 0,
                 "name": "JimPartners",
                 "tag": "jimpartners",
                 "link": "https://jimpartners.com/",
@@ -1533,7 +1533,7 @@
                 "desc": "Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not."
               },
               {
-                "percent": 1.00,
+                "percent": 0,
                 "name": "DS Partners",
                 "tag": "ds-partners",
                 "link": "https://www.dspartners.pro/",
@@ -1541,7 +1541,7 @@
                 "desc": "Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not."
               },
               {
-                "percent": 1.42,
+                "percent": 0,
                 "name": "One Partners",
                 "tag": "one-partners",
                 "link": "https://onepartners.io/",
@@ -1549,7 +1549,7 @@
                 "desc": "Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not."
               },
               {
-                "percent": 22.33,
+                "percent": 0,
                 "name": "Arbitrage Up",
                 "tag": "arbitrageup",
                 "link": "https://arbitrageup.net/",
@@ -1557,7 +1557,7 @@
                 "desc": "Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not."
               },
               {
-                "percent": 0.75,
+                "percent": 0,
                 "name": "OceanLeads",
                 "tag": "ocean-leads",
                 "link": "https://www.oceanleads.online",
@@ -1565,7 +1565,7 @@
                 "desc": "Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not. Long description or not."
               },
               {
-                "percent": 0.31,
+                "percent": 0,
                 "name": "One One Agency",
                 "tag": "one-one-agency",
                 "link": "https://www.instagram.com/one.one_agency?igsh=MTY2eDIwaXNmMjkzYg==",
@@ -1579,16 +1579,16 @@
     ]
   },
   "announcement": {
-    "text": "Переможців «Affhub CPA Voice 2025» буде оголошено в грудні. Слідкуйте за нашими анонсами на:"
+    "text": "The winners of «Affhub CPA Voice 2025» will be announced in December. Stay tuned for our announcements at:"
   },
   "modal": {
     "titles": {
-      "login": "Щоб віддати свій голос, виконайте вхід",
-      "signup": "Щоб віддати свій голос, зареєструйтесь"
+      "login": "To cast your vote, please log in",
+      "signup": "To cast your vote, please sign up"
     },
     "switcher": {
-      "login": "Вже маю аккаунт",
-      "signup": "Ще не маю аккаунту"
+      "login": "I already have an account",
+      "signup": "I don’t have an account yet"
     },
     "signup": {
 
@@ -1603,35 +1603,35 @@
 
     },
     "placeholders": {
-      "name": "Ім'я",
+      "name": "Name",
       "email": "Email",
-      "phone": "Телефон",
-      "otp": "Код"
+      "phone": "Phone",
+      "otp": "Code"
     },
     "buttons": {
-      "login": "Увійти",
-      "signup": "Зареєструватись",
-      "sendOtp": "Надіслати код",
-      "faq": "Проблеми з авторизацією"
+      "login": "Login",
+      "signup": "Sign Up",
+      "sendOtp": "Send Code",
+      "faq": "Problems with authorization"
     },
     "validation": {
       "name": {
-        "required": "Поле не може бути пустим!",
+        "required": "Field cannot be empty!",
         "matches": ""
       },
       "email": {
-        "test": "Ви ввели неправильний email",
-        "required": "Поле не може бути пустим!",
-        "matches": "Має містити домен з крапкою та TLD"
+        "test": "You entered an incorrect email",
+        "required": "Field cannot be empty!",
+        "matches": "Must contain a domain with a dot and TLD"
       },
       "phone": {
-        "required": "Поле не може бути пустим!",
-        "matches": "Телефон має бути у форматі +380XXXXXXXXX"
+        "required": "Field cannot be empty!",
+        "matches": "Phone must be in the format +380XXXXXXXXX"
       },
       "otp": {
-        "required": "Поле не може бути пустим!",
-        "matches": "Код має містити тільки цифри",
-        "min": "Код має містити 6 цифр"
+        "required": "Field cannot be empty!",
+        "matches": "Code must contain only digits",
+        "min": "Code must contain 6 digits"
       }
     },
     "globalErrors": {
@@ -1639,25 +1639,25 @@
     }
   },
   "faq": {
-    "title": "Проблеми з авторизацією",
-    "subtitle": "Оберіть проблему щоб повідомити нам:",
+    "title": "Problems with authorization",
+    "subtitle": "Choose a problem to report to us:",
     "letter": {
       "emails": ["maksym.vovk@redi.partners", "s.batanin@redi.partners"],
       "subject": "Affhub Bug Report",
       "body": {
         "markers": {
-          "problem": "Проблема",
-          "email": "Електронна пошта",
-          "phone": "Номер телефону"
+          "problem": "Problem",
+          "email": "Email",
+          "phone": "Phone number"
         },
         "topics": {
-          "noEmail": "Не приходить лист на пошту.",
-          "wrongEmailCode": "Код з пошти — неправильний.",
-          "noPhoneCode": "Телефонний код не приходить.",
-          "wrongPhoneCode": "Надходить невірний телефонний код."
+          "noEmail": "No email received.",
+          "wrongEmailCode": "The email code is incorrect.",
+          "noPhoneCode": "No phone code received.",
+          "wrongPhoneCode": "The phone code received is incorrect."
         },
         "userData": {
-          "hero": "Під час реєстрації я вказав дані:",
+          "hero": "During registration I entered the following data:",
           "email": "example@mail.com",
           "phone": "+380XXXXXXXXX"
         }

@@ -1,4 +1,5 @@
-import {useEffect, useState} from 'react';
+import {useEffect, useState, useRef} from 'react';
+import { GrLanguage } from "react-icons/gr";
 import './LangSwitcher.scss'
 
 function LangSwitcher({ i18n }) {
@@ -6,6 +7,7 @@ function LangSwitcher({ i18n }) {
     const [currentLanguage, setCurrentLanguage] = useState(() => {
         return localStorage.getItem('language') || 'en'
     });
+    const ref = useRef(null);
 
     const languages = [
         { key: "uk", label: "UA" },
@@ -17,22 +19,41 @@ function LangSwitcher({ i18n }) {
         i18n.changeLanguage(currentLanguage);
     }, [currentLanguage])
 
+    useEffect(() => {
+        if (!open) return;
+        function handleClickOutside(event) {
+            if (ref.current && !ref.current.contains(event.target)) {
+                setOpen(false);
+            }
+        }
+        document.addEventListener('mousedown', handleClickOutside);
+        return () => {
+            document.removeEventListener('mousedown', handleClickOutside);
+        };
+    }, [open]);
+
     const handleSelect = (lang) => {
         setCurrentLanguage(lang)
         setOpen(false);
     };
 
     return (
-        <div className="lang-switcher">
-            <button
-                className="lang-switcher__selected"
+        <div className="lang-switcher" ref={ref}>
+            <GrLanguage
+                className='lang-switcher__button'
                 onClick={() => setOpen((prev) => !prev)}
                 aria-haspopup="listbox"
                 aria-expanded={open}
-            >
-                {languages.find(l => l.key === currentLanguage)?.label || currentLanguage}
-                <span className="lang-switcher__arrow" />
-            </button>
+            />
+            {/*<button*/}
+            {/*    className="lang-switcher__selected"*/}
+            {/*    onClick={() => setOpen((prev) => !prev)}*/}
+            {/*    aria-haspopup="listbox"*/}
+            {/*    aria-expanded={open}*/}
+            {/*>*/}
+            {/*    {languages.find(l => l.key === currentLanguage)?.label || currentLanguage}*/}
+            {/*    <span className="lang-switcher__arrow" />*/}
+            {/*</button>*/}
             {open && (
                 <ul className="lang-switcher__dropdown" role="listbox">
                     {languages.map(lang => (

@@ -1,9 +1,12 @@
 import './CompanyCard.scss'
 import {useTranslation} from "react-i18next";
 import Button from "../Button/Button.jsx";
+import {useModal} from "../../context/ModalContext.jsx";
 
 function CompanyCard({ company }) {
     const { t } = useTranslation();
+    const { openModal } = useModal()
+
     const imgSrc = `/assets/${company.logo}`
     const imgElement = <img className="company__logo" src={imgSrc} alt={company.name} /> || null
 
@@ -21,7 +24,7 @@ function CompanyCard({ company }) {
                 </div>
                 <Button
                     className="company__button button"
-                    onClick={() => console.log('good')}
+                    onClick={() => openModal('login')}
                 >
                     {t('common.voteButton')}
                 </Button>

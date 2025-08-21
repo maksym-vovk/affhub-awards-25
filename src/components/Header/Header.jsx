@@ -5,10 +5,12 @@ import logo from '/assets/main-logo.svg'
 import { useTranslation } from 'react-i18next'
 import LangSwitcher from "../LangSwitcher/LangSwitcher.jsx";
 import Button from "../Button/Button.jsx";
+import {useModal} from "../../context/ModalContext.jsx";
 
 function Header() {
     const { t, i18n } = useTranslation();
     const [visible, setVisible] = useState(true);
+    const {openModal} = useModal()
     const lastScrollY = useRef(window.scrollY);
 
     useEffect(() => {
@@ -31,10 +33,14 @@ function Header() {
                 <div className="header__wrapper">
                     <img src={logo} alt="Affhub logo" width='110' height='25' className="header__logo logo" />
                     <div className="header__controls">
-                        <LangSwitcher i18n={i18n}/>
-                        <Button className="header__btn button">
+
+                        <Button
+                            className="header__btn button"
+                            onClick={() => openModal('signup')}
+                        >
                             {t('common.loginButton')}
                         </Button>
+                        <LangSwitcher i18n={i18n}/>
                     </div>
                 </div>
             </div>

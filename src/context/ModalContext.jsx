@@ -4,7 +4,7 @@ export const ModalContext = createContext()
 
 export const ModalProvider = ({ children }) => {
     const [modal, setModal] = useState({
-        isOpen: true,
+        isOpen: false,
         type: 'login',
         props: {}
     });
