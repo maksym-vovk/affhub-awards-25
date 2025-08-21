@@ -109,6 +109,7 @@ function SignupForm() {
                         isPasswordVisible={isPasswordVisible}
                         setIsPasswordVisible={setIsPasswordVisible}
                         onInput={handlePasswordInput}
+                        maxLength="20"
                     />
                     <FormField
                         name="repeatPassword"
@@ -117,6 +118,7 @@ function SignupForm() {
                         isPasswordVisible={isRepeatPasswordVisible}
                         setIsPasswordVisible={setIsRepeatPasswordVisible}
                         onInput={handlePasswordInput}
+                        maxLength="20"
                     />
                     <FormField
                         name="phoneNumber"

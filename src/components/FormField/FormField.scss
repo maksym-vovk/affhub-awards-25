@@ -5,6 +5,12 @@
   width: 100%;
   margin-bottom: 15px;
 
+  &--password {
+    input {
+      width: calc(100% - 40px);
+    }
+  }
+
   &__label,
   &__input {
     display: block;
@@ -40,10 +46,6 @@
       &::placeholder {
         color: variables.$error-red;
       }
-    }
-
-    &[type="password"] {
-        padding-right: 40px;
     }
   }
 

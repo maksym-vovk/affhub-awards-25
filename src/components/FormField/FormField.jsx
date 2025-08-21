@@ -9,7 +9,7 @@ function FormField({ isPasswordVisible, setIsPasswordVisible, ...props }) {
     const isPassword = field.name === "password" || field.name === "repeatPassword";
 
     return (
-        <div className="popup-field">
+        <div className={`popup-field ${isPassword ? 'popup-field--password' : ''}`}>
             <label className="popup-field__label">
                 <input
                     className="popup-field__input"
