@@ -1,5 +1,5 @@
 import "./ModalRoot.scss"
-import {useModal} from "../../context/ModalContext.jsx";
+import {useModal} from "../../context/ModalProvider.jsx";
 
 import logo from '/assets/main-logo.svg'
 import Button from "../Button/Button.jsx";
@@ -10,7 +10,7 @@ import SocialForm from "../SocialForm/SocialForm.jsx";
 import FormError from "../FormError/FormError.jsx";
 
 function ModalRoot() {
-    const { isOpen, type, closeModal } = useModal()
+    const { isOpen, type, props, closeModal } = useModal()
 
     // if (!isOpen) return null;
 
@@ -20,7 +20,7 @@ function ModalRoot() {
         emailOtp: <OtpForm />,
         phoneOtp: <OtpForm />,
         socialVerification: <SocialForm />,
-        error: <FormError />,
+        error: <FormError {...props}/>,
     }
 
     return (

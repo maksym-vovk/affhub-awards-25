@@ -3,13 +3,13 @@ import { createRoot } from 'react-dom/client'
 import './styles/global.scss'
 import App from './App.jsx'
 import './i18n.js'
-import ContextProviders from "./context/ContextProviders.jsx";
+import Providers from "./context/Providers.jsx";
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-      <ContextProviders>
+      <Providers>
           <App />
-      </ContextProviders>
+      </Providers>
   </StrictMode>,
 
 )

@@ -1,8 +1,8 @@
-import {ModalProvider} from "./ModalContext.jsx";
-import {FaqProvider} from "./FaqContext.jsx";
-import {LoaderProvider} from "./LoaderContext.jsx";
+import {ModalProvider} from "./ModalProvider.jsx";
+import {FaqProvider} from "./FaqProvider.jsx";
+import {LoaderProvider} from "./LoaderProvider.jsx";
 
-function ContextProviders({ children }) {
+function Providers({ children }) {
     return (
         <LoaderProvider>
             <ModalProvider>
@@ -14,4 +14,4 @@ function ContextProviders({ children }) {
     )
 }
 
-export default ContextProviders
+export default Providers

@@ -5,7 +5,7 @@ import logo from '/assets/main-logo.svg'
 import { useTranslation } from 'react-i18next'
 import LangSwitcher from "../LangSwitcher/LangSwitcher.jsx";
 import Button from "../Button/Button.jsx";
-import {useModal} from "../../context/ModalContext.jsx";
+import {useModal} from "../../context/ModalProvider.jsx";
 
 function Header() {
     const { t, i18n } = useTranslation();
@@ -36,7 +36,7 @@ function Header() {
 
                         <Button
                             className="header__btn button"
-                            onClick={() => openModal('signup')}
+                            onClick={() => openModal('login')}
                         >
                             {t('common.loginButton')}
                         </Button>

@@ -1,0 +1,61 @@
+@use '../../styles/mixins';
+@use '../../styles/variables';
+
+.popup-field {
+  width: 100%;
+  margin-bottom: 15px;
+
+  &__label,
+  &__input {
+    display: block;
+    width: 100%;
+  }
+
+  &__label {
+    position: relative;
+
+    &:last-of-type {
+      //margin-bottom: 114px;
+    }
+  }
+
+  &__input {
+    font-size: 18px;
+    color: white;
+    background: none;
+    border: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.24);
+    padding: 14px 10px 14px 0;
+    transition: .3s ease-in-out;
+
+    &::placeholder {
+      color: white;
+      transition: .3s ease-in-out;
+    }
+
+    &--error {
+      color: variables.$error-red;
+      border-color: variables.$error-red;
+
+      &::placeholder {
+        color: variables.$error-red;
+      }
+    }
+
+    &[type="password"] {
+        padding-right: 40px;
+    }
+  }
+
+  &__error {
+    font-size: 12px;
+    line-height: 1;
+    color: red;
+    margin-top: 13px;
+    opacity: 0;
+
+    &.active {
+      opacity: 1;
+    }
+  }
+}

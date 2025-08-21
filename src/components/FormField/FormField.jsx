@@ -1,23 +1,31 @@
 import './FormField.scss'
 import { useField } from "formik";
+import PasswordButton from "../PasswordButton/PasswordButton.jsx";
 
-function FormField({ ...props }) {
+function FormField({ isPasswordVisible, setIsPasswordVisible, ...props }) {
     const [field, meta] = useField({...props})
+
     const isError = meta.touched && meta.error
-    const isPhoneType = field.name === "phone";
-
-
+    const isPassword = field.name === "password" || field.name === "repeatPassword";
 
     return (
-        <label className="popup__label">
-            <input
-                className="popup__input"
-                {...props}
-                {...field}
-                autoComplete="on"
-            />
-            <p className={`popup__error ${isError ? 'active': ''}`}>{isError ? meta.error : 'Empty'}</p>
-        </label>
+        <div className="popup-field">
+            <label className="popup-field__label">
+                <input
+                    className="popup-field__input"
+                    {...props}
+                    {...field}
+                    autoComplete="on"
+                />
+                {isPassword && (
+                    <PasswordButton
+                        isPasswordVisible={isPasswordVisible}
+                        setIsPasswordVisible={setIsPasswordVisible}
+                    />
+                )}
+            </label>
+            <p className={`popup-field__error ${isError ? 'active': ''}`}>{isError ? meta.error : 'Empty'}</p>
+        </div>
     )
 }
 

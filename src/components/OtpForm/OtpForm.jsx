@@ -1,6 +1,6 @@
 import "./OtpForm.scss"
 import {useTranslation} from "react-i18next";
-import {useModal} from "../../context/ModalContext.jsx";
+import {useModal} from "../../context/ModalProvider.jsx";
 import * as Yup from "yup";
 import Button from "../Button/Button.jsx";
 import FormField from "../FormField/FormField.jsx";

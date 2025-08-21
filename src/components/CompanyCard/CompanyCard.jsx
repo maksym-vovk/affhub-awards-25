@@ -1,7 +1,7 @@
 import './CompanyCard.scss'
 import {useTranslation} from "react-i18next";
 import Button from "../Button/Button.jsx";
-import {useModal} from "../../context/ModalContext.jsx";
+import {useModal} from "../../context/ModalProvider.jsx";
 
 function CompanyCard({ company }) {
     const { t } = useTranslation();

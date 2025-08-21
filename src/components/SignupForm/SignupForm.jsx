@@ -7,9 +7,39 @@ import Button from "../Button/Button.jsx";
 import {useTranslation} from "react-i18next";
 import FormSwitcher from "../FormSwitcher/FormSwitcher.jsx";
 import FaqButton from "../FaqButton/FaqButton.jsx";
+import {api} from "../../api/auth.js";
+import {useState} from "react";
+import {useLoader} from "../../context/LoaderProvider.jsx";
+import {useModal} from "../../context/ModalProvider.jsx";
 
 function SignupForm() {
     const { t } = useTranslation();
+    const [loading, setLoading] = useLoader()
+    const {openModal, closeModalWithDelay} = useModal()
+    const [isPasswordVisible, setIsPasswordVisible] = useState(false);
+    const [isRepeatPasswordVisible, setIsRepeatPasswordVisible] = useState(false);
+
+    console.log(setLoading);
+
+    const signupSchema = Yup.object({
+        name: Yup.string()
+            .required(t('modal.validation.name.required')),
+        password: Yup.string()
+            .required('Поле не може бути порожнім')
+            .min(8, 'Пароль повинен містити щонайменше 8 символів')
+            .max(20, 'Пароль повинен містити не більше 20 символів')
+            .matches(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/, 'Пароль повинен включати принаймні одну літеру в нижньому регістрі, одну літеру в верхньому регістрі, одну цифру та один спеціальний символ (@$!%*?&)'),
+        repeatPassword: Yup.string()
+            .oneOf([Yup.ref('password'), null], 'Passwords must match')
+            .required('Please repeat your password'),
+        email: Yup.string()
+            .email(t('modal.validation.email.test'))
+            .required(t('modal.validation.email.required'))
+            .matches(/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/, t('modal.validation.email.matches')),
+        phoneNumber: Yup.string()
+            .required(t('modal.validation.phone.required'))
+            .matches(/^\+380\d{9}$/, t('modal.validation.phone.matches'))
+    })
 
     function handlePhoneInput(e) {
         const raw = e.target.value;
@@ -33,22 +63,23 @@ function SignupForm() {
             initialValues={{
                 name: '',
                 email: '',
-                phone: '',
+                phoneNumber: '',
+                password: '',
+                repeatPassword: '',
             }}
-            validationSchema={Yup.object({
-                name: Yup.string()
-                    .required(t('modal.validation.name.required')),
-                email: Yup.string()
-                    .email(t('modal.validation.email.test'))
-                    .required(t('modal.validation.email.required'))
-                    .matches(/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/, t('modal.validation.email.matches')),
-                phone: Yup.string()
-                    .required(t('modal.validation.phone.required'))
-                    .matches(/^\+380\d{9}$/, t('modal.validation.phone.matches'))
-            })}
-            onSubmit={(values, {resetForm}) => {
-                console.log('Form submitted with values:', JSON.stringify(values, null, 2));
+            validationSchema={signupSchema}
+            onSubmit={async ({ repeatPassword, ...submitValues }, {resetForm}) => {
+                setLoading(true);
+
+                const res = await api.register(submitValues)
+
+                if (res.error) {
+                    openModal('error', res.error)
+                    closeModalWithDelay()
+                }
+
                 resetForm();
+                setLoading(false);
             }}
         >
             <>
@@ -68,7 +99,23 @@ function SignupForm() {
                         placeholder={t('modal.placeholders.email')}
                     />
                     <FormField
-                        name="phone"
+                        name="password"
+                        type={isPasswordVisible ? "text" : "password"}
+                        placeholder="Пароль"
+                        isPasswordVisible={isPasswordVisible}
+                        setIsPasswordVisible={setIsPasswordVisible}
+                        onInput={(e) => e.target.value = e.target.value.trim()}
+                    />
+                    <FormField
+                        name="repeatPassword"
+                        type={isRepeatPasswordVisible ? "text" : "password"}
+                        placeholder="Repeat password"
+                        isPasswordVisible={isRepeatPasswordVisible}
+                        setIsPasswordVisible={setIsRepeatPasswordVisible}
+                        onInput={(e) => e.target.value = e.target.value.trim()}
+                    />
+                    <FormField
+                        name="phoneNumber"
                         type="tel"
                         placeholder={t('modal.placeholders.phone')}
                         onInput={handlePhoneInput}

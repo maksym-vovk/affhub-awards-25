@@ -1,7 +1,7 @@
 import './styles/global.scss';
 
 import {useEffect} from "react";
-import {useLoader} from "./context/LoaderContext.jsx";
+import {useLoader} from "./context/LoaderProvider.jsx";
 
 import LandingPage from "./pages/LandingPage/LandingPage.jsx";
 import Header from "./components/Header/Header.jsx";

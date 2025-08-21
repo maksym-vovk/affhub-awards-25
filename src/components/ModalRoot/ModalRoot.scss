@@ -10,7 +10,7 @@
   right: 0;
   bottom: 0;
   left: 0;
-  z-index: 10;
+  z-index: 100;
   padding: 15px 0;
   transform: translateX(100%);
   opacity: 0;
@@ -104,10 +104,10 @@
     justify-content: center;
     gap: 24px;
     width: 100%;
-    padding-bottom: 15px;
+    padding-bottom: 25px;
 
     @include mixins.rm(1024) {
-      padding-bottom: 20px;
+      padding-bottom: 40px;
     }
 
     &--warning {
@@ -150,78 +150,6 @@
     }
   }
 
-  &__label,
-  &__input {
-    display: block;
-    width: 100%;
-  }
-
-  &__label {
-    margin-bottom: 15px;
-
-    &:last-of-type {
-      //margin-bottom: 114px;
-    }
-  }
-
-  &__input {
-    font-size: 18px;
-    color: white;
-    background: none;
-    border: none;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.24);
-    padding: 20px 10px 14px 0;
-    transition: .3s ease-in-out;
-
-    &::placeholder {
-      color: white;
-      transition: .3s ease-in-out;
-    }
-
-    &--error {
-      color: variables.$error-red;
-      border-color: variables.$error-red;
-
-      &::placeholder {
-        color: variables.$error-red;
-      }
-    }
-  }
-
-  &__error {
-    font-size: 12px;
-    line-height: 1;
-    color: red;
-    margin-top: 13px;
-    opacity: 0;
-
-    &.active {
-      opacity: 1;
-    }
-  }
-
-  &__button {
-    width: 100%;
-    //color: white;
-    //background: linear-gradient(100deg, #FF00D4, #6A00FF, #0FF, #FFA800);
-    //background-size: 250% 100%;
-    //background-position: 0 0;
-    //border: none;
-    padding: 18px;
-
-    &:hover {
-      color: black;
-      background-position: 100% 0;
-    }
-
-    &:disabled {
-      color: white;
-      background: variables.$modal-gray;
-      border-color: variables.$modal-gray;
-      cursor: not-allowed;
-    }
-  }
-
   &__faq {
     position: relative;
     font-family: variables.$font-regular;
@@ -249,6 +177,28 @@
       &::after {
         opacity: 0;
       }
+    }
+  }
+
+  &__button {
+    width: 100%;
+    //color: white;
+    //background: linear-gradient(100deg, #FF00D4, #6A00FF, #0FF, #FFA800);
+    //background-size: 250% 100%;
+    //background-position: 0 0;
+    //border: none;
+    padding: 18px;
+
+    &:hover {
+      color: black;
+      background-position: 100% 0;
+    }
+
+    &:disabled {
+      color: white;
+      background: variables.$modal-gray;
+      border-color: variables.$modal-gray;
+      cursor: not-allowed;
     }
   }
 

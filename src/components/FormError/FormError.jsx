@@ -1,8 +1,11 @@
 import "./FormError.scss"
 
-function FormError() {
+function FormError({ title, text }) {
     return (
-        <div>FormError</div>
+        <>
+            <h2 className="popup__title">{title}</h2>
+            <p className="popup__message">{text}</p>
+        </>
     )
 }
 

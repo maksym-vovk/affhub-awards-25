@@ -17,12 +17,16 @@ export const ModalProvider = ({ children }) => {
         setModal({ isOpen: false, type: null, props: {} });
     }, []);
 
+    const closeModalWithDelay = (delay = 3000) => {
+        setTimeout(() => closeModal(), delay);
+    };
+
     const changeModalType = useCallback((type) => {
         setModal((prev) => ({ ...prev, type }));
     }, []);
 
     return (
-        <ModalContext.Provider value={{ ...modal, openModal, closeModal, changeModalType }}>
+        <ModalContext.Provider value={{ ...modal, openModal, closeModal, closeModalWithDelay, changeModalType }}>
             {children}
         </ModalContext.Provider>
     )

@@ -1,7 +1,7 @@
 import './FormSwitcher.scss'
 import Button from "../Button/Button.jsx";
 import {useTranslation} from "react-i18next";
-import {useModal} from "../../context/ModalContext.jsx";
+import {useModal} from "../../context/ModalProvider.jsx";
 
 function FormSwitcher() {
     const { t } = useTranslation();

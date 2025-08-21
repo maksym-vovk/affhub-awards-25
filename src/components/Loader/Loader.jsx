@@ -1,6 +1,6 @@
 import './Loader.scss'
 import { ThreeCircles } from "react-loader-spinner";
-import {useLoader} from "../../context/LoaderContext.jsx";
+import {useLoader} from "../../context/LoaderProvider.jsx";
 
 function Loader() {
     const [loading] = useLoader();

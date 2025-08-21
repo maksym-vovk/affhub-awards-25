@@ -1,5 +1,5 @@
 import './FaqModal.scss'
-import {useFaq} from "../../context/FaqContext.jsx";
+import {useFaq} from "../../context/FaqProvider.jsx";
 import Button from "../Button/Button.jsx";
 import {useTranslation} from "react-i18next";
 

@@ -27,7 +27,7 @@ function LoginForm() {
         >
             <>
                 <h2 className="popup__title">
-                    {t('modal.titles.signup')}
+                    {t('modal.titles.login')}
                 </h2>
                 <FormSwitcher/>
                 <Form className="popup__form">
