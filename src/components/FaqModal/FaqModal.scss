@@ -176,6 +176,11 @@
 
   &__item {
     width: 100%;
+    max-width: 300px;
+
+    @include mixins.rm(768) {
+      max-width: none;
+    }
 
     &:not(:last-child) {
       margin-bottom: 14px;
@@ -189,7 +194,6 @@
     align-items: center;
     color: black;
     padding: 8px 10px;
-    max-width: 300px;
     width: 100%;
     text-align: center;
 
