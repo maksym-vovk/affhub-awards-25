@@ -14,7 +14,7 @@ import {useModal} from "../../context/ModalProvider.jsx";
 
 function SignupForm() {
     const { t } = useTranslation();
-    const [setLoading] = useLoader()
+    const [, setLoading] = useLoader()
     const {openModal, closeModalWithDelay} = useModal()
     const [isPasswordVisible, setIsPasswordVisible] = useState(false);
     const [isRepeatPasswordVisible, setIsRepeatPasswordVisible] = useState(false);
@@ -36,7 +36,7 @@ function SignupForm() {
             .matches(/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/, t('modal.validation.email.matches')),
         phoneNumber: Yup.string()
             .required(t('modal.validation.phone.required'))
-            .matches(/^\+380\d{9}$/, t('modal.validation.phone.matches'))
+            .matches(/^\+?[1-9]\d{6,14}$/, t('modal.validation.phone.matches'))
     })
 
     function handlePhoneInput(e) {
@@ -49,8 +49,8 @@ function SignupForm() {
             return;
         }
 
-        if (!cleaned.startsWith('+380')) {
-            cleaned = '+380' + cleaned.replace(/^\+?3?8?0?/, '');
+        if (!cleaned.startsWith('+')) {
+            cleaned = '+' + cleaned.replace(/^\+?/, '');
         }
 
         e.target.value = cleaned;
@@ -77,9 +77,11 @@ function SignupForm() {
 
                 if (res.error) {
                     openModal('error', res.error)
-                    closeModalWithDelay()
+                } else {
+                    openModal('error', {title: 'Success', text: "Now you can login with your account."})
                 }
 
+                closeModalWithDelay();
                 resetForm();
                 setLoading(false);
             }}
@@ -123,7 +125,7 @@ function SignupForm() {
                         type="tel"
                         placeholder={t('modal.placeholders.phone')}
                         onInput={handlePhoneInput}
-                        maxLength="13"
+                        maxLength="16"
                     />
                     <Button
                         className="popup__button button"

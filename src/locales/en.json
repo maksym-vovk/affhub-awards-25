@@ -1637,7 +1637,7 @@
       },
       "phone": {
         "required": "Field cannot be empty!",
-        "matches": "Phone must be in the format +380XXXXXXXXX"
+        "matches": "Enter a valid phone number in international format."
       },
       "otp": {
         "required": "Field cannot be empty!",
