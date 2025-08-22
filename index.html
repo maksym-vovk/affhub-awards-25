@@ -1,21 +1,57 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
+<head>
+    <meta charset="UTF-8"/>
     <!--Favicons-->
-    <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="shortcut icon" href="/favicon.ico" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-    <meta name="apple-mobile-web-app-title" content="CPA Voice" />
-    <link rel="manifest" href="/site.webmanifest" />
-    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96"/>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg"/>
+    <link rel="shortcut icon" href="/favicon.ico"/>
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"/>
+    <meta name="apple-mobile-web-app-title" content="CPA Voice"/>
+    <link rel="manifest" href="/site.webmanifest"/>
+    <link rel="manifest" href="/site.webmanifest"/>
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Affhub CPA Voice 2025</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="./src/main.jsx"></script>
-  </body>
+</head>
+<body>
+<style>
+  #loader {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(10px);
+    z-index: 9999;
+    transition: opacity 0.4s ease, visibility 0.4s ease;
+  }
+
+  #loader.hidden {
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  .loader__icon {
+    width: 20%;
+    height: 20%;
+    max-width: 80px;
+  }
+
+  .loader__icon {
+    animation: spin 3s forwards infinite alternate;
+  }
+
+  @keyframes spin {
+    from { transform: rotate(0deg); }
+    to   { transform: rotate(360deg); }
+  }
+</style>
+
+<div id="loader">
+  <img class="loader__icon" src="./public/assets/loader-logo.svg" alt="Affhub Logo">
+</div>
+<div id="root"></div>
+<script type="module" src="./src/main.jsx"></script>
+</body>
 </html>

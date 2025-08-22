@@ -1,8 +1,5 @@
 import './styles/global.scss';
 
-import {useEffect} from "react";
-import {useLoader} from "./context/LoaderProvider.jsx";
-
 import LandingPage from "./pages/LandingPage/LandingPage.jsx";
 import Header from "./components/Header/Header.jsx";
 import NominationSection from "./sections/NominationSection/NominationSection.jsx";
@@ -12,23 +9,8 @@ import AnnouncementSection from "./sections/AnnouncementSection/AnnouncementSect
 import Footer from "./components/Footer/Footer.jsx";
 import ModalRoot from "./components/ModalRoot/ModalRoot.jsx";
 import FaqModal from "./components/FaqModal/FaqModal.jsx";
-import Loader from "./components/Loader/Loader.jsx";
 
 function App() {
-    const [loading, setLoadingWithDelay] = useLoader();
-
-    useEffect(() => {
-        const handleLoad = () => setLoadingWithDelay(false);
-        if (document.readyState === "complete") {
-            setLoadingWithDelay(false);
-            return;
-        }
-
-        window.addEventListener("load", handleLoad);
-        return () => window.removeEventListener("load", handleLoad);
-    }, []);
-
-
     return (
         <>
             <Header/>
@@ -42,7 +24,6 @@ function App() {
 
             <ModalRoot/>
             <FaqModal/>
-            {loading && <Loader/>}
         </>
     );
 }

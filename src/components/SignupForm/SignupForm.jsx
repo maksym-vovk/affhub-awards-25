@@ -14,7 +14,7 @@ import {useModal} from "../../context/ModalProvider.jsx";
 
 function SignupForm() {
     const { t } = useTranslation();
-    const [, setLoading] = useLoader()
+    const {showLoader, hideLoader} = useLoader()
     const {openModal, closeModalWithDelay} = useModal()
     const [isPasswordVisible, setIsPasswordVisible] = useState(false);
     const [isRepeatPasswordVisible, setIsRepeatPasswordVisible] = useState(false);
@@ -71,7 +71,7 @@ function SignupForm() {
             }}
             validationSchema={signupSchema}
             onSubmit={async ({ repeatPassword, ...submitValues }, {resetForm}) => {
-                setLoading(true);
+                showLoader();
 
                 const res = await api.register(submitValues)
 
@@ -83,7 +83,7 @@ function SignupForm() {
 
                 closeModalWithDelay();
                 resetForm();
-                setLoading(false);
+                hideLoader(false);
             }}
         >
             <>
