@@ -2,6 +2,7 @@
 @use '../../styles/variables';
 
 .categories {
+  overflow: hidden;
   position: relative;
   background: variables.$gray-color;
   padding-bottom: 10px;
