@@ -8,7 +8,6 @@ import {useTranslation} from "react-i18next";
 import FormSwitcher from "../FormSwitcher/FormSwitcher.jsx";
 import FaqButton from "../FaqButton/FaqButton.jsx";
 import {api} from "../../api/auth.js";
-import {useState} from "react";
 import {useLoader} from "../../context/LoaderProvider.jsx";
 import {useModal} from "../../context/ModalProvider.jsx";
 
@@ -16,8 +15,6 @@ function SignupForm() {
     const { t } = useTranslation();
     const {showLoader, hideLoader} = useLoader()
     const {openModal, closeModalWithDelay} = useModal()
-    const [isPasswordVisible, setIsPasswordVisible] = useState(false);
-    const [isRepeatPasswordVisible, setIsRepeatPasswordVisible] = useState(false);
 
     const signupSchema = Yup.object({
         name: Yup.string()
@@ -29,7 +26,10 @@ function SignupForm() {
             .matches(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/, t('modal.validation.password.matches')),
         repeatPassword: Yup.string()
             .oneOf([Yup.ref('password'), null], t('modal.validation.repeatPassword.oneOf'))
-            .required(t('modal.validation.repeatPassword.required')),
+            .required(t('modal.validation.repeatPassword.required'))
+            .min(8, t('modal.validation.password.min'))
+            .max(20, t('modal.validation.password.max'))
+            .matches(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/, t('modal.validation.password.matches')),
         email: Yup.string()
             .email(t('modal.validation.email.test'))
             .required(t('modal.validation.email.required'))
@@ -38,27 +38,6 @@ function SignupForm() {
             .required(t('modal.validation.phone.required'))
             .matches(/^\+?[1-9]\d{6,14}$/, t('modal.validation.phone.matches'))
     })
-
-    function handlePhoneInput(e) {
-        const raw = e.target.value;
-        let cleaned = raw.replace(/[^\d]/g, '');
-        // let cleaned = raw.replace(/[^\d+]/g, '');
-
-        if (cleaned === '') {
-            e.target.value = '';
-            return;
-        }
-
-        if (!cleaned.startsWith('+')) {
-            cleaned = '+' + cleaned.replace(/^\+?/, '');
-        }
-
-        e.target.value = cleaned;
-    }
-
-    function handlePasswordInput(e) {
-        e.target.value = e.target.value.trim();
-    }
 
     return (
         <Formik
@@ -104,27 +83,20 @@ function SignupForm() {
                     />
                     <FormField
                         name="password"
-                        type={isPasswordVisible ? "text" : "password"}
+                        type="password"
                         placeholder={t('modal.placeholders.password')}
-                        isPasswordVisible={isPasswordVisible}
-                        setIsPasswordVisible={setIsPasswordVisible}
-                        onInput={handlePasswordInput}
                         maxLength="20"
                     />
                     <FormField
                         name="repeatPassword"
-                        type={isRepeatPasswordVisible ? "text" : "password"}
+                        type="password"
                         placeholder={t('modal.placeholders.repeatPassword')}
-                        isPasswordVisible={isRepeatPasswordVisible}
-                        setIsPasswordVisible={setIsRepeatPasswordVisible}
-                        onInput={handlePasswordInput}
                         maxLength="20"
                     />
                     <FormField
                         name="phoneNumber"
                         type="tel"
                         placeholder={t('modal.placeholders.phone')}
-                        onInput={handlePhoneInput}
                         maxLength="16"
                     />
                     <Button
