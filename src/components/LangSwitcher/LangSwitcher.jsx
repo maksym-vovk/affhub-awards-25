@@ -1,4 +1,4 @@
-import {useEffect, useState, useRef} from 'react';
+import {useEffect, useState, useRef, useLayoutEffect} from 'react';
 import { GrLanguage } from "react-icons/gr";
 import './LangSwitcher.scss'
 
@@ -7,6 +7,7 @@ function LangSwitcher({ i18n }) {
     const [currentLanguage, setCurrentLanguage] = useState(() => {
         return localStorage.getItem('language') || 'en'
     });
+
     const ref = useRef(null);
 
     const languages = [
@@ -45,15 +46,6 @@ function LangSwitcher({ i18n }) {
                 aria-haspopup="listbox"
                 aria-expanded={open}
             />
-            {/*<button*/}
-            {/*    className="lang-switcher__selected"*/}
-            {/*    onClick={() => setOpen((prev) => !prev)}*/}
-            {/*    aria-haspopup="listbox"*/}
-            {/*    aria-expanded={open}*/}
-            {/*>*/}
-            {/*    {languages.find(l => l.key === currentLanguage)?.label || currentLanguage}*/}
-            {/*    <span className="lang-switcher__arrow" />*/}
-            {/*</button>*/}
             {open && (
                 <ul className="lang-switcher__dropdown" role="listbox">
                     {languages.map(lang => (
