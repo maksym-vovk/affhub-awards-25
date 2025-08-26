@@ -7,7 +7,7 @@ import Button from "../Button/Button.jsx";
 import {useTranslation} from "react-i18next";
 import FormSwitcher from "../FormSwitcher/FormSwitcher.jsx";
 import FaqButton from "../FaqButton/FaqButton.jsx";
-import {api} from "../../api/auth.js";
+import {authApi} from "../../api/auth.js";
 import {useLoader} from "../../context/LoaderProvider.jsx";
 import {useModal} from "../../context/ModalProvider.jsx";
 
@@ -52,12 +52,12 @@ function SignupForm() {
             onSubmit={async ({ repeatPassword, ...submitValues }, {resetForm}) => {
                 showLoader();
 
-                const res = await api.register(submitValues)
+                const res = await authApi.register(submitValues)
 
                 if (res.error) {
-                    openModal('error', res.error)
+                    openModal('message', res.error)
                 } else {
-                    openModal('error', {title: 'Success', text: "Now you can login with your account."})
+                    openModal('message', {title: 'Success', text: "Now you can login with your account."})
                 }
 
                 closeModalWithDelay();

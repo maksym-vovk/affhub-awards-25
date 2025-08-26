@@ -1,8 +1,9 @@
 import './NominationSection.scss'
 import {useTranslation} from "react-i18next";
 import NominationsAccordion from "../../components/NominationsAccordion/NominationsAccordion.jsx";
-import {useEffect, useLayoutEffect, useState} from "react";
+import {useEffect, useState} from "react";
 import {useLoader} from "../../context/LoaderProvider.jsx";
+import {voteApi} from "../../api/vote.js";
 
 function NominationSection() {
     const { t } = useTranslation();
@@ -43,32 +44,11 @@ function NominationSection() {
         );
     }
 
-    function fetchUsers() {
-        return new Promise((resolve, reject) => {
-            setTimeout(() => {
-                resolve(JSON.stringify([
-                    {
-                        "nomination": "best-partner",
-                        "niche": "gambling",
-                        "results": [
-                            {
-                                "company": "datifylink",
-                                "percentage": 100.0
-                            }
-                        ]
-                    }
-                ]));
-            }, 3000)
-        })
-    }
-
     useEffect(() => {
         showLoader()
 
         const fetchData = async () => {
-            const users = await fetchUsers();
-            const stats = JSON.parse(users); // no await needed
-
+            const stats = await voteApi.getStatistic()
             updateList(stats)
             hideLoader()
         };

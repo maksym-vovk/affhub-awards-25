@@ -5,14 +5,55 @@ import * as Yup from "yup";
 import Button from "../Button/Button.jsx";
 import FormField from "../FormField/FormField.jsx";
 import {Form, Formik} from "formik";
+import {useAuth} from "../../context/AuthProvider.jsx";
+import {useLoader} from "../../context/LoaderProvider.jsx";
 
 function OtpForm() {
     const {t} = useTranslation();
-    const {type, changeModalType} = useModal()
+    const {type, openModal, changeModalTypeWithDelay, closeModalWithDelay} = useModal()
+    const {handleLogin} = useAuth()
+    const {showLoader, hideLoader} = useLoader()
+    const requestId = localStorage.getItem('requestId') || '';
+
+    const otpSchema = Yup.object({
+        otp: Yup.string()
+            .required(t('modal.validation.otp.required'))
+            .matches(/^\d+$/, t('modal.validation.otp.matches'))
+            .min(6, t('modal.validation.otp.min'))
+    })
 
     function handleOtpInput(e) {
         const raw = e.target.value;
         e.target.value = raw.replace(/[^\d]/g, '');
+    }
+
+    async function handleSubmit(values, { resetForm }) {
+        showLoader()
+        try {
+            await handleLogin({
+                requestId,
+                code: values.otp
+            })
+
+            localStorage.removeItem('requestId')
+
+            openModal('message', {
+                title: type === 'emailOtp'
+                    ? 'Your email is verified'
+                    : 'Your phone is verified',
+                text: type === 'emailOtp'
+                    ? 'You have successfully logged in to your account.'
+                    : 'Your phone number has been successfully verified.'
+            })
+
+            resetForm();
+            closeModalWithDelay();
+        } catch (errorResponse) {
+            openModal('message', errorResponse.error)
+            changeModalTypeWithDelay(type)
+        } finally {
+            hideLoader()
+        }
     }
 
     return (
@@ -20,16 +61,8 @@ function OtpForm() {
             initialValues={{
                 otp: '',
             }}
-            validationSchema={Yup.object({
-                otp: Yup.string()
-                    .required(t('modal.validation.otp.required'))
-                    .matches(/^\d+$/, t('modal.validation.otp.matches'))
-                    .min(6, t('modal.validation.otp.min'))
-            })}
-            onSubmit={(values, {resetForm}) => {
-                console.log('Form submitted with values:', JSON.stringify(values, null, 2));
-                resetForm();
-            }}
+            validationSchema={otpSchema}
+            onSubmit={handleSubmit}
         >
             <div className="otp">
                 <h3 className="otp__title">

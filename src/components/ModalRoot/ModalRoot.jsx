@@ -7,7 +7,7 @@ import SignupForm from "../SignupForm/SignupForm.jsx";
 import LoginForm from "../LoginForm/LoginForm.jsx";
 import OtpForm from "../OtpForm/OtpForm.jsx";
 import SocialForm from "../SocialForm/SocialForm.jsx";
-import FormError from "../FormError/FormError.jsx";
+import FormMessage from "../FormMessage/FormMessage.jsx";
 
 function ModalRoot() {
     const { isOpen, type, props, closeModal } = useModal()
@@ -20,7 +20,7 @@ function ModalRoot() {
         emailOtp: <OtpForm />,
         phoneOtp: <OtpForm />,
         socialVerification: <SocialForm />,
-        error: <FormError {...props}/>,
+        message: <FormMessage {...props}/>,
     }
 
     return (

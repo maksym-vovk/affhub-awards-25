@@ -2,13 +2,22 @@ import './CompanyCard.scss'
 import {useTranslation} from "react-i18next";
 import Button from "../Button/Button.jsx";
 import {useModal} from "../../context/ModalProvider.jsx";
+import {useAuth} from "../../context/AuthProvider.jsx";
+import {authApi} from "../../api/auth.js";
 
 function CompanyCard({ company }) {
     const { t } = useTranslation();
     const { openModal } = useModal()
+    const { authToken } = useAuth()
 
     const imgSrc = `/assets/${company.logo}`
     const imgElement = <img className="company__logo" src={imgSrc} alt={company.name} /> || null
+
+    async function handleVote() {
+        if (!authToken) openModal('login')
+
+        await authApi.checkPhoneVerification(authToken)
+    }
 
     return (
         <div className="company" data-company={company.tag}>
@@ -24,7 +33,7 @@ function CompanyCard({ company }) {
                 </div>
                 <Button
                     className="company__button button"
-                    onClick={() => openModal('login')}
+                    onClick={handleVote}
                 >
                     {t('common.voteButton')}
                 </Button>

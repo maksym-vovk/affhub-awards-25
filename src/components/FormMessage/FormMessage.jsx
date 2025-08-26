@@ -1,6 +1,6 @@
-import "./FormError.scss"
+import "./FormMessage.scss"
 
-function FormError({ title, text }) {
+function FormMessage({ title, text }) {
     return (
         <>
             <h2 className="popup__title">{title}</h2>
@@ -9,4 +9,4 @@ function FormError({ title, text }) {
     )
 }
 
-export default FormError
+export default FormMessage

@@ -6,11 +6,15 @@ import Button from "../Button/Button.jsx";
 import {useTranslation} from "react-i18next";
 import FormSwitcher from "../FormSwitcher/FormSwitcher.jsx";
 import FaqButton from "../FaqButton/FaqButton.jsx";
-import {useState} from "react";
+import {useAuth} from "../../context/AuthProvider.jsx";
+import {useLoader} from "../../context/LoaderProvider.jsx";
+import {useModal} from "../../context/ModalProvider.jsx";
 
 function LoginForm() {
     const { t } = useTranslation();
-
+    const {handleLogin, initialized} = useAuth()
+    const {showLoader, hideLoader} = useLoader()
+    const {openModal, closeModalWithDelay, changeModalTypeWithDelay} = useModal()
 
     const loginSchema = Yup.object({
         email: Yup.string()
@@ -24,7 +28,35 @@ function LoginForm() {
             .matches(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/, t('modal.validation.password.matches')),
     })
 
+    async function handleSubmit(values, { resetForm }) {
+        showLoader()
 
+        const { email, password } = values;
+
+        try {
+            await handleLogin({
+                login: email,
+                password,
+                rememberMe: true
+            })
+            openModal('message', {
+                title: 'You are logged in',
+                text: 'You have successfully logged in to your account.'
+            })
+            resetForm();
+            closeModalWithDelay();
+        } catch (errorResponse) {
+            if (errorResponse.data) {
+                openModal('message', errorResponse.error)
+                changeModalTypeWithDelay('emailOtp')
+            } else {
+                openModal('message', errorResponse.error)
+                changeModalTypeWithDelay('login')
+            }
+        } finally {
+            hideLoader()
+        }
+    }
 
     return (
         <Formik
@@ -33,10 +65,7 @@ function LoginForm() {
                 password: ''
             }}
             validationSchema={loginSchema}
-            onSubmit={(values, {resetForm}) => {
-                console.log('Form submitted with values:', JSON.stringify(values, null, 2));
-                resetForm();
-            }}
+            onSubmit={handleSubmit}
         >
             <>
                 <h2 className="popup__title">
