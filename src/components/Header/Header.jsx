@@ -7,12 +7,11 @@ import LangSwitcher from "../LangSwitcher/LangSwitcher.jsx";
 import Button from "../Button/Button.jsx";
 import {useModal} from "../../context/ModalProvider.jsx";
 import {useAuth} from "../../context/AuthProvider.jsx";
-import {useLoader} from "../../context/LoaderProvider.jsx";
+import UserMenu from "../UserMenu/UserMenu.jsx";
 
 function Header() {
     const { t, i18n } = useTranslation();
     const {currentUser, handleLogout} = useAuth()
-    const { showLoader, hideLoader } = useLoader()
     const [visible, setVisible] = useState(true);
     const {openModal} = useModal()
     const lastScrollY = useRef(window.scrollY);
@@ -37,11 +36,12 @@ function Header() {
                 <div className="header__wrapper">
                     <img src={logo} alt="Affhub logo" width='110' height='25' className="header__logo logo" />
                     <div className="header__controls">
-                        {currentUser && <span style={{display:"block", cursor:"pointer"}} onClick={() => {
-                            showLoader()
-                            handleLogout()
-                            hideLoader()
-                        }}>{currentUser.name}</span>}
+                        {currentUser && (
+                            <UserMenu
+                                user={currentUser}
+                                handleLogout={handleLogout}
+                            />
+                        )}
 
                         {!currentUser && (
                             <Button

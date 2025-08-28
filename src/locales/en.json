@@ -1,6 +1,7 @@
 {
   "common": {
     "loginButton": "Login",
+    "logoutButton": "Logout",
     "voteButton": "Vote"
   },
   "hero": {

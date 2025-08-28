@@ -1,0 +1,67 @@
+@use '../../styles/mixins';
+
+.user {
+  position: relative;
+
+  &__logo {
+    width: 40px;
+    aspect-ratio: 1/1;
+    color: white;
+    border: 1px solid white;
+    border-radius: 50%;
+    background: transparent;
+    padding: 6px;
+    cursor: pointer;
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+
+  &__info-item {
+    font-size: 14px;
+    line-height: 1.2;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
+
+  &__menu {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background: rgba(0,0,0,0.7);
+    border-radius: 12px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    width: 220px;
+    padding: 16px;
+    z-index: 1000;
+    opacity: 0;
+    transform: translateY(-8px);
+    animation: slideIn 0.2s ease-out forwards;
+    margin-top: 14px;
+
+    @include mixins.rm(1024) {
+      margin-top: 20px;
+      border-radius: 10px;
+    }
+  }
+
+  &__btn {
+    width: 100%;
+    @include mixins.button-style(inherit, 6px 16px, 5px);
+
+    @include mixins.rm(768) {
+      @include mixins.button-style(18px, 8px 20px, 5px);
+    }
+
+    @include mixins.rm(1024) {
+      @include mixins.button-style(20px, 10px 24px, 10px);
+    }
+  }
+}

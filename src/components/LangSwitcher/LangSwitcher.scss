@@ -9,13 +9,13 @@
 
   &__button {
     cursor: pointer;
-    height: 30px;
-    width: 30px;
+    height: 40px;
+    width: 40px;
 
-    @include mixins.rm(1024) {
-      height: 40px;
-      width: 40px;
-    }
+    //@include mixins.rm(1024) {
+    //  height: 40px;
+    //  width: 40px;
+    //}
   }
 
   //&__selected {
@@ -47,7 +47,7 @@
     position: absolute;
     right: 0;
     top: 100%;
-    background: #fff;;
+    background: rgba(0,0,0,0.6);
     //border: 1px solid #ccc;
     border-radius: 5px;
     margin-top: 14px;
@@ -56,6 +56,9 @@
     z-index: 10;
     //padding: 4px 0;
     overflow: auto;
+    opacity: 0;
+    transform: translateY(-8px);
+    animation: slideIn 0.2s ease-out forwards;
 
     @include mixins.rm(1024) {
       margin-top: 20px;
@@ -67,7 +70,7 @@
     font-family: variables.$font-bold;
     background: none;
     border: none;
-    color: #222;
+    color: white;
     padding: 8px 16px;
     width: 100%;
     text-align: left;
@@ -80,7 +83,8 @@
 
     &.active {
       text-decoration: none;
-      background: #d5d5d5;
+      color: #222;
+      background: white;
     }
   }
 }

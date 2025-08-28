@@ -1,6 +1,7 @@
 import {useEffect, useState, useRef, useLayoutEffect} from 'react';
 import { GrLanguage } from "react-icons/gr";
 import './LangSwitcher.scss'
+import useClickOutside from "../../hooks/useClickOutside.jsx";
 
 function LangSwitcher({ i18n }) {
     const [open, setOpen] = useState(false);
@@ -8,7 +9,8 @@ function LangSwitcher({ i18n }) {
         return localStorage.getItem('language') || 'en'
     });
 
-    const ref = useRef(null);
+    const langSwitcherBlock = useRef(null);
+    useClickOutside(langSwitcherBlock, open, () => setOpen(false));
 
     const languages = [
         { key: "uk", label: "UA" },
@@ -20,26 +22,13 @@ function LangSwitcher({ i18n }) {
         i18n.changeLanguage(currentLanguage);
     }, [currentLanguage])
 
-    useEffect(() => {
-        if (!open) return;
-        function handleClickOutside(event) {
-            if (ref.current && !ref.current.contains(event.target)) {
-                setOpen(false);
-            }
-        }
-        document.addEventListener('mousedown', handleClickOutside);
-        return () => {
-            document.removeEventListener('mousedown', handleClickOutside);
-        };
-    }, [open]);
-
     const handleSelect = (lang) => {
         setCurrentLanguage(lang)
         setOpen(false);
     };
 
     return (
-        <div className="lang-switcher" ref={ref}>
+        <div className="lang-switcher" ref={langSwitcherBlock}>
             <GrLanguage
                 className='lang-switcher__button'
                 onClick={() => setOpen((prev) => !prev)}
