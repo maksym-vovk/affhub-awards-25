@@ -35,7 +35,7 @@ function ModalRoot() {
                     </div>
                     <div className="popup__body">
                         <div className="popup__block">
-                            {MODAL_COMPONENTS[type] || null}
+                            {isOpen ? MODAL_COMPONENTS[type] || null : null}
                         </div>
                     </div>
                 </div>
