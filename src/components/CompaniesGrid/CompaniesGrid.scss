@@ -59,21 +59,26 @@
     }
   }
 
-  &.disabled .companies__message {
-    display: block;
-
-    @include mixins.rm(1024) {
-      display: none;
-    }
-  }
+  //&.disabled .companies__message {
+  //  display: block;
+  //
+  //  @include mixins.rm(1024) {
+  //    display: none;
+  //  }
+  //}
 
   &.disabled .company__button {
     display: none;
   }
 
   &__message {
-    display: none;
+    display: block;
     text-align: center;
+    flex-basis: 100%;
+
+    @include mixins.rm(1024) {
+      display: none;
+    }
     //margin-bottom: 10px
 
     //@include mixins.rm(768) {

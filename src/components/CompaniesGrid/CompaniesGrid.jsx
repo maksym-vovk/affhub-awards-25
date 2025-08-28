@@ -6,6 +6,7 @@ function CompaniesGrid({ children, disabled }) {
 
     return (
         <div className={`companies ${authToken && disabled ? 'disabled' : ''}`}>
+            {authToken && disabled && <p className="companies__message">Ви проголосували в цій номінації за:</p>}
             {children}
         </div>
     )

@@ -7,7 +7,6 @@ import CompaniesGrid from "../CompaniesGrid/CompaniesGrid.jsx";
 function Nomination({ nomination }) {
     const [categoryTag, setCategoryTag] = useState(nomination.categories[0].tag);
     const companies = nomination.categories.find(category => category.tag === categoryTag)?.companies;
-    const [disabled, setDisabled] = useState(false);
     const isDisabled = !!companies.find(company => company.voted);
 
     return (
@@ -17,16 +16,19 @@ function Nomination({ nomination }) {
                 setCategoryTag={setCategoryTag}
                 categoryTag={categoryTag}
             />
-            <CompaniesGrid disabled={isDisabled}>
-                {companies.map(company => (
-                    <CompanyCard
-                        key={`${nomination.tag}-${categoryTag}-${company.tag}`}
-                        nominationTag={nomination.tag}
-                        categoryTag={categoryTag}
-                        company={company}
-                    />
-                ))}
-            </CompaniesGrid>
+            <div className="nomination__companies">
+                <CompaniesGrid disabled={isDisabled}>
+                    {companies.map(company => (
+                        <CompanyCard
+                            key={`${nomination.tag}-${categoryTag}-${company.tag}`}
+                            nominationTag={nomination.tag}
+                            categoryTag={categoryTag}
+                            company={company}
+                        />
+                    ))}
+                </CompaniesGrid>
+            </div>
+
         </div>
     )
 }
