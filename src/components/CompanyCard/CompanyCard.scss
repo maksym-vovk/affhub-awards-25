@@ -60,6 +60,7 @@
 
   &.voted {
     background: #0f0f0f;
+    box-shadow: none;
 
     @include mixins.rm(1024) {
       background: linear-gradient(0deg, #000, #000, variables.$card-gradient-start, variables.$shadow);
@@ -382,6 +383,7 @@
     justify-content: center;
     align-items: center;
     gap: 6px;
+    margin-top: 6px;
 
     &__svg {
       flex-shrink: 0;

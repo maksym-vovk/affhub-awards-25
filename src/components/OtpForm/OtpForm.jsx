@@ -8,7 +8,7 @@ import {Form, Formik} from "formik";
 import {useAuth} from "../../context/AuthProvider.jsx";
 import {useLoader} from "../../context/LoaderProvider.jsx";
 
-function OtpForm() {
+function OtpForm({ onSubmit }) {
     const {t} = useTranslation();
     const {type, openModal, changeModalTypeWithDelay, closeModalWithDelay} = useModal()
     const {handleLogin} = useAuth()
@@ -30,27 +30,12 @@ function OtpForm() {
     async function handleSubmit(values, { resetForm }) {
         showLoader()
         try {
-            await handleLogin({
-                requestId,
-                code: values.otp
-            })
-
-            localStorage.removeItem('requestId')
-
-            openModal('message', {
-                title: type === 'emailOtp'
-                    ? 'Your email is verified'
-                    : 'Your phone is verified',
-                text: type === 'emailOtp'
-                    ? 'You have successfully logged in to your account.'
-                    : 'Your phone number has been successfully verified.'
-            })
-
+            await onSubmit(values)
             resetForm();
             closeModalWithDelay();
         } catch (errorResponse) {
             openModal('message', errorResponse.error)
-            changeModalTypeWithDelay(type)
+            changeModalTypeWithDelay(type, { onSubmit })
         } finally {
             hideLoader()
         }

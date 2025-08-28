@@ -39,6 +39,28 @@ function SignupForm() {
             .matches(/^\+?[1-9]\d{6,14}$/, t('modal.validation.phone.matches'))
     })
 
+    async function handleSubmit({ repeatPassword, ...submitValues }, { resetForm }) {
+        showLoader();
+
+        localStorage.setItem('signupData', JSON.stringify({
+            email: submitValues.email,
+            name: submitValues.name,
+            phoneNumber: submitValues.phoneNumber,
+        }));
+
+        const res = await authApi.register(submitValues)
+
+        if (res.error) {
+            openModal('message', res.error)
+        } else {
+            openModal('message', {title: 'Success', text: "Now you can login with your account."})
+        }
+
+        closeModalWithDelay();
+        resetForm();
+        hideLoader(false);
+    }
+
     return (
         <Formik
             initialValues={{
@@ -49,21 +71,7 @@ function SignupForm() {
                 repeatPassword: '',
             }}
             validationSchema={signupSchema}
-            onSubmit={async ({ repeatPassword, ...submitValues }, {resetForm}) => {
-                showLoader();
-
-                const res = await authApi.register(submitValues)
-
-                if (res.error) {
-                    openModal('message', res.error)
-                } else {
-                    openModal('message', {title: 'Success', text: "Now you can login with your account."})
-                }
-
-                closeModalWithDelay();
-                resetForm();
-                hideLoader(false);
-            }}
+            onSubmit={handleSubmit}
         >
             <>
                 <h2 className="popup__title">

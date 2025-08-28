@@ -1,8 +1,11 @@
 import "./CompaniesGrid.scss"
+import {useAuth} from "../../context/AuthProvider.jsx";
 
-function CompaniesGrid({ children }) {
+function CompaniesGrid({ children, disabled }) {
+    const { authToken } = useAuth();
+
     return (
-        <div className="companies">
+        <div className={`companies ${authToken && disabled ? 'disabled' : ''}`}>
             {children}
         </div>
     )

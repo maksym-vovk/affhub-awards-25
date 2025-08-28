@@ -17,8 +17,8 @@ function ModalRoot() {
     const MODAL_COMPONENTS = {
         login: <LoginForm />,
         signup: <SignupForm />,
-        emailOtp: <OtpForm />,
-        phoneOtp: <OtpForm />,
+        emailOtp: <OtpForm {...props}/>,
+        phoneOtp: <OtpForm {...props}/>,
         socialVerification: <SocialForm />,
         message: <FormMessage {...props}/>,
     }

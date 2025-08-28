@@ -7,11 +7,11 @@ import Providers from "./context/Providers.jsx";
 
 
 createRoot(document.getElementById('root')).render(
-    <StrictMode>
+    // <StrictMode>
         <Providers>
             <App/>
         </Providers>
-    </StrictMode>,
+    // </StrictMode>,
 )
 
 // window.addEventListener('load', () => {

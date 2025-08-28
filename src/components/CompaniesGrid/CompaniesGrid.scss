@@ -30,6 +30,47 @@
     gap: 32px;
   }
 
+  //disabled styles
+  &.disabled {
+    //pointer-events: none;
+
+    .company__overlay {
+      display: none;
+    }
+  }
+
+  &.disabled.active {
+    flex-direction: column;
+    align-items: center;
+
+    @include mixins.rm(1024) {
+      flex-direction: row;
+      align-items: stretch;
+    }
+  }
+
+  &.disabled .company:not(.voted) {
+    display: none;
+    background: none;
+    box-shadow: none;
+
+    @include mixins.rm(1024) {
+      display: flex;
+    }
+  }
+
+  &.disabled .companies__message {
+    display: block;
+
+    @include mixins.rm(1024) {
+      display: none;
+    }
+  }
+
+  &.disabled .company__button {
+    display: none;
+  }
+
   &__message {
     display: none;
     text-align: center;
@@ -40,49 +81,51 @@
     //}
   }
 
-  &__category {
-    display: none;
 
-    &.active {
-      //moved to root
-    }
 
-    &.disabled {
-      pointer-events: none;
-
-      .company__overlay {
-        display: none;
-      }
-    }
-
-    &.disabled.active {
-      flex-direction: column;
-      align-items: center;
-
-      @include mixins.rm(1024) {
-        flex-direction: row;
-        align-items: stretch;
-      }
-    }
-
-    &.disabled .company:not(.voted) {
-      display: none;
-
-      @include mixins.rm(1024) {
-        display: flex;
-      }
-    }
-
-    &.disabled .companies__message {
-      display: block;
-
-      @include mixins.rm(1024) {
-        display: none;
-      }
-    }
-
-    &.disabled .company__button {
-      display: none;
-    }
-  }
+  //&__category {
+  //  display: none;
+  //
+  //  &.active {
+  //    //moved to root
+  //  }
+  //
+  //  &.disabled {
+  //    pointer-events: none;
+  //
+  //    .company__overlay {
+  //      display: none;
+  //    }
+  //  }
+  //
+  //  &.disabled.active {
+  //    flex-direction: column;
+  //    align-items: center;
+  //
+  //    @include mixins.rm(1024) {
+  //      flex-direction: row;
+  //      align-items: stretch;
+  //    }
+  //  }
+  //
+  //  &.disabled .company:not(.voted) {
+  //    display: none;
+  //
+  //    @include mixins.rm(1024) {
+  //      display: flex;
+  //    }
+  //  }
+  //
+  //  &.disabled .companies__message {
+  //    display: block;
+  //
+  //    @include mixins.rm(1024) {
+  //      display: none;
+  //    }
+  //  }
+  //
+  //  &.disabled .company__button {
+  //    display: none;
+  //  }
+  //}
 }

@@ -21,12 +21,12 @@ export const ModalProvider = ({ children }) => {
         setTimeout(() => closeModal(), delay);
     }, []);
 
-    const changeModalType = useCallback((type) => {
-        setModal((prev) => ({ ...prev, type }));
+    const changeModalType = useCallback((type, props) => {
+        setModal((prev) => ({ ...prev, type, props }));
     }, []);
 
-    const changeModalTypeWithDelay = useCallback((type, delay = 3000) => {
-        setTimeout(() => changeModalType(type), delay);
+    const changeModalTypeWithDelay = useCallback((type, props, delay = 3000) => {
+        setTimeout(() => changeModalType(type, props), delay);
     }, []);
 
     return (

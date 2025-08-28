@@ -6,15 +6,16 @@ import {useTranslation} from "react-i18next";
 function FaqModal() {
     const {isOpen, closeModal} = useFaq()
     const { t } = useTranslation();
-
-    // if (!isOpen) return null;
+    const { email, phoneNumber } = localStorage.getItem('signupData')
+        ? JSON.parse(localStorage.getItem('signupData'))
+        : {email: null, phoneNumber: null};
 
     const faqEmailOptions = t('faq.letter', { returnObjects: true });
     const mailtoButtons = Object.entries(faqEmailOptions.body.topics)
         .map(([, topic]) => {
             return {
                 topic: topic,
-                link: `mailto:${faqEmailOptions.emails.join(',')}?subject=${encodeURIComponent(faqEmailOptions.subject)}&body=${encodeURIComponent(`${faqEmailOptions.body.markers.problem}: ${topic}\n\n${faqEmailOptions.body.userData.hero}\n\n- ${faqEmailOptions.body.markers.email}: ${faqEmailOptions.body.userData.email}\n- ${faqEmailOptions.body.markers.phone}: ${faqEmailOptions.body.userData.phone}`)}`
+                link: `mailto:${faqEmailOptions.emails.join(',')}?subject=${encodeURIComponent(faqEmailOptions.subject)}&body=${encodeURIComponent(`${faqEmailOptions.body.markers.problem}: ${topic}\n\n${faqEmailOptions.body.userData.hero}\n\n- ${faqEmailOptions.body.markers.email}: ${email || faqEmailOptions.body.userData.email}\n- ${faqEmailOptions.body.markers.phone}: ${phoneNumber || faqEmailOptions.body.userData.phone}`)}`
             };
         })
 

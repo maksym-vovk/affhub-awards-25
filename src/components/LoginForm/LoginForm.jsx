@@ -12,7 +12,7 @@ import {useModal} from "../../context/ModalProvider.jsx";
 
 function LoginForm() {
     const { t } = useTranslation();
-    const {handleLogin, initialized} = useAuth()
+    const {handleLogin} = useAuth()
     const {showLoader, hideLoader} = useLoader()
     const {openModal, closeModalWithDelay, changeModalTypeWithDelay} = useModal()
 
@@ -27,6 +27,24 @@ function LoginForm() {
             .max(20, t('modal.validation.password.max'))
             .matches(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/, t('modal.validation.password.matches')),
     })
+
+    async function handleEmailVerification(values) {
+        const requestId = localStorage.getItem('requestId') || '';
+        try {
+            await handleLogin({
+                requestId,
+                code: values.otp
+            })
+            localStorage.removeItem('requestId')
+            openModal('message', {
+                title: 'Your email is verified',
+                text: 'You have successfully logged in to your account.'
+            })
+        } catch (error) {
+            throw error
+        }
+
+    }
 
     async function handleSubmit(values, { resetForm }) {
         showLoader()
@@ -48,7 +66,9 @@ function LoginForm() {
         } catch (errorResponse) {
             if (errorResponse.data) {
                 openModal('message', errorResponse.error)
-                changeModalTypeWithDelay('emailOtp')
+                changeModalTypeWithDelay('emailOtp', {
+                    onSubmit: handleEmailVerification
+                })
             } else {
                 openModal('message', errorResponse.error)
                 changeModalTypeWithDelay('login')

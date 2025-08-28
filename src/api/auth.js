@@ -12,7 +12,10 @@ const serverErrorMessages = {
     verification: {
         email: "Please verify your email using the verification code sent to you",
         requestId: "Verification code is invalid or has expired",
-        code: "The verification code provided is incorrect"
+        code: "The verification code provided is incorrect",
+        phone: "No phone verification record for this user",
+        phoneCode: "The code you provided is incorrect",
+        phoneRequestKey: "No verification request found for this key",
     }
 }
 
@@ -186,18 +189,126 @@ export const authApi = {
     },
     checkPhoneVerification: async (authToken) => {
         try {
-            const res = await apiClient.get('/users/request-phone-verify', {
+            const res = await apiClient.get('/users/check-phone', {
                 headers: {
                     Authorization: `Bearer ${authToken}`,
                 },
             });
-            console.log("success: ", res);
+            return res.data;
         } catch (error) {
-            console.log("error: ", error);
+            if (error.response) {
+                const {errors} = error.response.data;
+                const isBadPhoneVerification = errors.includes(serverErrorMessages.verification.phone);
+
+                if (isBadPhoneVerification) {
+                    return {
+                        success: false,
+                        error: {
+                            title: "Phone verification required",
+                            text: "Please verify your phone number using the verification code sent to your phone"
+                        }
+                    }
+                }
+
+                return {
+                    success: false,
+                    error: {
+                        title: "Phone verification check failed",
+                        text: "Something went wrong. Please try again later"
+                    }
+                }
+            }
+
+            return {
+                success: false, error: {
+                    title: "Network Error or Server Unreachable",
+                    text: "Unable to connect to the server. Please check your internet connection and try again"
+                }
+            };
         }
 
     },
-    verifyPhone: async (values) => {
+    requestPhoneVerification: async (authToken) => {
+        try {
+            const res = await apiClient.post('/users/request-phone-verify', {}, {
+                headers: {
+                    Authorization: `Bearer ${authToken}`,
+                },
+            });
 
-    }
+            return res.data;
+        } catch (error) {
+            if (error.response) {
+                return {
+                    success: false,
+                    error: {
+                        title: "Phone verification request failed",
+                        text: "Something went wrong. Please try again later"
+                    }
+                }
+            }
+
+            return {
+                success: false, error: {
+                    title: "Network Error or Server Unreachable",
+                    text: "Unable to connect to the server. Please check your internet connection and try again"
+                }
+            };
+        }
+    },
+    verifyPhone: async (values, authToken) => {
+        try {
+            const res = await apiClient.post('/users/confirm-phone-verify', values, {
+                headers: {
+                    Authorization: `Bearer ${authToken}`,
+                },
+            });
+            const { data } = res.data;
+            return {
+                success: true,
+                data: data
+            };
+        } catch (error) {
+            if (error.response) {
+                const {errors} = error.response.data;
+                const isBadRequestId = errors.includes(serverErrorMessages.verification.phoneRequestKey);
+                const isBadCode = errors.includes(serverErrorMessages.verification.phoneCode);
+
+                switch (true) {
+                    case isBadRequestId:
+                        return {
+                            success: false,
+                            expired: true,
+                            error: {
+                                title: "Verification failed",
+                                text: "Verification code is invalid or has expired"
+                            }
+                        }
+                    case isBadCode:
+                        return {
+                            success: false,
+                            error: {
+                                title: "Verification failed",
+                                text: "The verification code provided is incorrect"
+                            }
+                        };
+                    default:
+                        return {
+                            success: false,
+                            error: {
+                                title: "Verification failed",
+                                text: "Something went wrong. Please try again later"
+                            }
+                        };
+                }
+            }
+
+            return {
+                success: false, error: {
+                    title: "Network Error or Server Unreachable",
+                    text: "Unable to connect to the server. Please check your internet connection and try again"
+                }
+            };
+        }
+    },
 }
