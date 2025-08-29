@@ -82,14 +82,14 @@ function NominationSection() {
 
     const statisticsQuery = useQuery({
         queryKey: ['statistics'],
-        queryFn: voteApi.getStatistic,
+        queryFn: () => voteApi.getStatistic(t),
         staleTime: 1000 * 60,       // 1 minute cache
         refetchOnMount: false,      // don't refetch if data is cached
     })
 
     const usersVotesQuery = useQuery({
         queryKey: ['usersVotes'],
-        queryFn: () => voteApi.getUsersVotes(authToken),
+        queryFn: () => voteApi.getUsersVotes(authToken, t),
         staleTime: 1000 * 60,       // 1 minute cache
         refetchOnMount: false,      // don't refetch if data is cached
         enabled: !!authToken, // only run if authToken is truthy

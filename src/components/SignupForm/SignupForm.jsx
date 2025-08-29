@@ -48,12 +48,12 @@ function SignupForm() {
             phoneNumber: submitValues.phoneNumber,
         }));
 
-        const res = await authApi.register(submitValues)
+        const res = await authApi.register(submitValues, t)
 
         if (res.error) {
             openModal('message', res.error)
         } else {
-            openModal('message', {title: 'Success', text: "Now you can login with your account."})
+            openModal('message', res.message)
         }
 
         closeModalWithDelay();

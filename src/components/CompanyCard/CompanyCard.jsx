@@ -21,9 +21,8 @@ function CompanyCard({ nominationTag, categoryTag, company }) {
 
     const queryClient = useQueryClient()
     const mutation = useMutation({
-        mutationFn: voteApi.createVote,
+        mutationFn: () => voteApi.createVote(t),
         onSuccess: () => {
-            // Invalidate and refetch
             queryClient.invalidateQueries({ queryKey: ['statistics'] })
             queryClient.invalidateQueries({ queryKey: ['usersVotes'] })
         },
@@ -55,7 +54,7 @@ function CompanyCard({ nominationTag, categoryTag, company }) {
         showLoader()
 
         try {
-            const res = await authApi.checkPhoneVerification(authToken)
+            const res = await authApi.checkPhoneVerification(authToken, t)
 
             if (!res.success) {
                 throw res
@@ -83,7 +82,7 @@ function CompanyCard({ nominationTag, categoryTag, company }) {
         showLoader()
 
         try {
-            const res = await authApi.requestPhoneVerification(authToken)
+            const res = await authApi.requestPhoneVerification(authToken, t)
 
             if (!res.success) {
                 throw res
@@ -109,17 +108,14 @@ function CompanyCard({ nominationTag, categoryTag, company }) {
             const response = await authApi.verifyPhone({
                 requestKey,
                 code: values.otp
-            }, authToken)
+            }, authToken, t)
 
             if (!response.success) {
                 throw response
             }
 
             localStorage.removeItem('requestKey')
-            openModal('message', {
-                title: 'Your phone is verified',
-                text: 'Your phone number has been successfully verified.'
-            })
+            openModal('message', response.message)
         } catch (errorResponse) {
             if (errorResponse.expired) {
                 localStorage.removeItem('requestKey')
@@ -153,9 +149,10 @@ function CompanyCard({ nominationTag, categoryTag, company }) {
                     {t('common.voteButton')}
                 </Button>
                 <div className="company-status">
-                    {/*<IoCloudDoneSharp />*/}
                     <IoCloudDoneSharp className="company-status__svg"/>
-                    <p className="company-status__text">Проголосовано</p>
+                    <p className="company-status__text">
+                        {t('companies.card.status')}
+                    </p>
                 </div>
             </div>
             <span className="company__votes">{company.percent.toFixed(2)}</span>

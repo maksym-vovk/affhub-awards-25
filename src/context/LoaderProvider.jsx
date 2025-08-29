@@ -8,6 +8,8 @@ export const LoaderProvider = ({ children }) => {
     const [visible, setVisible] = useState(false)
     const timerRef = useRef(null)
 
+    console.log(count);
+
     const showLoader = () => {
         setCount(count => count + 1)
 

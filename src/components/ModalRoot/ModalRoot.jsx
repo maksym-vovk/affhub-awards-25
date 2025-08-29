@@ -12,8 +12,6 @@ import FormMessage from "../FormMessage/FormMessage.jsx";
 function ModalRoot() {
     const { isOpen, type, props, closeModal } = useModal()
 
-    // if (!isOpen) return null;
-
     const MODAL_COMPONENTS = {
         login: <LoginForm />,
         signup: <SignupForm />,

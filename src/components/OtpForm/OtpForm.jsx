@@ -51,7 +51,7 @@ function OtpForm({ onSubmit }) {
         >
             <div className="otp">
                 <h3 className="otp__title">
-                    {type === 'emailOtp' ? "Введіть код з email:" : "Введіть код з SMS:"}
+                    {type === 'emailOtp' ? t('modal.otp.emailTitle') : t('modal.otp.phoneTitle')}
                 </h3>
                 <Form>
                     <FormField

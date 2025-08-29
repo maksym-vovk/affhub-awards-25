@@ -1,5 +1,6 @@
 import {createContext, useContext, useEffect, useState} from "react";
 import {authApi} from "../api/auth.js";
+import {useTranslation} from "react-i18next";
 
 export const AuthContext = createContext(undefined)
 
@@ -70,6 +71,7 @@ function validateJWTToken(token) {
 
 
 export default function AuthProvider({ children }) {
+    const { t } = useTranslation()
     const [authToken, setAuthToken] = useState(() => getStoredToken())
     const [currentUser, setCurrentUser] = useState(() => getStoredUser())
     const [initialized, setInitialized] = useState(false)
@@ -99,8 +101,8 @@ export default function AuthProvider({ children }) {
             const isOtpLogin = Boolean(data.requestId);
 
             const response = isOtpLogin
-                ? await authApi.verifyEmail(data)
-                : await authApi.login(data);
+                ? await authApi.verifyEmail(data, t)
+                : await authApi.login(data, t);
 
             if (response.error) {
                 if (!isOtpLogin && response.data?.code) {
@@ -113,6 +115,10 @@ export default function AuthProvider({ children }) {
 
             setAuthToken(token)
             setCurrentUser(user)
+
+            return {
+                message: response.message
+            }
         } catch (error) {
             setAuthToken(null)
             setCurrentUser(null)

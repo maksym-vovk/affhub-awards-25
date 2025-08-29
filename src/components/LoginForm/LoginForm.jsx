@@ -31,15 +31,12 @@ function LoginForm() {
     async function handleEmailVerification(values) {
         const requestId = localStorage.getItem('requestId') || '';
         try {
-            await handleLogin({
+            const res = await handleLogin({
                 requestId,
                 code: values.otp
             })
             localStorage.removeItem('requestId')
-            openModal('message', {
-                title: 'Your email is verified',
-                text: 'You have successfully logged in to your account.'
-            })
+            openModal('message', res.message)
         } catch (error) {
             throw error
         }
@@ -52,15 +49,12 @@ function LoginForm() {
         const { email, password } = values;
 
         try {
-            await handleLogin({
+            const res = await handleLogin({
                 login: email,
                 password,
                 rememberMe: true
             })
-            openModal('message', {
-                title: 'You are logged in',
-                text: 'You have successfully logged in to your account.'
-            })
+            openModal('message', res.message)
             resetForm();
             closeModalWithDelay();
         } catch (errorResponse) {

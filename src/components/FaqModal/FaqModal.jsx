@@ -2,14 +2,19 @@ import './FaqModal.scss'
 import {useFaq} from "../../context/FaqProvider.jsx";
 import Button from "../Button/Button.jsx";
 import {useTranslation} from "react-i18next";
+import {useRef} from "react";
+import useClickOutside from "../../hooks/useClickOutside.jsx";
 
 function FaqModal() {
     const {isOpen, closeModal} = useFaq()
     const { t } = useTranslation();
+
+    const faqModalBlock = useRef(null)
+    useClickOutside(faqModalBlock, isOpen, closeModal)
+
     const { email, phoneNumber } = localStorage.getItem('signupData')
         ? JSON.parse(localStorage.getItem('signupData'))
         : {email: null, phoneNumber: null};
-
     const faqEmailOptions = t('faq.letter', { returnObjects: true });
     const mailtoButtons = Object.entries(faqEmailOptions.body.topics)
         .map(([, topic]) => {
@@ -20,7 +25,7 @@ function FaqModal() {
         })
 
     return (
-        <div className={`faq ${isOpen ? 'active' : ''}`}>
+        <div className={`faq ${isOpen ? 'active' : ''}`} ref={faqModalBlock}>
             <div className="faq__wrapper">
                 <div className="faq__header">
                     <Button className="faq__close" onClick={closeModal}/>

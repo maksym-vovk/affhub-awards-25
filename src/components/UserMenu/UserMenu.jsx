@@ -26,13 +26,13 @@ function UserMenu({ user, handleLogout }) {
                 <div className="user__menu">
                     <div className="user__info">
                         <span className="user__info-item" title={user?.name}>
-                            {`Name: ${user?.name || 'Unknown User'}`}
+                            {`${t('common.name')}: ${user?.name || 'Unknown User'}`}
                         </span>
                         <span className="user__info-item" title={user?.email}>
-                            {`Email: ${user?.email || 'No Email'}`}
+                            {`${t('common.email')}: ${user?.email || 'No Email'}`}
                         </span>
                         <span className="user__info-item" title={user?.phoneNumber}>
-                            {`Phone: ${user?.phoneNumber || 'No Phone'}`}
+                            {`${t('common.phone')}: ${user?.phoneNumber || 'No Phone'}`}
                         </span>
                     </div>
                     <Button

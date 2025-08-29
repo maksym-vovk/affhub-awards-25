@@ -20,12 +20,16 @@ const serverErrorMessages = {
 }
 
 export const authApi = {
-    register: async (values) => {
+    register: async (values, t) => {
         try {
             const res = await apiClient.post('/users/register', values);
             return {
                 success: true,
-                data: res.data
+                data: res.data,
+                message: {
+                    title: t("api.auth.success.register.title"),
+                    text: t("api.auth.success.register.text")
+                }
             };
         } catch (error) {
             if (error.response) {
@@ -38,32 +42,32 @@ export const authApi = {
                         return {
                             success: false,
                             error: {
-                                title: "Registration failed",
-                                text: "User with this email and phone number already exists"
+                                title: t("api.auth.errors.register.isBadEmailOrPhone.title"),
+                                text: t("api.auth.errors.register.isBadEmailOrPhone.text")
                             }
                         }
                     case isBadEmail:
                         return {
                             success: false,
                             error: {
-                                title: "Registration failed",
-                                text: "User with this email already exists"
+                                title: t("api.auth.errors.register.isBadEmail.title"),
+                                text: t("api.auth.errors.register.isBadEmail.text")
                             }
                         };
                     case isBadPhone:
                         return {
                             success: false,
                             error: {
-                                title: "Registration failed",
-                                text: "User with this phone number already exists"
+                                title: t("api.auth.errors.register.isBadPhone.title"),
+                                text: t("api.auth.errors.register.isBadPhone.text")
                             }
                         };
                     default:
                         return {
                             success: false,
                             error: {
-                                title: "Registration failed",
-                                text: "Something went wrong. Please try again later"
+                                title: t("api.auth.errors.register.default.title"),
+                                text: t("api.auth.errors.register.default.text")
                             }
                         };
                 }
@@ -71,19 +75,23 @@ export const authApi = {
 
             return {
                 success: false, error: {
-                    title: "Network Error or Server Unreachable",
-                    text: "Unable to connect to the server. Please check your internet connection and try again"
+                    title: t("api.common.errors.default.title"),
+                    text: t("api.common.errors.default.text")
                 }
             };
         }
     },
-    login: async (values) => {
+    login: async (values, t) => {
         try {
             const res = await apiClient.post('/users/login', values);
-            const { data } = res.data;
+            const {data} = res.data;
             return {
                 success: true,
-                data: data
+                data: data,
+                message: {
+                    title: t("api.auth.success.login.title"),
+                    text: t("api.auth.success.login.text")
+                }
             };
         } catch (error) {
             if (error.response) {
@@ -98,32 +106,32 @@ export const authApi = {
                             success: false,
                             data,
                             error: {
-                                title: "Yor email is not verified",
-                                text: "Please verify your email using the verification code sent to your email address"
+                                title: t("api.auth.errors.login.isNotVerifiedEmail.title"),
+                                text: t("api.auth.errors.login.isNotVerifiedEmail.text")
                             },
                         }
                     case isBadEmail:
                         return {
                             success: false,
                             error: {
-                                title: "Login failed",
-                                text: "User with this email or phone number does not exist"
+                                title: t("api.auth.errors.login.isBadEmail.title"),
+                                text: t("api.auth.errors.login.isBadEmail.text")
                             }
                         };
                     case isBadPassword:
                         return {
                             success: false,
                             error: {
-                                title: "Login failed",
-                                text: "User password is incorrect"
+                                title: t("api.auth.errors.login.isBadPassword.title"),
+                                text: t("api.auth.errors.login.isBadPassword.text")
                             }
                         };
                     default:
                         return {
                             success: false,
                             error: {
-                                title: "Login failed",
-                                text: "An error occurred during login. Please try again later.",
+                                title: t("api.auth.errors.login.default.title"),
+                                text: t("api.auth.errors.login.default.text"),
                             }
                         };
                 }
@@ -131,19 +139,23 @@ export const authApi = {
 
             return {
                 success: false, error: {
-                    title: "Network Error or Server Unreachable",
-                    text: "Unable to connect to the server. Please check your internet connection and try again"
+                    title: t("api.common.errors.default.title"),
+                    text: t("api.common.errors.default.text")
                 }
             };
         }
     },
-    verifyEmail: async (values) => {
+    verifyEmail: async (values, t) => {
         try {
             const res = await apiClient.post('/users/verify-email', values);
-            const { data } = res.data;
+            const {data} = res.data;
             return {
                 success: true,
-                data: data
+                data: data,
+                message: {
+                    title: t("api.auth.success.verifyEmail.title"),
+                    text: t("api.auth.success.verifyEmail.text")
+                }
             };
         } catch (error) {
             if (error.response) {
@@ -156,24 +168,24 @@ export const authApi = {
                         return {
                             success: false,
                             error: {
-                                title: "Verification failed",
-                                text: "Verification code is invalid or has expired"
+                                title: t("api.auth.errors.verifyEmail.isBadRequestId.title"),
+                                text: t("api.auth.errors.verifyEmail.isBadRequestId.text")
                             }
                         }
                     case isBadCode:
                         return {
                             success: false,
                             error: {
-                                title: "Verification failed",
-                                text: "The verification code provided is incorrect"
+                                title: t("api.auth.errors.verifyEmail.isBadCode.title"),
+                                text: t("api.auth.errors.verifyEmail.isBadCode.text")
                             }
                         };
                     default:
                         return {
                             success: false,
                             error: {
-                                title: "Verification failed",
-                                text: "Something went wrong. Please try again later"
+                                title: t("api.auth.errors.verifyEmail.default.title"),
+                                text: t("api.auth.errors.verifyEmail.default.text")
                             }
                         };
                 }
@@ -181,13 +193,13 @@ export const authApi = {
 
             return {
                 success: false, error: {
-                    title: "Network Error or Server Unreachable",
-                    text: "Unable to connect to the server. Please check your internet connection and try again"
+                    title: t("api.common.errors.default.title"),
+                    text: t("api.common.errors.default.text")
                 }
             };
         }
     },
-    checkPhoneVerification: async (authToken) => {
+    checkPhoneVerification: async (authToken, t) => {
         try {
             const res = await apiClient.get('/users/check-phone', {
                 headers: {
@@ -204,8 +216,8 @@ export const authApi = {
                     return {
                         success: false,
                         error: {
-                            title: "Phone verification required",
-                            text: "Please verify your phone number using the verification code sent to your phone"
+                            title: t("api.auth.errors.checkPhone.isBadPhoneVerification.title"),
+                            text: t("api.auth.errors.checkPhone.isBadPhoneVerification.text")
                         }
                     }
                 }
@@ -213,22 +225,22 @@ export const authApi = {
                 return {
                     success: false,
                     error: {
-                        title: "Phone verification check failed",
-                        text: "Something went wrong. Please try again later"
+                        title: t("api.auth.errors.checkPhone.default.title"),
+                        text: t("api.auth.errors.checkPhone.default.text")
                     }
                 }
             }
 
             return {
                 success: false, error: {
-                    title: "Network Error or Server Unreachable",
-                    text: "Unable to connect to the server. Please check your internet connection and try again"
+                    title: t("api.common.errors.default.title"),
+                    text: t("api.common.errors.default.text")
                 }
             };
         }
 
     },
-    requestPhoneVerification: async (authToken) => {
+    requestPhoneVerification: async (authToken, t) => {
         try {
             const res = await apiClient.post('/users/request-phone-verify', {}, {
                 headers: {
@@ -242,31 +254,35 @@ export const authApi = {
                 return {
                     success: false,
                     error: {
-                        title: "Phone verification request failed",
-                        text: "Something went wrong. Please try again later"
+                        title: t("api.auth.errors.reqPhoneVerify.default.title"),
+                        text: t("api.auth.errors.reqPhoneVerify.default.text")
                     }
                 }
             }
 
             return {
                 success: false, error: {
-                    title: "Network Error or Server Unreachable",
-                    text: "Unable to connect to the server. Please check your internet connection and try again"
+                    title: t("api.common.errors.default.title"),
+                    text: t("api.common.errors.default.text")
                 }
             };
         }
     },
-    verifyPhone: async (values, authToken) => {
+    verifyPhone: async (values, authToken, t) => {
         try {
             const res = await apiClient.post('/users/confirm-phone-verify', values, {
                 headers: {
                     Authorization: `Bearer ${authToken}`,
                 },
             });
-            const { data } = res.data;
+            const {data} = res.data;
             return {
                 success: true,
-                data: data
+                data: data,
+                message: {
+                    title: t("api.auth.success.verifyPhone.verifyPhone.title"),
+                    text: t("api.auth.success.verifyPhone.verifyPhone.text")
+                }
             };
         } catch (error) {
             if (error.response) {
@@ -280,24 +296,24 @@ export const authApi = {
                             success: false,
                             expired: true,
                             error: {
-                                title: "Verification failed",
-                                text: "Verification code is invalid or has expired"
+                                title: t("api.auth.errors.verifyPhone.isBadRequestId.title"),
+                                text: t("api.auth.errors.verifyPhone.isBadRequestId.text")
                             }
                         }
                     case isBadCode:
                         return {
                             success: false,
                             error: {
-                                title: "Verification failed",
-                                text: "The verification code provided is incorrect"
+                                title: t("api.auth.errors.verifyPhone.isBadCode.title"),
+                                text: t("api.auth.errors.verifyPhone.isBadCode.text")
                             }
                         };
                     default:
                         return {
                             success: false,
                             error: {
-                                title: "Verification failed",
-                                text: "Something went wrong. Please try again later"
+                                title: t("api.auth.errors.verifyPhone.default.title"),
+                                text: t("api.auth.errors.verifyPhone.default.text")
                             }
                         };
                 }
@@ -305,8 +321,8 @@ export const authApi = {
 
             return {
                 success: false, error: {
-                    title: "Network Error or Server Unreachable",
-                    text: "Unable to connect to the server. Please check your internet connection and try again"
+                    title: t("api.common.errors.default.title"),
+                    text: t("api.common.errors.default.text")
                 }
             };
         }
