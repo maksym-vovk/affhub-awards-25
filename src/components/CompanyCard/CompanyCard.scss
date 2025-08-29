@@ -350,10 +350,10 @@
   &__button {
     width: 100%;
 
-    @include mixins.button-style(inherit, 6px 16px, 5px);
+    @include mixins.button-style(inherit, 10px 16px, 5px);
 
     @include mixins.rm(768) {
-      @include mixins.button-style(inherit, 8px 20px, 5px);
+      @include mixins.button-style(inherit, 10px 20px, 5px);
     }
 
     @include mixins.rm(1024) {

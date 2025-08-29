@@ -1,32 +1,73 @@
 @use '../../styles/mixins';
+@use '../../styles/variables';
 
 .user {
   position: relative;
 
   &__logo {
+    font-size: 14px;
+    font-family: variables.$font-regular;
     width: 40px;
     aspect-ratio: 1/1;
     color: white;
     border: 1px solid white;
     border-radius: 50%;
     background: transparent;
-    padding: 6px;
+    padding: 4px;
     cursor: pointer;
   }
 
   &__info {
     display: flex;
     flex-direction: column;
-    gap: 10px;
-    margin-bottom: 20px;
+    gap: 6px;
+    margin-bottom: 16px;
+
+    @include mixins.rm(768) {
+      gap: 10px;
+      margin-bottom: 20px;
+    }
   }
 
   &__info-item {
-    font-size: 14px;
-    line-height: 1.2;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    overflow: hidden;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+
+    @include mixins.rm(768) {
+      gap: 10px;
+    }
+
+    svg {
+      flex-shrink: 0;
+      aspect-ratio: 1/1;
+      width: 14px;
+      height: auto;
+
+      @include mixins.rm(768) {
+        width: 20px;
+      }
+    }
+
+    &:first-child svg {
+      height: 13px;
+
+      @include mixins.rm(768) {
+        height: 18px;
+      }
+    }
+
+    span {
+      font-size: 14px;
+      line-height: 1.2;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
+
+      @include mixins.rm(768) {
+        font-size: 16px;
+      }
+    }
   }
 
   &__menu {
@@ -45,6 +86,14 @@
     transform: translateY(-8px);
     animation: slideIn 0.2s ease-out forwards;
     margin-top: 14px;
+
+    @include mixins.rm(480) {
+      width: 280px;
+    }
+
+    @include mixins.rm(768) {
+      width: 320px;
+    }
 
     @include mixins.rm(1024) {
       margin-top: 20px;

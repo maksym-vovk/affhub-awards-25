@@ -1,6 +1,8 @@
 import './Button.scss'
 
 function Button({ className, type, scrollId, onClick, children }) {
+    const isPrimary = className.includes('button--primary')
+
     const handleScroll = () => {
         const section = document.getElementById(scrollId);
         if (section) {
@@ -19,7 +21,7 @@ function Button({ className, type, scrollId, onClick, children }) {
             onClick={handleClick}
             type={type || 'button'}
         >
-            {children}
+            {isPrimary ? <span>{children}</span> : children}
         </button>
     )
 }

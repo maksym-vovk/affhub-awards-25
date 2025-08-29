@@ -143,7 +143,7 @@ function CompanyCard({ nominationTag, categoryTag, company }) {
                 </div>
 
                 <Button
-                    className="company__button button"
+                    className="company__button button button--primary"
                     onClick={handleVote}
                 >
                     {t('common.voteButton')}

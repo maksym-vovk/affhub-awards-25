@@ -10,7 +10,32 @@
   background: #fff;
   transition: .3s ease;
 
-  &:hover {
-    transform: scale(1.05);
+  &--primary {
+    text-transform: uppercase;
+    overflow: hidden;
+    color: #fff;
+    background: #e7e7e7;
+
+    &::before {
+      position: absolute;
+      top: 0;
+      left: -10%;
+      width: 120%;
+      height: 100%;
+      content: '';
+      color: red;
+      background: white;
+      transform: skew(30deg);
+      transition: transform 0.4s cubic-bezier(0.3, 1, 0.8, 1);
+    }
+
+    &:hover::before {
+      transform: translate3d(100%, 0, 0);
+    }
+
+    span {
+      position: relative;
+      mix-blend-mode: difference;
+    }
   }
 }

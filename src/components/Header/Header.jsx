@@ -1,6 +1,7 @@
 import React, {useEffect, useRef, useState} from 'react'
 import './Header.scss'
 import logo from '/assets/main-logo.svg'
+import logoMin from '/assets/logo-min.svg'
 
 import { useTranslation } from 'react-i18next'
 import LangSwitcher from "../LangSwitcher/LangSwitcher.jsx";
@@ -34,7 +35,10 @@ function Header() {
         <header className={`header${visible ? '' : ' header--hidden'}`}>
             <div className="container">
                 <div className="header__wrapper">
-                    <img src={logo} alt="Affhub logo" width='110' height='25' className="header__logo logo" />
+                    <picture>
+                        <source srcSet={logo} media="(min-width: 375px)" />
+                        <img src={logoMin} alt="Affhub logo" width='110' height='25' className="header__logo logo" />
+                    </picture>
                     <div className="header__controls">
                         {currentUser && (
                             <UserMenu
@@ -45,7 +49,7 @@ function Header() {
 
                         {!currentUser && (
                             <Button
-                                className="header__btn button"
+                                className="header__btn button button--primary"
                                 onClick={() => openModal('login')}
                             >
                                 {t('common.loginButton')}

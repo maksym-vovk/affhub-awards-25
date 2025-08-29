@@ -19,7 +19,7 @@ function HeroSection() {
                         { t('hero.title.year') }
                     </h1>
                     <Button
-                        className="hero__btn button"
+                        className="hero__btn button button--primary"
                         scrollId="nominations"
                     >
                         {t('common.voteButton')}
