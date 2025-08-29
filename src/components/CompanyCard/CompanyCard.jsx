@@ -21,7 +21,7 @@ function CompanyCard({ nominationTag, categoryTag, company }) {
 
     const queryClient = useQueryClient()
     const mutation = useMutation({
-        mutationFn: () => voteApi.createVote(t),
+        mutationFn: (params) => voteApi.createVote(params),
         onSuccess: () => {
             queryClient.invalidateQueries({ queryKey: ['statistics'] })
             queryClient.invalidateQueries({ queryKey: ['usersVotes'] })
@@ -46,7 +46,8 @@ function CompanyCard({ nominationTag, categoryTag, company }) {
             nomination: nominationTag,
             niche: categoryTag,
             vote: company.tag,
-            authToken
+            authToken,
+            t
         })
     }
 

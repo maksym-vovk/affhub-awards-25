@@ -31,7 +31,8 @@ export const voteApi = {
         }
 
     },
-    createVote: async ({ authToken, t, ...values}) => {
+    createVote: async ({ authToken, ...values}) => {
+        console.log(values);
         try {
             await apiClient.post('/vote', values, {
                 headers: {
