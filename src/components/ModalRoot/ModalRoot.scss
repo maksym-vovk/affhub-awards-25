@@ -201,6 +201,10 @@
     //  //background-position: 100% 0;
     //}
 
+    &:not(:last-child) {
+      margin-bottom: 16px;
+    }
+
     &:disabled {
       color: white;
       background: variables.$modal-gray;

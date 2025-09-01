@@ -2,9 +2,11 @@
 @use "../../styles/variables";
 
 .button {
+  display: block;
   position: relative;
   font-family: variables.$font-bold;
   font-weight: 800;
+  text-align: center;
   text-transform: uppercase;
   color: variables.$black-color;
   background: #fff;

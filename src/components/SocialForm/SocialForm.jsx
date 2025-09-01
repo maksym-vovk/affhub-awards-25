@@ -15,8 +15,9 @@ function SocialForm() {
     const {t} = useTranslation();
     const {authToken} = useAuth()
     const {showLoader, hideLoader} = useLoader()
-    const {closeModalWithDelay, changeModalType} = useModal()
+    const {closeModal, closeModalWithDelay, changeModalType} = useModal()
     const [type, setType] = useState('instagram');
+    const [telegramLink, setTelegramLink] = useState(null)
 
     const switcherOptions = [
         {type: 'instagram', text: 'Instagram'},
@@ -52,8 +53,9 @@ function SocialForm() {
 
             if (!res.success) throw res.error
 
-            window.open(res.link, "_blank")
-            closeModalWithDelay(100)
+            // window.open(res.link, "_blank")
+            // closeModalWithDelay(100)
+            setTelegramLink(res.link)
         } catch (error) {
             changeModalType('message', error)
             closeModalWithDelay()
@@ -90,31 +92,50 @@ function SocialForm() {
 
 
                 {type === 'instagram' && (
-                    <Form className="social-form">
-                        <FormField
-                            name="username"
-                            type="text"
-                            placeholder="Введіть ім'я користувача"
-                            maxLength={32}
-                        />
-                        <Button
-                            className="popup__button button button--primary"
-                            type="submit"
-                        >
-                            Підтвердити
-                        </Button>
-                    </Form>
+                    <div className="popup__content">
+                        <Form className="social-form">
+                            <FormField
+                                name="username"
+                                type="text"
+                                placeholder="Введіть ім'я користувача"
+                                maxLength={32}
+                            />
+                            <Button
+                                className="popup__button button button--primary"
+                                type="submit"
+                            >
+                                Підтвердити
+                            </Button>
+                        </Form>
+                    </div>
                 )}
 
                 {type === 'telegram' && (
                     <div className="popup__content">
-                        <Button
-                            className="popup__button button button--primary"
-                            type="submit"
-                            onClick={verifyTelegram}
-                        >
-                            Перейти в бот
-                        </Button>
+                        {!telegramLink
+                            ? (
+                                <Button
+                                    className="popup__button button button--primary"
+                                    type="submit"
+                                    onClick={verifyTelegram}
+                                    disabled
+                                >
+                                    Отримати посилання
+                                </Button>
+                            )
+                            : (
+                                <Button
+                                    as='a'
+                                    href={telegramLink}
+                                    target="_blank"
+                                    className="popup__button button button--primary"
+                                    type="submit"
+                                    onClick={() => closeModal()}
+                                >
+                                    Перейти в бот
+                                </Button>
+                            )
+                        }
                     </div>
                 )}
 
