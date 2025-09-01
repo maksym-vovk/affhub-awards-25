@@ -71,7 +71,7 @@
       },
       "password": {
         "required": "Field cannot be empty!",
-        "min": "Password must be at least 8 characters long",
+        "min": "Password must be at least 6 characters long",
         "max": "Password must not exceed 20 characters",
         "matches": "Password must contain at least one uppercase letter, one lowercase letter, one number, and one special character (@$!%*?&)"
       },

@@ -23,9 +23,9 @@ function LoginForm() {
             .matches(/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/, t('modal.validation.email.matches')),
         password: Yup.string()
             .required(t('modal.validation.password.required'))
-            .min(8, t('modal.validation.password.min'))
+            .min(6, t('modal.validation.password.min'))
             .max(20, t('modal.validation.password.max'))
-            .matches(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/, t('modal.validation.password.matches')),
+            // .matches(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/, t('modal.validation.password.matches')),
     })
 
     async function handleEmailVerification(values) {

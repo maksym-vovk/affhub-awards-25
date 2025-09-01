@@ -21,15 +21,17 @@ function SignupForm() {
             .required(t('modal.validation.name.required')),
         password: Yup.string()
             .required(t('modal.validation.password.required'))
-            .min(8, t('modal.validation.password.min'))
-            .max(20, t('modal.validation.password.max'))
-            .matches(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/, t('modal.validation.password.matches')),
+            // .min(8, t('modal.validation.password.min'))
+            .min(6, t('modal.validation.password.min'))
+            .max(20, t('modal.validation.password.max')),
+            // .matches(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/, t('modal.validation.password.matches')),
         repeatPassword: Yup.string()
             .oneOf([Yup.ref('password'), null], t('modal.validation.repeatPassword.oneOf'))
             .required(t('modal.validation.repeatPassword.required'))
-            .min(8, t('modal.validation.password.min'))
-            .max(20, t('modal.validation.password.max'))
-            .matches(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/, t('modal.validation.password.matches')),
+            // .min(8, t('modal.validation.password.min'))
+            .min(6, t('modal.validation.password.min'))
+            .max(20, t('modal.validation.password.max')),
+            // .matches(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/, t('modal.validation.password.matches')),
         email: Yup.string()
             .email(t('modal.validation.email.test'))
             .required(t('modal.validation.email.required'))
