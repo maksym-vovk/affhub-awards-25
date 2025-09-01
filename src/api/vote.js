@@ -2,7 +2,8 @@ import apiClient from "./axios.js";
 
 const serverErrorMessages = {
     votes: {
-        alreadyCreated: 'Vote already exists for this nomination and niche'
+        alreadyCreated: 'Vote already exists for this nomination and niche',
+        noSocial: 'No social verification record for this user'
     }
 }
 
@@ -31,8 +32,7 @@ export const voteApi = {
         }
 
     },
-    createVote: async ({ authToken, ...values}) => {
-        console.log(values);
+    createVote: async ({ authToken, t, ...values}) => {
         try {
             await apiClient.post('/vote', values, {
                 headers: {
@@ -43,23 +43,34 @@ export const voteApi = {
             if (error.response) {
                 const {errors} = error.response.data;
                 const isCreated = errors.includes(serverErrorMessages.votes.alreadyCreated);
-                if (isCreated) {
-                    throw {
-                        success: false,
-                        errorMessage: {
-                            title: t("api.vote.errors.createVote.isCreated.title"),
-                            text: t("api.vote.errors.createVote.isCreated.text"),
-                        }
-                    };
+                const isNoSocial = errors.includes(serverErrorMessages.votes.noSocial);
+                console.log(isNoSocial);
+                switch (true) {
+                    case isCreated:
+                        throw {
+                            success: false,
+                            errorMessage: {
+                                title: t("api.vote.errors.createVote.isCreated.title"),
+                                text: t("api.vote.errors.createVote.isCreated.text"),
+                            }
+                        };
+                    case isNoSocial:
+                        throw {
+                            success: false,
+                            errorMessage: {
+                                title: t("api.vote.errors.createVote.isNoSocial.title"),
+                                text: t("api.vote.errors.createVote.isNoSocial.text"),
+                            }
+                        };
+                    default:
+                        throw {
+                            success: false,
+                            errorMessage: {
+                                title: t("api.vote.errors.createVote.default.title"),
+                                text: t("api.vote.errors.createVote.default.text"),
+                            }
+                        };
                 }
-
-                throw {
-                    success: false,
-                    errorMessage: {
-                        title: t("api.vote.errors.createVote.default.title"),
-                        text: t("api.vote.errors.createVote.default.text"),
-                    }
-                };
             }
             throw {
                 success: false,

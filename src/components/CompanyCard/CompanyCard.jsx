@@ -27,6 +27,7 @@ function CompanyCard({ nominationTag, categoryTag, company }) {
             queryClient.invalidateQueries({ queryKey: ['usersVotes'] })
         },
         onError: (error) => {
+            console.log(error);
             openModal("message", error?.errorMessage)
             closeModalWithDelay()
         },

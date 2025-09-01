@@ -267,6 +267,10 @@
             "title": "Already Voted",
             "text": "You've already voted in this category. You can only vote once per category."
           },
+          "isNoSocial": {
+            "title": "Your social media is not connected",
+            "text": "To vote, please connect at least one social media account."
+          },
           "default": {
             "title": "Vote Submission Failed",
             "text": "We couldn't submit your vote. Please try again later."

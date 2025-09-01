@@ -19,7 +19,7 @@ function ModalRoot() {
         signup: <SignupForm />,
         emailOtp: <OtpForm {...props}/>,
         phoneOtp: <OtpForm {...props}/>,
-        socialVerification: <SocialForm />,
+        socialVerification: <SocialForm {...props}/>,
         message: <FormMessage {...props}/>,
     }
 
