@@ -10,11 +10,11 @@ import {useAuth} from "../../context/AuthProvider.jsx";
 import {useLoader} from "../../context/LoaderProvider.jsx";
 import {useModal} from "../../context/ModalProvider.jsx";
 
-function LoginForm() {
+function LoginForm({ switcherTypes }) {
     const { t } = useTranslation();
     const {handleLogin} = useAuth()
     const {showLoader, hideLoader} = useLoader()
-    const {openModal, closeModalWithDelay, changeModalTypeWithDelay} = useModal()
+    const {openModal, closeModalWithDelay, type, changeModalType, changeModalTypeWithDelay} = useModal()
 
     const loginSchema = Yup.object({
         email: Yup.string()
@@ -85,7 +85,11 @@ function LoginForm() {
                 <h2 className="popup__title">
                     {t('modal.titles.login')}
                 </h2>
-                <FormSwitcher/>
+                <FormSwitcher
+                    type={type}
+                    options={switcherTypes}
+                    onSwitch={changeModalType}
+                />
                 <Form className="popup__form">
                     <FormField
                         name="email"

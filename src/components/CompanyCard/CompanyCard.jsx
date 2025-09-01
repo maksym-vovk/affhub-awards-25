@@ -12,7 +12,7 @@ import {voteApi} from "../../api/vote.js";
 
 function CompanyCard({ nominationTag, categoryTag, company }) {
     const { t } = useTranslation();
-    const { openModal, changeModalTypeWithDelay, closeModalWithDelay } = useModal()
+    const { openModal, changeModalType, changeModalTypeWithDelay, closeModalWithDelay } = useModal()
     const { authToken } = useAuth()
     const { showLoader, hideLoader } = useLoader()
 
@@ -26,11 +26,7 @@ function CompanyCard({ nominationTag, categoryTag, company }) {
             queryClient.invalidateQueries({ queryKey: ['statistics'] })
             queryClient.invalidateQueries({ queryKey: ['usersVotes'] })
         },
-        onError: (error) => {
-            console.log(error);
-            openModal("message", error?.errorMessage)
-            closeModalWithDelay()
-        },
+        onError: handleVoteError,
     })
 
     async function handleVote() {
@@ -38,10 +34,6 @@ function CompanyCard({ nominationTag, categoryTag, company }) {
             openModal('login')
             return;
         }
-
-        const isPhoneVerified = await checkPhoneVerification()
-
-        if (!isPhoneVerified) return
 
         mutation.mutate({
             nomination: nominationTag,
@@ -80,10 +72,45 @@ function CompanyCard({ nominationTag, categoryTag, company }) {
         }
     }
 
-    async function sendPhoneVerifyRequest() {
-        showLoader()
+    async function handleVoteError(error) {
+        const { phoneVerified, socialVerified } = error.metadata
+        const { errorMessage } = error
 
+        if (!phoneVerified && !socialVerified) {
+            await runPhoneAndSocialVerification(errorMessage)
+            return
+        }
+
+        openModal('socialVerification')
+    }
+
+    async function runPhoneAndSocialVerification(notification) {
         try {
+            const isSMSSent = localStorage.getItem('requestKey')
+            const verifyReqStatus = !isSMSSent && await sendPhoneVerifyRequest(authToken, t)
+
+            if (!isSMSSent && !verifyReqStatus.success) {
+                openModal('message', verifyReqStatus.error)
+                closeModalWithDelay()
+                return;
+            }
+
+            openModal('message', notification)
+            changeModalTypeWithDelay('phoneOtp', {
+                onSubmit: verifyPhone,
+                nextStep: {
+                    type: 'socialVerification',
+                    props: {}
+                }
+            })
+        } catch (error) {
+            console.warn('runPhoneAndSocialVerification Error: ', error)
+        }
+    }
+
+    async function sendPhoneVerifyRequest(authToken, t) {
+        try {
+            showLoader()
             const res = await authApi.requestPhoneVerification(authToken, t)
 
             if (!res.success) {
@@ -91,13 +118,9 @@ function CompanyCard({ nominationTag, categoryTag, company }) {
             }
 
             localStorage.setItem('requestKey', res.data.code)
-            return res.success
+            return res
         } catch (errorResponse) {
-            openModal('message', errorResponse.error)
-            changeModalTypeWithDelay('phoneOtp', {
-                onSubmit: verifyPhone,
-            })
-            return errorResponse.success
+            return errorResponse
         } finally {
             hideLoader()
         }
@@ -107,6 +130,7 @@ function CompanyCard({ nominationTag, categoryTag, company }) {
         const requestKey = localStorage.getItem('requestKey') || '';
 
         try {
+            showLoader()
             const response = await authApi.verifyPhone({
                 requestKey,
                 code: values.otp
@@ -127,6 +151,8 @@ function CompanyCard({ nominationTag, categoryTag, company }) {
             }
 
             throw errorResponse
+        } finally {
+            hideLoader()
         }
 
     }

@@ -280,8 +280,8 @@ export const authApi = {
                 success: true,
                 data: data,
                 message: {
-                    title: t("api.auth.success.verifyPhone.verifyPhone.title"),
-                    text: t("api.auth.success.verifyPhone.verifyPhone.text")
+                    title: t("api.auth.success.verifyPhone.title"),
+                    text: t("api.auth.success.verifyPhone.text")
                 }
             };
         } catch (error) {
@@ -321,6 +321,76 @@ export const authApi = {
 
             return {
                 success: false, error: {
+                    title: t("api.common.errors.default.title"),
+                    text: t("api.common.errors.default.text")
+                }
+            };
+        }
+    },
+    verifyInstagram: async (values, authToken, t) => {
+        try {
+            const res = await apiClient.post('/users/verification', values, {
+                headers: {
+                    Authorization: `Bearer ${authToken}`,
+                },
+            });
+
+            return {
+                success: res.data.success,
+                message: {
+                    title: 'Verification Request Submitted',
+                    text: "We will review your request and let you know by email if it has been approved"
+                }
+            }
+        } catch (error) {
+            if (error.response) {
+                return {
+                    success: false,
+                    error: {
+                        title: "Something went wrong",
+                        text: "Please try again later"
+                    }
+                };
+            }
+
+            return {
+                success: false,
+                error: {
+                    title: t("api.common.errors.default.title"),
+                    text: t("api.common.errors.default.text")
+                }
+            };
+        }
+    },
+    verifyTelegram: async (authToken, t) => {
+        const telegramBotLink = 'https://t.me/affhubvoice2025_bot?start='
+
+        try {
+            const res = await apiClient.get('/users/verification/telegram-link', {
+                headers: {
+                    Authorization: `Bearer ${authToken}`,
+                },
+            });
+            const { data } = res.data;
+
+            return {
+                success: true,
+                link: telegramBotLink + data.code
+            }
+        } catch (error) {
+            if (error.response) {
+                return {
+                    success: false,
+                    error: {
+                        title: "Something went wrong",
+                        text: "Please try again later"
+                    }
+                };
+            }
+
+            return {
+                success: false,
+                error: {
                     title: t("api.common.errors.default.title"),
                     text: t("api.common.errors.default.text")
                 }

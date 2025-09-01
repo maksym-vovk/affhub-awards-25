@@ -1,26 +1,20 @@
 import './FormSwitcher.scss'
 import Button from "../Button/Button.jsx";
-import {useTranslation} from "react-i18next";
-import {useModal} from "../../context/ModalProvider.jsx";
 
-function FormSwitcher() {
-    const { t } = useTranslation();
-    const { type, changeModalType } = useModal()
+function FormSwitcher({type, options, onSwitch}) {
+    if (options.length !== 2) throw new Error('FormSwitcher: options must have 2 elements');
 
     return (
         <div className="auth-switcher">
-            <Button
-                className={`auth-switcher__btn ${type === 'login' ? 'active' : ''}`}
-                onClick={() => changeModalType('login')}
-            >
-                {t('modal.switcher.login')}
-            </Button>
-            <Button
-                className={`auth-switcher__btn ${type === 'signup' ? 'active' : ''}`}
-                onClick={() => changeModalType('signup')}
-            >
-                {t('modal.switcher.signup')}
-            </Button>
+            {options.map(option => (
+                <Button
+                    key={option.type}
+                    className={`auth-switcher__btn ${type === option.type ? 'active' : ''}`}
+                    onClick={() => onSwitch(option.type)}
+                >
+                    {option.text}
+                </Button>
+            ))}
         </div>
     )
 }

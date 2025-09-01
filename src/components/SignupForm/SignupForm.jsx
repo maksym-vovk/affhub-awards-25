@@ -11,10 +11,10 @@ import {authApi} from "../../api/auth.js";
 import {useLoader} from "../../context/LoaderProvider.jsx";
 import {useModal} from "../../context/ModalProvider.jsx";
 
-function SignupForm() {
+function SignupForm({ switcherTypes }) {
     const { t } = useTranslation();
     const {showLoader, hideLoader} = useLoader()
-    const {openModal, closeModalWithDelay} = useModal()
+    const {type, changeModalType, openModal, closeModalWithDelay} = useModal()
 
     const signupSchema = Yup.object({
         name: Yup.string()
@@ -79,7 +79,11 @@ function SignupForm() {
                 <h2 className="popup__title">
                     {t('modal.titles.signup')}
                 </h2>
-                <FormSwitcher/>
+                <FormSwitcher
+                    type={type}
+                    options={switcherTypes}
+                    onSwitch={changeModalType}
+                />
                 <Form className="popup__form">
                     <FormField
                         name="name"

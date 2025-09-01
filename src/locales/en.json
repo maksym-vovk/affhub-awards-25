@@ -153,8 +153,8 @@
           "text": ""
         },
         "verifyPhone": {
-          "title": "",
-          "text": ""
+          "title": "Phone Verified",
+          "text": "Your phone number has been successfully verified."
         }
       },
       "errors": {
@@ -267,9 +267,17 @@
             "title": "Already Voted",
             "text": "You've already voted in this category. You can only vote once per category."
           },
+          "isNoPhoneAndSocial": {
+            "title": "Your phone and social media must to be verified",
+            "text": "To vote, please verify your phone number and connect at least one social media account"
+          },
+          "isNoPhone": {
+            "title": "Your phone must to be verified",
+            "text": "Please enter code from SMS to verify your phone number"
+          },
           "isNoSocial": {
             "title": "Your social media is not connected",
-            "text": "To vote, please connect at least one social media account."
+            "text": "To vote, please connect at least one social media account"
           },
           "default": {
             "title": "Vote Submission Failed",

@@ -10,13 +10,26 @@ import OtpForm from "../OtpForm/OtpForm.jsx";
 import SocialForm from "../SocialForm/SocialForm.jsx";
 import FormMessage from "../FormMessage/FormMessage.jsx";
 import React from "react";
+import {useTranslation} from "react-i18next";
 
 function ModalRoot() {
+    const { t } = useTranslation();
     const { isOpen, type, props, closeModal } = useModal()
 
+    const authSwitcherTypes = [
+        {
+            type: 'login',
+            text: t('modal.switcher.login')
+        },
+        {
+            type: 'signup',
+            text: t('modal.switcher.signup')
+        }
+    ]
+
     const MODAL_COMPONENTS = {
-        login: <LoginForm />,
-        signup: <SignupForm />,
+        login: <LoginForm switcherTypes={authSwitcherTypes}/>,
+        signup: <SignupForm switcherTypes={authSwitcherTypes}/>,
         emailOtp: <OtpForm {...props}/>,
         phoneOtp: <OtpForm {...props}/>,
         socialVerification: <SocialForm {...props}/>,

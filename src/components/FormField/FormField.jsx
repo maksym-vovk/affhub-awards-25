@@ -11,7 +11,7 @@ function FormField({ ...props }) {
     const isError = meta.touched && meta.error
     const isPassword = field.name === "password" || field.name === "repeatPassword";
 
-    function handlePasswordInput(e) {
+    function handleNonSpacesInput(e) {
         e.target.value = e.target.value.trim();
     }
 
@@ -33,12 +33,22 @@ function FormField({ ...props }) {
     }
 
     function handleInput(event) {
-        if (field.name === 'phoneNumber') {
-            handlePhoneInput(event);
-        }
+        // if (field.name === 'phoneNumber') {
+        //     handlePhoneInput(event);
+        // }
+        //
+        // if (field.name === 'password') {
+        //     handlePasswordInput(event);
+        // }
 
-        if (field.name === 'password') {
-            handlePasswordInput(event);
+        switch (field.name) {
+            case 'phoneNumber': handlePhoneInput(event)
+                break;
+            case 'password': handleNonSpacesInput(event);
+                break;
+            case 'username': handleNonSpacesInput(event);
+                break;
+            default: return null
         }
     }
 

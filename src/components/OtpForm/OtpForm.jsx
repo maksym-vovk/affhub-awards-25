@@ -5,16 +5,12 @@ import * as Yup from "yup";
 import Button from "../Button/Button.jsx";
 import FormField from "../FormField/FormField.jsx";
 import {Form, Formik} from "formik";
-import {useAuth} from "../../context/AuthProvider.jsx";
 import {useLoader} from "../../context/LoaderProvider.jsx";
 
-function OtpForm({ onSubmit }) {
+function OtpForm({ onSubmit, nextStep }) {
     const {t} = useTranslation();
     const {type, openModal, changeModalTypeWithDelay, closeModalWithDelay} = useModal()
-    const {handleLogin} = useAuth()
-    const {showLoader, hideLoader} = useLoader()
-    const requestId = localStorage.getItem('requestId') || '';
-
+    const {hideLoader} = useLoader()
     const otpSchema = Yup.object({
         otp: Yup.string()
             .required(t('modal.validation.otp.required'))
@@ -28,14 +24,13 @@ function OtpForm({ onSubmit }) {
     }
 
     async function handleSubmit(values, { resetForm }) {
-        showLoader()
         try {
             await onSubmit(values)
             resetForm();
-            closeModalWithDelay();
+            nextStep ? changeModalTypeWithDelay(nextStep.type, nextStep.props) : closeModalWithDelay();
         } catch (errorResponse) {
             openModal('message', errorResponse.error)
-            changeModalTypeWithDelay(type, { onSubmit })
+            changeModalTypeWithDelay(type, { onSubmit, nextStep })
         } finally {
             hideLoader()
         }
