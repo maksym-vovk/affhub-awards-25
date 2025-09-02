@@ -112,7 +112,7 @@ function CompanyCard({ nominationTag, categoryTag, company }) {
                 throw response
             }
 
-            queryClient.invalidateQueries({queryKey: ['phoneVerification']})
+            queryClient.invalidateQueries({queryKey: ['userInfo']})
             localStorage.removeItem('requestKey')
             openModal('message', response.message)
         } catch (errorResponse) {

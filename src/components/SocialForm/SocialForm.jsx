@@ -36,6 +36,7 @@ function SocialForm() {
 
             if (!res.success) throw res.error
 
+            localStorage.setItem('verificationRequest', 'instagram')
             changeModalType('message', res.message)
             closeModalWithDelay()
         } catch (error) {
@@ -53,6 +54,7 @@ function SocialForm() {
 
             if (!res.success) throw res.error
 
+            localStorage.setItem('verificationRequest', 'telegram')
             setTelegramLink(res.link)
         } catch (error) {
             changeModalType('message', error)

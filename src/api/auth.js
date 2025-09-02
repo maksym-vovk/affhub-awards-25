@@ -240,6 +240,48 @@ export const authApi = {
         }
 
     },
+    getUserInfo: async (authToken, t) => {
+        try {
+            const res = await apiClient.get('/users/info', {
+                headers: {
+                    Authorization: `Bearer ${authToken}`,
+                },
+            });
+            return res.data;
+        } catch (error) {
+            console.log(error);
+            // if (error.response) {
+            //     const {errors} = error.response.data;
+            //     const isBadPhoneVerification = errors.includes(serverErrorMessages.verification.phone);
+            //
+            //     if (isBadPhoneVerification) {
+            //         throw {
+            //             success: false,
+            //             error: {
+            //                 title: t("api.auth.errors.checkPhone.isBadPhoneVerification.title"),
+            //                 text: t("api.auth.errors.checkPhone.isBadPhoneVerification.text")
+            //             }
+            //         }
+            //     }
+            //
+            //     throw {
+            //         success: false,
+            //         error: {
+            //             title: t("api.auth.errors.checkPhone.default.title"),
+            //             text: t("api.auth.errors.checkPhone.default.text")
+            //         }
+            //     }
+            // }
+            //
+            // throw {
+            //     success: false, error: {
+            //         title: t("api.common.errors.default.title"),
+            //         text: t("api.common.errors.default.text")
+            //     }
+            // };
+        }
+
+    },
     requestPhoneVerification: async (authToken, t) => {
         try {
             const res = await apiClient.post('/users/request-phone-verify', {}, {

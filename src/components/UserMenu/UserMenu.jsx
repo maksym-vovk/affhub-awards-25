@@ -22,15 +22,42 @@ function UserMenu({ user, handleLogout }) {
     const userMenuBlock = useRef(null);
     useClickOutside(userMenuBlock, open, () => setOpen(false));
 
-    const { data, isError } = useQuery({
-        queryKey: ['phoneVerification', user?.phoneNumber],
-        queryFn: () => authApi.checkPhoneVerification(authToken, t),
-        retry: 1,
+    // const { data, isError } = useQuery({
+    //     queryKey: ['phoneVerification', user?.phoneNumber],
+    //     queryFn: () => authApi.checkPhoneVerification(authToken, t),
+    //     retry: 1,
+    //     refetchOnWindowFocus: false,
+    //     enabled: !!authToken
+    // })
+
+    function onUserInfoRefetch(data) {
+        const isVerificationRequested = localStorage.getItem('verificationRequest');
+        const socialVerification = data?.data?.verifications.find(verification => ['INSTAGRAM_SUBSCRIPTION', 'TELEGRAM_SUBSCRIPTION'].includes(verification.type));
+        return isVerificationRequested && socialVerification ? 5000 : false;
+    }
+
+    const { data, isLoading } = useQuery({
+        queryKey: ['userInfo'],
+        queryFn: () => authApi.getUserInfo(authToken, t),
+        retry: 2,
+        refetchInterval: onUserInfoRefetch,
         refetchOnWindowFocus: false,
         enabled: !!authToken
     })
 
-    const isPhoneVerified = !isError && (data?.success ?? false)
+    useEffect(() => {
+        console.log(data);
+    }, [data])
+
+    const isPhoneVerified = data?.data?.verifications?.some(verification => verification.type === 'PHONE') ?? false;
+
+    useEffect(() => {
+        if (isLoading || !data) return;
+        const socialVerification = data.data.verifications.find(verification => ['INSTAGRAM_SUBSCRIPTION', 'TELEGRAM_SUBSCRIPTION'].includes(verification.type));
+        if (!socialVerification?.type) return;
+        socialVerification.type = socialVerification.type === 'INSTAGRAM_SUBSCRIPTION' ? 'Instagram' : 'Telegram';
+        setSocialVerification(socialVerification);
+    }, [data, isLoading])
 
     return (
         <div className="user" ref={userMenuBlock}>
@@ -45,23 +72,23 @@ function UserMenu({ user, handleLogout }) {
                     <div className="user__info">
                         <div className="user__info-item" title={user?.name}>
                             <FaUser />
-                            <span>{user?.name || 'Unknown User'}</span>
+                            <span>{user?.name ?? 'Unknown User'}</span>
                         </div>
                         <div className="user__info-item" title={user?.email}>
                             <MdEmail />
-                            <span>{user?.email || 'No Email'}</span>
+                            <span>{user?.email ?? 'No Email'}</span>
                         </div>
                         <div className="user__info-item" title={user?.phoneNumber}>
                             <MdOutlinePhoneIphone />
-                            {user?.phoneNumber || 'No Phone'}
+                            {user?.phoneNumber ?? 'No Phone'}
                             {isPhoneVerified
                                 ? <MdVerifiedUser title="Verified" className="user__info-status user__info-status--success" />
                                 : <MdOutlineError title="Not Verified" className="user__info-status user__info-status--error" />
                             }
                         </div>
-                        <div className="user__info-item" title={socialVerification?.name || t('common.social')}>
+                        <div className="user__info-item" title={socialVerification?.name ?? t('common.social')}>
                             <FaGlobe />
-                            {socialVerification || t('common.social')}
+                            {socialVerification?.type ?? t('common.social')}
                             {socialVerification?.verified
                                 ? <MdVerifiedUser title="Verified" className="user__info-status user__info-status--success" />
                                 : <MdOutlineError title="Not Verified" className="user__info-status user__info-status--error" />
