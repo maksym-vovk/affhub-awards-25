@@ -70,6 +70,15 @@
     }
   }
 
+  &__info-status {
+    &--success {
+      color: #28a745;
+    }
+    &--error {
+      color: #dc3545;
+    }
+  }
+
   &__menu {
     position: absolute;
     top: 100%;
@@ -87,13 +96,18 @@
     animation: slideIn 0.2s ease-out forwards;
     margin-top: 14px;
 
-    @include mixins.rm(480) {
+    @include mixins.rm(375) {
       width: 280px;
     }
 
-    @include mixins.rm(768) {
+    @include mixins.rm(480) {
       width: 320px;
     }
+
+    @include mixins.rm(768) {
+      width: 360px;
+    }
+
 
     @include mixins.rm(1024) {
       margin-top: 20px;

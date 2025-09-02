@@ -213,7 +213,7 @@ export const authApi = {
                 const isBadPhoneVerification = errors.includes(serverErrorMessages.verification.phone);
 
                 if (isBadPhoneVerification) {
-                    return {
+                    throw {
                         success: false,
                         error: {
                             title: t("api.auth.errors.checkPhone.isBadPhoneVerification.title"),
@@ -222,7 +222,7 @@ export const authApi = {
                     }
                 }
 
-                return {
+                throw {
                     success: false,
                     error: {
                         title: t("api.auth.errors.checkPhone.default.title"),
@@ -231,7 +231,7 @@ export const authApi = {
                 }
             }
 
-            return {
+            throw {
                 success: false, error: {
                     title: t("api.common.errors.default.title"),
                     text: t("api.common.errors.default.text")

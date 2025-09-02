@@ -26,7 +26,7 @@ function SocialForm() {
 
     const usernameSchema = Yup.object({
         username: Yup.string()
-            .required('Поле не може бути порожнім')
+            .required(t('modal.validation.social.required'))
     })
 
     async function verifyInstagram(values) {
@@ -53,8 +53,6 @@ function SocialForm() {
 
             if (!res.success) throw res.error
 
-            // window.open(res.link, "_blank")
-            // closeModalWithDelay(100)
             setTelegramLink(res.link)
         } catch (error) {
             changeModalType('message', error)
@@ -64,7 +62,7 @@ function SocialForm() {
         }
     }
 
-    async function handleSubmit(values, {resetForm}) {
+    async function handleSubmit(values) {
         await verifyInstagram({
             verificationType: 'INSTAGRAM_SUBSCRIPTION',
             tag: values.username
@@ -72,75 +70,75 @@ function SocialForm() {
     }
 
     return (
-        <Formik
-            initialValues={{
-                username: '',
-            }}
-            validationSchema={usernameSchema}
-            onSubmit={handleSubmit}
-        >
-            <>
-                <h2 className="popup__title">
-                    Веріфікуйтесь з вікористанням однієї з соціальних мереж
-                </h2>
+        <>
+            <Formik
+                initialValues={{
+                    username: '',
+                }}
+                validationSchema={usernameSchema}
+                onSubmit={handleSubmit}
+            >
+                <>
+                    <h2 className="popup__title">
+                        {t('modal.social.title')}
+                    </h2>
 
-                <FormSwitcher
-                    type={type}
-                    options={switcherOptions}
-                    onSwitch={setType}
-                />
+                    <FormSwitcher
+                        type={type}
+                        options={switcherOptions}
+                        onSwitch={setType}
+                    />
 
+                    {type === 'instagram' && (
+                        <div className="popup__content">
+                            <Form className="social-form">
+                                <FormField
+                                    name="username"
+                                    type="text"
+                                    placeholder={t('modal.placeholders.username')}
+                                    maxLength={32}
+                                />
+                                <Button
+                                    className="popup__button button button--primary"
+                                    type="submit"
+                                >
+                                    {t('modal.buttons.confirm')}
+                                </Button>
+                            </Form>
+                        </div>
+                    )}
+                </>
+            </Formik>
 
-                {type === 'instagram' && (
-                    <div className="popup__content">
-                        <Form className="social-form">
-                            <FormField
-                                name="username"
-                                type="text"
-                                placeholder="Введіть ім'я користувача"
-                                maxLength={32}
-                            />
+            {type === 'telegram' && (
+                <div className="popup__content">
+                    {!telegramLink
+                        ? (
                             <Button
                                 className="popup__button button button--primary"
                                 type="submit"
+                                onClick={verifyTelegram}
                             >
-                                Підтвердити
+                                {t('modal.buttons.getLink')}
                             </Button>
-                        </Form>
-                    </div>
-                )}
+                        )
+                        : (
+                            <Button
+                                as='a'
+                                href={telegramLink}
+                                target="_blank"
+                                className="popup__button button button--primary"
+                                type="submit"
+                                onClick={() => closeModal()}
+                            >
+                                {t('modal.buttons.toBot')}
+                            </Button>
+                        )
+                    }
+                </div>
+            )}
+        </>
 
-                {type === 'telegram' && (
-                    <div className="popup__content">
-                        {!telegramLink
-                            ? (
-                                <Button
-                                    className="popup__button button button--primary"
-                                    type="submit"
-                                    onClick={verifyTelegram}
-                                    disabled
-                                >
-                                    Отримати посилання
-                                </Button>
-                            )
-                            : (
-                                <Button
-                                    as='a'
-                                    href={telegramLink}
-                                    target="_blank"
-                                    className="popup__button button button--primary"
-                                    type="submit"
-                                    onClick={() => closeModal()}
-                                >
-                                    Перейти в бот
-                                </Button>
-                            )
-                        }
-                    </div>
-                )}
-
-            </>
-        </Formik>
     )
 }
 

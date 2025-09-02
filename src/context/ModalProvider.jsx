@@ -17,7 +17,7 @@ export const ModalProvider = ({ children }) => {
         setModal({ isOpen: false, type: null, props: {} });
     }, []);
 
-    const closeModalWithDelay = useCallback((delay = 3000) => {
+    const closeModalWithDelay = useCallback((delay = 4500) => {
         setTimeout(() => closeModal(), delay);
     }, []);
 
@@ -25,7 +25,7 @@ export const ModalProvider = ({ children }) => {
         setModal((prev) => ({ ...prev, type, props }));
     }, []);
 
-    const changeModalTypeWithDelay = useCallback((type, props, delay = 3000) => {
+    const changeModalTypeWithDelay = useCallback((type, props, delay = 4500) => {
         setTimeout(() => changeModalType(type, props), delay);
     }, []);
 

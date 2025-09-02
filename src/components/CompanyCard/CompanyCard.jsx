@@ -44,34 +44,6 @@ function CompanyCard({ nominationTag, categoryTag, company }) {
         })
     }
 
-    async function checkPhoneVerification() {
-        showLoader()
-
-        try {
-            const res = await authApi.checkPhoneVerification(authToken, t)
-
-            if (!res.success) {
-                throw res
-            }
-
-            return res.success
-        } catch (errorResponse) {
-            const isSMSSent = localStorage.getItem('requestKey')
-            const isVerifyReqSuccess = !isSMSSent && await sendPhoneVerifyRequest(authToken)
-
-            if (isVerifyReqSuccess || isSMSSent) {
-                openModal('message', errorResponse.error)
-                changeModalTypeWithDelay('phoneOtp', {
-                    onSubmit: verifyPhone,
-                })
-            }
-
-            return errorResponse.success
-        } finally {
-            hideLoader()
-        }
-    }
-
     async function handleVoteError(error) {
         const { phoneVerified, socialVerified } = error.metadata
         const { errorMessage } = error
@@ -140,6 +112,7 @@ function CompanyCard({ nominationTag, categoryTag, company }) {
                 throw response
             }
 
+            queryClient.invalidateQueries({queryKey: ['phoneVerification']})
             localStorage.removeItem('requestKey')
             openModal('message', response.message)
         } catch (errorResponse) {

@@ -5,7 +5,8 @@
     "voteButton": "Vote",
     "email": "Email",
     "name": "Name",
-    "phone": "Phone"
+    "phone": "Phone",
+    "social": "Social Media"
   },
   "hero": {
     "title": {
@@ -45,6 +46,7 @@
       "phoneTitle": "Enter the code from SMS:"
     },
     "social": {
+      "title": "Verify your account via one of your social media accounts"
     },
     "placeholders": {
       "name": "Name",
@@ -52,13 +54,17 @@
       "password": "Password",
       "repeatPassword": "Repeat password",
       "phone": "Phone",
-      "otp": "Code"
+      "otp": "Code",
+      "username": "Username"
     },
     "buttons": {
       "login": "Login",
       "signup": "Sign Up",
       "sendOtp": "Send Code",
-      "faq": "Problems with authorization"
+      "faq": "Problems with authorization",
+      "confirm": "Confirm",
+      "getLink": "Get link",
+      "toBot": "Go to bot"
     },
     "validation": {
       "name": {
@@ -87,6 +93,9 @@
         "required": "Field cannot be empty!",
         "matches": "Code must contain only digits",
         "min": "Code must contain 6 digits"
+      },
+      "social": {
+        "required": "Field cannot be empty!"
       }
     },
     "globalErrors": {
@@ -126,27 +135,27 @@
       "errors": {
         "default": {
           "title": "Connection Error",
-          "text": "Unable to connect to the server. Please check your internet connection and try again."
+          "text": "We couldn’t reach the server. Please check your internet connection and try again."
         }
       }
     },
     "auth": {
       "success": {
         "register": {
-          "title": "Registration Successful",
-          "text": "Your account has been created. You can now log in."
+          "title": "Registration Complete",
+          "text": "Your account has been created successfully. You can now sign in."
         },
         "login": {
-          "title": "Login Successful",
-          "text": "You are now logged in to your account."
+          "title": "Signed In",
+          "text": "You’re now signed in to your account."
         },
         "verifyEmail": {
           "title": "Email Verified",
-          "text": "Your email address has been successfully verified."
+          "text": "Your email has been verified successfully."
         },
         "checkPhone": {
-          "title": "Phone Verified",
-          "text": "Your phone number has been successfully verified."
+          "title": "",
+          "text": ""
         },
         "reqPhoneVerify": {
           "title": "",
@@ -154,88 +163,88 @@
         },
         "verifyPhone": {
           "title": "Phone Verified",
-          "text": "Your phone number has been successfully verified."
+          "text": "Your phone number has been verified successfully."
         }
       },
       "errors": {
         "register": {
           "isBadEmailOrPhone": {
             "title": "Registration Failed",
-            "text": "An account with this email and phone number already exists."
+            "text": "An account with this email or phone number already exists."
           },
           "isBadEmail": {
             "title": "Registration Failed",
-            "text": "An account with this email already exists."
+            "text": "An account with this email already exists. Please use a different email or log in."
           },
           "isBadPhone": {
             "title": "Registration Failed",
-            "text": "An account with this phone number already exists."
+            "text": "An account with this phone number already exists. Please use a different number or log in."
           },
           "default": {
             "title": "Registration Failed",
-            "text": "We couldn't complete your registration. Please try again later."
+            "text": "We couldn’t complete your registration. Please try again in a few moments."
           }
         },
         "login": {
           "isNotVerifiedEmail": {
             "title": "Email Not Verified",
-            "text": "Please verify your email address using the verification code we sent you."
+            "text": "Please verify your email using the code we sent you."
           },
           "isBadEmail": {
             "title": "Login Failed",
-            "text": "No account found with this email or phone number."
+            "text": "We couldn’t find an account with this email or phone number."
           },
           "isBadPassword": {
             "title": "Login Failed",
-            "text": "Incorrect password. Please try again."
+            "text": "The password you entered is incorrect. Please try again."
           },
           "default": {
             "title": "Login Failed",
-            "text": "We couldn't log you in. Please try again later."
+            "text": "We couldn’t log you in. Please try again in a few moments."
           }
         },
         "verifyEmail": {
           "isBadRequestId": {
             "title": "Verification Failed",
-            "text": "This verification link is invalid or has expired. Please request a new one."
+            "text": "This verification link is invalid or has expired. Please request a new link."
           },
           "isBadCode": {
             "title": "Verification Failed",
-            "text": "The verification code you entered is incorrect. Please check and try again."
+            "text": "The code you entered is incorrect. Please check it and try again."
           },
           "default": {
             "title": "Verification Failed",
-            "text": "We couldn't verify your email. Please try again later."
+            "text": "We couldn’t verify your email. Please try again in a few moments."
           }
         },
         "checkPhone": {
           "isBadPhoneVerification": {
-            "title": "Phone Verification Failed",
-            "text": "This verification request is invalid or has expired. Please request a new one."
+            "title": "Phone Not Verified",
+            "text": "Your phone number hasn’t been verified yet. Please enter the verification code sent to you via SMS."
           },
           "default": {
             "title": "Phone Verification Failed",
-            "text": "We couldn't verify your phone number. Please try again later."
+            "text": "We couldn’t verify your phone number. Please try again in a few moments."
           }
         },
         "reqPhoneVerify": {
           "default": {
             "title": "Request Failed",
-            "text": "We couldn't send a verification code. Please try again later."
+            "text": "We couldn’t send the verification code. Please try again in a few moments."
           }
         },
         "verifyPhone": {
           "isBadRequestId": {
             "title": "Verification Failed",
-            "text": "This verification code is invalid or has expired. Please request a new one."
+            "text": "This verification code is invalid or has expired. Please request a new code."
           },
           "isBadCode": {
             "title": "Verification Failed",
-            "text": "The verification code you entered is incorrect. Please check and try again."
+            "text": "The verification code you entered is incorrect. Please try again."
           },
           "default": {
             "title": "Verification Failed",
-            "text": "We couldn't verify your phone number. Please try again later."
+            "text": "We couldn’t verify your phone number. Please try again in a few moments."
           }
         }
       }
@@ -259,35 +268,35 @@
         "statistic": {
           "default": {
             "title": "Loading Error",
-            "text": "We couldn't load the voting statistics. Please try again later."
+            "text": "We couldn’t load the voting statistics. Please try again in a few moments."
           }
         },
         "createVote": {
           "isCreated": {
             "title": "Already Voted",
-            "text": "You've already voted in this category. You can only vote once per category."
+            "text": "You’ve already voted in this category. Each category allows only one vote."
           },
           "isNoPhoneAndSocial": {
-            "title": "Your phone and social media must to be verified",
-            "text": "To vote, please verify your phone number and connect at least one social media account"
+            "title": "Verification Required",
+            "text": "To vote, please verify your phone number and connect at least one social media account."
           },
           "isNoPhone": {
-            "title": "Your phone must to be verified",
-            "text": "Please enter code from SMS to verify your phone number"
+            "title": "Phone Verification Required",
+            "text": "Please enter the code sent via SMS to verify your phone number."
           },
           "isNoSocial": {
-            "title": "Your social media is not connected",
-            "text": "To vote, please connect at least one social media account"
+            "title": "Social Media Required",
+            "text": "To vote, please connect at least one social media account."
           },
           "default": {
             "title": "Vote Submission Failed",
-            "text": "We couldn't submit your vote. Please try again later."
+            "text": "We couldn’t submit your vote. Please try again in a few moments."
           }
         },
         "usersVotes": {
           "default": {
             "title": "Loading Error",
-            "text": "We couldn't load your voting history. Please try again later."
+            "text": "We couldn’t load your voting history. You have been logged out. Please sign in again."
           }
         }
       }

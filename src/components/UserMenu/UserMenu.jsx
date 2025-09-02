@@ -4,17 +4,33 @@ import Button from "../Button/Button.jsx";
 import {useTranslation} from "react-i18next";
 import useClickOutside from "../../hooks/useClickOutside.jsx";
 import {useLoader} from "../../context/LoaderProvider.jsx";
-import { FaUser } from "react-icons/fa";
-import { MdEmail, MdOutlinePhoneIphone } from "react-icons/md";
+import {FaGlobe, FaUser} from "react-icons/fa";
+import {MdEmail, MdOutlineError, MdOutlinePhoneIphone, MdVerifiedUser} from "react-icons/md";
+import {useQuery} from "@tanstack/react-query";
+import {authApi} from "../../api/auth.js";
+import {useAuth} from "../../context/AuthProvider.jsx";
 
 function UserMenu({ user, handleLogout }) {
     const { t } = useTranslation();
+    const { authToken } = useAuth();
     const [open, setOpen] = useState(false);
+    const [socialVerification, setSocialVerification] = useState(null);
+
     const { showLoader, hideLoader } = useLoader();
     const userInitials = user?.name ? user.name.split(' ').map(word => word[0]).join('').slice(0,2) : '??';
 
     const userMenuBlock = useRef(null);
     useClickOutside(userMenuBlock, open, () => setOpen(false));
+
+    const { data, isError } = useQuery({
+        queryKey: ['phoneVerification', user?.phoneNumber],
+        queryFn: () => authApi.checkPhoneVerification(authToken, t),
+        retry: 1,
+        refetchOnWindowFocus: false,
+        enabled: !!authToken
+    })
+
+    const isPhoneVerified = !isError && (data?.success ?? false)
 
     return (
         <div className="user" ref={userMenuBlock}>
@@ -37,7 +53,19 @@ function UserMenu({ user, handleLogout }) {
                         </div>
                         <div className="user__info-item" title={user?.phoneNumber}>
                             <MdOutlinePhoneIphone />
-                            <span>{user?.phoneNumber || 'No Phone'}</span>
+                            {user?.phoneNumber || 'No Phone'}
+                            {isPhoneVerified
+                                ? <MdVerifiedUser title="Verified" className="user__info-status user__info-status--success" />
+                                : <MdOutlineError title="Not Verified" className="user__info-status user__info-status--error" />
+                            }
+                        </div>
+                        <div className="user__info-item" title={socialVerification?.name || t('common.social')}>
+                            <FaGlobe />
+                            {socialVerification || t('common.social')}
+                            {socialVerification?.verified
+                                ? <MdVerifiedUser title="Verified" className="user__info-status user__info-status--success" />
+                                : <MdOutlineError title="Not Verified" className="user__info-status user__info-status--error" />
+                            }
                         </div>
                     </div>
                     <Button
