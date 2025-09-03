@@ -48,7 +48,6 @@ function UserMenu({ user, handleLogout }) {
     const { data, isLoading } = useQuery({
         queryKey: ['userInfo'],
         queryFn: () => authApi.getUserInfo(authToken, t),
-        retry: 2,
         refetchInterval: onUserInfoRefetch,
         refetchOnWindowFocus: false,
         enabled: !!authToken
@@ -61,6 +60,10 @@ function UserMenu({ user, handleLogout }) {
         socialVerification.type = socialVerification.type === 'INSTAGRAM_SUBSCRIPTION' ? 'Instagram' : 'Telegram';
         setSocialVerification(socialVerification);
     }, [data, isLoading])
+
+    useEffect(() => {
+        console.log(data?.data)
+    }, [data])
 
     const isPhoneVerified = data?.data?.verifications?.some(verification => verification.type === 'PHONE') ?? false;
 
@@ -87,16 +90,16 @@ function UserMenu({ user, handleLogout }) {
                             <MdOutlinePhoneIphone />
                             {user?.phoneNumber ?? 'No Phone'}
                             {isPhoneVerified
-                                ? <MdVerifiedUser title="Verified" className="user__info-status user__info-status--success" />
-                                : <MdOutlineError title="Not Verified" className="user__info-status user__info-status--error" />
+                                ? <MdVerifiedUser title={t('common.verified')} className="user__info-status user__info-status--success" />
+                                : <MdOutlineError title={t('common.notVerified')} className="user__info-status user__info-status--error" />
                             }
                         </div>
                         <div className="user__info-item" title={socialVerification?.name ?? t('common.social')}>
                             <FaGlobe />
                             {socialVerification?.type ?? t('common.social')}
                             {socialVerification?.verified
-                                ? <MdVerifiedUser title="Verified" className="user__info-status user__info-status--success" />
-                                : <MdOutlineError title="Not Verified" className="user__info-status user__info-status--error" />
+                                ? <MdVerifiedUser title={t('common.verified')} className="user__info-status user__info-status--success" />
+                                : <MdOutlineError title={t('common.notVerified')} className="user__info-status user__info-status--error" />
                             }
                         </div>
                     </div>

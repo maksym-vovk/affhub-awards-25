@@ -6,7 +6,9 @@
     "email": "Email",
     "name": "Ім'я",
     "phone": "Телефон",
-    "social": "Соціальні мережі"
+    "social": "Соціальні мережі",
+    "verified": "Верифіковано",
+    "notVerified": "Не верифіковано"
   },
   "hero": {
     "title": {

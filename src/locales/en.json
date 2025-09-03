@@ -6,7 +6,9 @@
     "email": "Email",
     "name": "Name",
     "phone": "Phone",
-    "social": "Social Media"
+    "social": "Social Media",
+    "verified": "Verified",
+    "notVerified": "Not Verified"
   },
   "hero": {
     "title": {

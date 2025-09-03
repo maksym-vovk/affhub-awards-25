@@ -12,6 +12,7 @@ import {voteApi} from "../../api/vote.js";
 
 function CompanyCard({ nominationTag, categoryTag, company }) {
     const { t } = useTranslation();
+    const { handleLogout } = useAuth()
     const { openModal, changeModalType, changeModalTypeWithDelay, closeModalWithDelay } = useModal()
     const { authToken } = useAuth()
     const { showLoader, hideLoader } = useLoader()
@@ -47,8 +48,10 @@ function CompanyCard({ nominationTag, categoryTag, company }) {
     }
 
     async function handleVoteError(error) {
-        const { phoneVerified, socialVerified } = error.metadata
-        const { errorMessage } = error
+        const { errorMessage, metadata } = error
+        const { phoneVerified, socialVerified } = metadata
+
+        // if (!metadata) handleLogout()
 
         if (!phoneVerified && !socialVerified) {
             await runPhoneAndSocialVerification(errorMessage)

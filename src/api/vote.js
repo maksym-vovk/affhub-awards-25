@@ -79,6 +79,7 @@ export const voteApi = {
                     case isCreated:
                         throw {
                             success: false,
+                            metadata: error.response.data.metadata,
                             errorMessage: {
                                 title: t("api.vote.errors.createVote.isCreated.title"),
                                 text: t("api.vote.errors.createVote.isCreated.text"),

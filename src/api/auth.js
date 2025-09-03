@@ -247,38 +247,9 @@ export const authApi = {
                     Authorization: `Bearer ${authToken}`,
                 },
             });
-            return res.data;
+            return res?.data ?? null;
         } catch (error) {
             console.log(error);
-            // if (error.response) {
-            //     const {errors} = error.response.data;
-            //     const isBadPhoneVerification = errors.includes(serverErrorMessages.verification.phone);
-            //
-            //     if (isBadPhoneVerification) {
-            //         throw {
-            //             success: false,
-            //             error: {
-            //                 title: t("api.auth.errors.checkPhone.isBadPhoneVerification.title"),
-            //                 text: t("api.auth.errors.checkPhone.isBadPhoneVerification.text")
-            //             }
-            //         }
-            //     }
-            //
-            //     throw {
-            //         success: false,
-            //         error: {
-            //             title: t("api.auth.errors.checkPhone.default.title"),
-            //             text: t("api.auth.errors.checkPhone.default.text")
-            //         }
-            //     }
-            // }
-            //
-            // throw {
-            //     success: false, error: {
-            //         title: t("api.common.errors.default.title"),
-            //         text: t("api.common.errors.default.text")
-            //     }
-            // };
         }
 
     },
