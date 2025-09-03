@@ -98,6 +98,17 @@ function SocialForm() {
 
                     {type === 'instagram' && (
                         <div className="popup__content">
+                            <p style={{marginBottom: '20px', textAlign: 'center', color: '#fff'}}>
+                                Перейти на нашу сторінку
+                                <br/>
+                                <a
+                                    href="https://www.instagram.com/affhub.global?igsh=MW1sb3ZucWFmMWtzMg%3D%3D"
+                                    style={{textDecoration: 'underline', color: '#fff' }}
+                                    target="_blank"
+                                >
+                                    за посиланням
+                                </a>
+                            </p>
                             <Form className="social-form">
                                 <FormField
                                     name="username"

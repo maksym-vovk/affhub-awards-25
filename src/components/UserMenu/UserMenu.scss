@@ -38,18 +38,7 @@
       gap: 10px;
     }
 
-    svg {
-      flex-shrink: 0;
-      aspect-ratio: 1/1;
-      width: 14px;
-      height: auto;
-
-      @include mixins.rm(768) {
-        width: 20px;
-      }
-    }
-
-    &:first-child svg {
+    &:first-child .user__info-icon {
       height: 13px;
 
       @include mixins.rm(768) {
@@ -70,6 +59,17 @@
     }
   }
 
+  &__info-icon {
+    flex-shrink: 0;
+    aspect-ratio: 1/1;
+    width: 14px;
+    height: auto;
+
+    @include mixins.rm(768) {
+      width: 20px;
+    }
+  }
+
   &__info-status {
     &--success {
       color: #28a745;
@@ -77,6 +77,13 @@
     &--error {
       color: #dc3545;
     }
+  }
+
+  &__loader {
+    line-height: 0;
+    aspect-ratio: 1/1;
+    width: 16px;
+    stroke: white;
   }
 
   &__menu {

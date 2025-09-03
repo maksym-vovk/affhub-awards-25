@@ -9,12 +9,14 @@ import {MdEmail, MdOutlineError, MdOutlinePhoneIphone, MdVerifiedUser} from "rea
 import {useQuery} from "@tanstack/react-query";
 import {authApi} from "../../api/auth.js";
 import {useAuth} from "../../context/AuthProvider.jsx";
+import {RotatingLines, TailSpin} from "react-loader-spinner";
 
 function UserMenu({ user, handleLogout }) {
     const { t } = useTranslation();
     const { authToken } = useAuth();
     const [open, setOpen] = useState(false);
     const [socialVerification, setSocialVerification] = useState(null);
+    const [isSocialVerified, setIsSocialVerified] = useState('notVerified');
 
     const { showLoader, hideLoader } = useLoader();
     const userInitials = user?.name ? user.name.split(' ').map(word => word[0]).join('').slice(0,2) : '??';
@@ -31,6 +33,8 @@ function UserMenu({ user, handleLogout }) {
             return false;
         }
 
+        setIsSocialVerified('pending');
+
         if (userInfo?.data) {
             const socialVerification = userInfo.data.verifications.find(
                 verification => ['INSTAGRAM_SUBSCRIPTION', 'TELEGRAM_SUBSCRIPTION'].includes(verification.type)
@@ -38,6 +42,7 @@ function UserMenu({ user, handleLogout }) {
 
             if (socialVerification) {
                 localStorage.removeItem('verificationRequest');
+                setIsSocialVerified('done');
                 return false;
             }
         }
@@ -59,13 +64,45 @@ function UserMenu({ user, handleLogout }) {
         if (!socialVerification?.type) return;
         socialVerification.type = socialVerification.type === 'INSTAGRAM_SUBSCRIPTION' ? 'Instagram' : 'Telegram';
         setSocialVerification(socialVerification);
+        setIsSocialVerified('verified');
     }, [data, isLoading])
 
-    useEffect(() => {
-        console.log(data?.data)
-    }, [data])
-
     const isPhoneVerified = data?.data?.verifications?.some(verification => verification.type === 'PHONE') ?? false;
+
+    const socialVerificationStatusIcon = () => {
+        switch (isSocialVerified) {
+            case 'pending':
+                return (
+                    <div className="user__loader">
+                        <RotatingLines
+                            visible={true}
+                            height="100%"
+                            width="100%"
+                            strokeColor="#fff"
+                            strokeWidth="5"
+                            animationDuration="0.75"
+                            ariaLabel="rotating-lines-loading"
+                        />
+                    </div>
+                )
+            case 'verified':
+                return (
+                    <MdVerifiedUser
+                        title={t('common.verified')}
+                        className="user__info-status user__info-status--success"
+                    />
+                )
+            case 'notVerified':
+                return (
+                    <MdOutlineError
+                        title={t('common.notVerified')}
+                        className="user__info-status user__info-status--error"
+                    />
+                )
+            default:
+                return null;
+        }
+    }
 
     return (
         <div className="user" ref={userMenuBlock}>
@@ -79,15 +116,15 @@ function UserMenu({ user, handleLogout }) {
                 <div className="user__menu">
                     <div className="user__info">
                         <div className="user__info-item" title={user?.name}>
-                            <FaUser />
+                            <FaUser className="user__info-icon" />
                             <span>{user?.name ?? 'Unknown User'}</span>
                         </div>
                         <div className="user__info-item" title={user?.email}>
-                            <MdEmail />
+                            <MdEmail className="user__info-icon" />
                             <span>{user?.email ?? 'No Email'}</span>
                         </div>
                         <div className="user__info-item" title={user?.phoneNumber}>
-                            <MdOutlinePhoneIphone />
+                            <MdOutlinePhoneIphone className="user__info-icon" />
                             {user?.phoneNumber ?? 'No Phone'}
                             {isPhoneVerified
                                 ? <MdVerifiedUser title={t('common.verified')} className="user__info-status user__info-status--success" />
@@ -95,12 +132,13 @@ function UserMenu({ user, handleLogout }) {
                             }
                         </div>
                         <div className="user__info-item" title={socialVerification?.name ?? t('common.social')}>
-                            <FaGlobe />
+                            <FaGlobe className="user__info-icon" />
                             {socialVerification?.type ?? t('common.social')}
-                            {socialVerification?.verified
-                                ? <MdVerifiedUser title={t('common.verified')} className="user__info-status user__info-status--success" />
-                                : <MdOutlineError title={t('common.notVerified')} className="user__info-status user__info-status--error" />
-                            }
+                            {/*{socialVerification?.verified*/}
+                            {/*    ? <MdVerifiedUser title={t('common.verified')} className="user__info-status user__info-status--success" />*/}
+                            {/*    : <MdOutlineError title={t('common.notVerified')} className="user__info-status user__info-status--error" />*/}
+                            {/*}*/}
+                            {socialVerificationStatusIcon()}
                         </div>
                     </div>
                     <Button
