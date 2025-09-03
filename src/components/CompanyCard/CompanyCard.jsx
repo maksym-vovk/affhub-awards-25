@@ -20,13 +20,14 @@ function CompanyCard({ nominationTag, categoryTag, company }) {
     const imgElement = <img className="company__logo" src={imgSrc} alt={company.name} /> || null
 
     const queryClient = useQueryClient()
-    const mutation = useMutation({
+    const {mutate, isPending} = useMutation({
         mutationFn: (params) => voteApi.createVote(params),
         onSuccess: () => {
             queryClient.invalidateQueries({ queryKey: ['statistics'] })
             queryClient.invalidateQueries({ queryKey: ['usersVotes'] })
         },
         onError: handleVoteError,
+        onSettled: () => hideLoader()
     })
 
     async function handleVote() {
@@ -36,19 +37,13 @@ function CompanyCard({ nominationTag, categoryTag, company }) {
         }
 
         showLoader()
-        try {
-            mutation.mutate({
-                nomination: nominationTag,
-                niche: categoryTag,
-                vote: company.tag,
-                authToken,
-                t
-            })
-        } catch (error) {
-            console.warn('handleVote Error: ', error)
-        } finally {
-            hideLoader()
-        }
+        mutate({
+            nomination: nominationTag,
+            niche: categoryTag,
+            vote: company.tag,
+            authToken,
+            t
+        })
     }
 
     async function handleVoteError(error) {

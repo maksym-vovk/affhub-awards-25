@@ -54,12 +54,6 @@ function UserMenu({ user, handleLogout }) {
         enabled: !!authToken
     })
 
-    const isPhoneVerified = data?.data?.verifications?.some(verification => verification.type === 'PHONE') ?? false;
-
-    useEffect(() => {
-        console.log(data);
-    }, [data])
-
     useEffect(() => {
         if (isLoading || !data) return;
         const socialVerification = data.data.verifications.find(verification => ['INSTAGRAM_SUBSCRIPTION', 'TELEGRAM_SUBSCRIPTION'].includes(verification.type));
@@ -67,6 +61,8 @@ function UserMenu({ user, handleLogout }) {
         socialVerification.type = socialVerification.type === 'INSTAGRAM_SUBSCRIPTION' ? 'Instagram' : 'Telegram';
         setSocialVerification(socialVerification);
     }, [data, isLoading])
+
+    const isPhoneVerified = data?.data?.verifications?.some(verification => verification.type === 'PHONE') ?? false;
 
     return (
         <div className="user" ref={userMenuBlock}>
