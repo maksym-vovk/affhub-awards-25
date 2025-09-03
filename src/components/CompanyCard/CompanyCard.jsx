@@ -35,13 +35,20 @@ function CompanyCard({ nominationTag, categoryTag, company }) {
             return;
         }
 
-        mutation.mutate({
-            nomination: nominationTag,
-            niche: categoryTag,
-            vote: company.tag,
-            authToken,
-            t
-        })
+        showLoader()
+        try {
+            mutation.mutate({
+                nomination: nominationTag,
+                niche: categoryTag,
+                vote: company.tag,
+                authToken,
+                t
+            })
+        } catch (error) {
+            console.warn('handleVote Error: ', error)
+        } finally {
+            hideLoader()
+        }
     }
 
     async function handleVoteError(error) {

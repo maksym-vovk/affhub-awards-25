@@ -10,6 +10,7 @@ import {useAuth} from "../../context/AuthProvider.jsx";
 import {authApi} from "../../api/auth.js";
 import {useModal} from "../../context/ModalProvider.jsx";
 import {useLoader} from "../../context/LoaderProvider.jsx";
+import {useQueryClient} from "@tanstack/react-query";
 
 function SocialForm() {
     const {t} = useTranslation();
@@ -18,6 +19,8 @@ function SocialForm() {
     const {closeModal, closeModalWithDelay, changeModalType} = useModal()
     const [type, setType] = useState('instagram');
     const [telegramLink, setTelegramLink] = useState(null)
+
+    const queryClient = useQueryClient()
 
     const switcherOptions = [
         {type: 'instagram', text: 'Instagram'},
@@ -37,6 +40,7 @@ function SocialForm() {
             if (!res.success) throw res.error
 
             localStorage.setItem('verificationRequest', 'instagram')
+            queryClient.invalidateQueries({queryKey: ['userInfo']})
             changeModalType('message', res.message)
             closeModalWithDelay()
         } catch (error) {
@@ -55,6 +59,7 @@ function SocialForm() {
             if (!res.success) throw res.error
 
             localStorage.setItem('verificationRequest', 'telegram')
+            queryClient.invalidateQueries({queryKey: ['userInfo']})
             setTelegramLink(res.link)
         } catch (error) {
             changeModalType('message', error)

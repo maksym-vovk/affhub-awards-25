@@ -10,7 +10,7 @@ import {useLoader} from "../../context/LoaderProvider.jsx";
 function OtpForm({ onSubmit, nextStep }) {
     const {t} = useTranslation();
     const {type, openModal, changeModalTypeWithDelay, closeModalWithDelay} = useModal()
-    const {hideLoader} = useLoader()
+    const {showLoader, hideLoader} = useLoader()
     const otpSchema = Yup.object({
         otp: Yup.string()
             .required(t('modal.validation.otp.required'))
@@ -18,13 +18,9 @@ function OtpForm({ onSubmit, nextStep }) {
             .min(6, t('modal.validation.otp.min'))
     })
 
-    function handleOtpInput(e) {
-        const raw = e.target.value;
-        e.target.value = raw.replace(/[^\d]/g, '');
-    }
-
     async function handleSubmit(values, { resetForm }) {
         try {
+            showLoader()
             await onSubmit(values)
             resetForm();
             nextStep ? changeModalTypeWithDelay(nextStep.type, nextStep.props) : closeModalWithDelay();
@@ -53,7 +49,6 @@ function OtpForm({ onSubmit, nextStep }) {
                         name="otp"
                         type="text"
                         placeholder={t('modal.placeholders.otp')}
-                        onInput={handleOtpInput}
                         maxLength={6}
                     />
                     <Button

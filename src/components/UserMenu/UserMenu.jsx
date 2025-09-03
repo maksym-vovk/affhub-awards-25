@@ -22,18 +22,27 @@ function UserMenu({ user, handleLogout }) {
     const userMenuBlock = useRef(null);
     useClickOutside(userMenuBlock, open, () => setOpen(false));
 
-    // const { data, isError } = useQuery({
-    //     queryKey: ['phoneVerification', user?.phoneNumber],
-    //     queryFn: () => authApi.checkPhoneVerification(authToken, t),
-    //     retry: 1,
-    //     refetchOnWindowFocus: false,
-    //     enabled: !!authToken
-    // })
 
     function onUserInfoRefetch(data) {
         const isVerificationRequested = localStorage.getItem('verificationRequest');
-        const socialVerification = data?.data?.verifications.find(verification => ['INSTAGRAM_SUBSCRIPTION', 'TELEGRAM_SUBSCRIPTION'].includes(verification.type));
-        return isVerificationRequested && socialVerification ? 5000 : false;
+        const userInfo = data.state?.data;
+
+        if (!isVerificationRequested) {
+            return false;
+        }
+
+        if (userInfo?.data) {
+            const socialVerification = userInfo.data.verifications.find(
+                verification => ['INSTAGRAM_SUBSCRIPTION', 'TELEGRAM_SUBSCRIPTION'].includes(verification.type)
+            );
+
+            if (socialVerification) {
+                localStorage.removeItem('verificationRequest');
+                return false;
+            }
+        }
+
+        return 5000;
     }
 
     const { data, isLoading } = useQuery({
@@ -45,11 +54,11 @@ function UserMenu({ user, handleLogout }) {
         enabled: !!authToken
     })
 
+    const isPhoneVerified = data?.data?.verifications?.some(verification => verification.type === 'PHONE') ?? false;
+
     useEffect(() => {
         console.log(data);
     }, [data])
-
-    const isPhoneVerified = data?.data?.verifications?.some(verification => verification.type === 'PHONE') ?? false;
 
     useEffect(() => {
         if (isLoading || !data) return;

@@ -1,7 +1,6 @@
 import './FormField.scss'
 import { useField } from "formik";
 import PasswordButton from "../PasswordButton/PasswordButton.jsx";
-import * as Yup from "yup";
 import {useState} from "react";
 
 function FormField({ ...props }) {
@@ -18,7 +17,6 @@ function FormField({ ...props }) {
     function handlePhoneInput(e) {
         const raw = e.target.value;
         let cleaned = raw.replace(/[^\d]/g, '');
-        // let cleaned = raw.replace(/[^\d+]/g, '');
 
         if (cleaned === '') {
             e.target.value = '';
@@ -32,21 +30,20 @@ function FormField({ ...props }) {
         e.target.value = cleaned;
     }
 
-    function handleInput(event) {
-        // if (field.name === 'phoneNumber') {
-        //     handlePhoneInput(event);
-        // }
-        //
-        // if (field.name === 'password') {
-        //     handlePasswordInput(event);
-        // }
+    function handleOtpInput(e) {
+        const raw = e.target.value;
+        e.target.value = raw.replace(/[^\d]/g, '');
+    }
 
+    function handleInput(event) {
         switch (field.name) {
             case 'phoneNumber': handlePhoneInput(event)
                 break;
             case 'password': handleNonSpacesInput(event);
                 break;
             case 'username': handleNonSpacesInput(event);
+                break;
+            case 'otp': handleOtpInput(event);
                 break;
             default: return null
         }
