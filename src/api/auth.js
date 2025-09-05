@@ -351,18 +351,17 @@ export const authApi = {
             return {
                 success: res.data.success,
                 message: {
-                    title: 'Verification Request Submitted',
-                    text: "We will review your request and let you know by email if it has been approved"
+                    title: t("api.success.verifySocialMedia.title"),
+                    text: t("api.success.verifySocialMedia.text")
                 }
             }
         } catch (error) {
-            console.log(error);
             if (error.response) {
                 return {
                     success: false,
                     error: {
-                        title: "Something went wrong",
-                        text: "Please try again later"
+                        title: t("api.errors.verifySocialMedia.title"),
+                        text: t("api.errors.verifySocialMedia.text")
                     }
                 };
             }
@@ -396,8 +395,8 @@ export const authApi = {
                 return {
                     success: false,
                     error: {
-                        title: "Something went wrong",
-                        text: "Please try again later"
+                        title: t("api.errors.verifySocialMedia.title"),
+                        text: t("api.errors.verifySocialMedia.text")
                     }
                 };
             }

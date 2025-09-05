@@ -48,7 +48,10 @@
       "phoneTitle": "Enter the code from SMS:"
     },
     "social": {
-      "title": "Необхідно верифікуватися через одну з соціальних мереж"
+      "title": "You need to verify through one of the social networks",
+      "info": "Go to our page",
+      "link": "via the link",
+      "fn": "*Verification may take up to 3 minutes"
     },
     "placeholders": {
       "name": "Name",
@@ -63,6 +66,7 @@
       "login": "Login",
       "signup": "Sign Up",
       "sendOtp": "Send Code",
+      "sendPhoneOtp": "Verify phone",
       "faq": "Problems with authorization",
       "confirm": "Confirm",
       "getLink": "Get link",
@@ -164,8 +168,12 @@
           "text": "A verification code has been sent to your phone"
         },
         "verifyPhone": {
-          "title": "Phone confirmed",
+          "title": "The code is correct",
           "text": "Your phone number has been successfully verified"
+        },
+        "verifySocialMedia": {
+          "title": "Verification Request Submitted",
+          "text": "We will review your request and let you know by email if it has been approved"
         }
       },
       "errors": {
@@ -248,6 +256,10 @@
             "title": "Verification error",
             "text": "Failed to verify phone number. Please try again in a few minutes"
           }
+        },
+        "verifySocialMedia": {
+          "title": "Verification request not sent",
+          "text": "Failed to send the verification request. Please try again in a few minutes"
         }
       }
     },

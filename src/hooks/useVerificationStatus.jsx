@@ -102,7 +102,7 @@ function useVerificationStatus() {
         console.log(data)
     }, [data])
 
-    return { isPhoneVerified, isSocialVerified, verifiedSocialMedia, requestVerification }
+    return { isPhoneVerified, isSocialVerified, verifiedSocialMedia, requestVerification, removeVerificationRequest }
 }
 
 export default useVerificationStatus

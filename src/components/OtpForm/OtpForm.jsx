@@ -55,7 +55,7 @@ function OtpForm({ onSubmit, nextStep }) {
                         className="popup__button button"
                         type="submit"
                     >
-                        {t('modal.buttons.sendOtp')}
+                        {type === 'phoneOtp' ? t('modal.buttons.sendPhoneOtp') : t('modal.buttons.sendOtp')}
                     </Button>
                 </Form>
             </div>

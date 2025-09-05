@@ -10,8 +10,9 @@ import {useAuth} from "../../context/AuthProvider.jsx";
 import {authApi} from "../../api/auth.js";
 import {useModal} from "../../context/ModalProvider.jsx";
 import {useLoader} from "../../context/LoaderProvider.jsx";
-import {useQueryClient} from "@tanstack/react-query";
 import useVerificationStatus from "../../hooks/useVerificationStatus.jsx";
+
+const INSTAGRAM_PAGE_URL = 'https://www.instagram.com/affhub.global?igsh=MW1sb3ZucWFmMWtzMg%3D%3D'
 
 function SocialForm() {
     const {t} = useTranslation();
@@ -21,9 +22,7 @@ function SocialForm() {
     const [type, setType] = useState('instagram');
     const [telegramLink, setTelegramLink] = useState(null)
 
-    const {requestVerification} = useVerificationStatus()
-
-    // const queryClient = useQueryClient()
+    const {requestVerification, removeVerificationRequest} = useVerificationStatus()
 
     const switcherOptions = [
         {type: 'instagram', text: 'Instagram'},
@@ -49,6 +48,7 @@ function SocialForm() {
         } catch (error) {
             changeModalType('message', error)
             closeModalWithDelay()
+            removeVerificationRequest()
         } finally {
             hideLoader()
         }
@@ -61,14 +61,13 @@ function SocialForm() {
 
             if (!res.success) throw res.error
 
-            requestVerification('telegram')
-            // localStorage.setItem('verificationRequest', 'telegram')
-            // queryClient.invalidateQueries({queryKey: ['userInfo']})
-
             setTelegramLink(res.link)
+
+            requestVerification('telegram')
         } catch (error) {
             changeModalType('message', error)
             closeModalWithDelay()
+            removeVerificationRequest()
         } finally {
             hideLoader()
         }
@@ -103,15 +102,14 @@ function SocialForm() {
 
                     {type === 'instagram' && (
                         <div className="popup__content">
-                            <p style={{marginBottom: '20px', textAlign: 'center', color: '#fff'}}>
-                                Перейти на нашу сторінку
-                                <br/>
+                            <p className="popup__text">
+                                {t('modal.social.info')}&nbsp;
                                 <a
-                                    href="https://www.instagram.com/affhub.global?igsh=MW1sb3ZucWFmMWtzMg%3D%3D"
-                                    style={{textDecoration: 'underline', color: '#fff' }}
+                                    href={INSTAGRAM_PAGE_URL}
+                                    className="popup__link"
                                     target="_blank"
                                 >
-                                    за посиланням
+                                    {t('modal.social.link')}
                                 </a>
                             </p>
                             <Form className="social-form">
@@ -127,8 +125,8 @@ function SocialForm() {
                                 >
                                     {t('modal.buttons.confirm')}
                                 </Button>
-                                <p style={{textAlign: 'center'}}>
-                                    *Очікування верифікації може зайняти до 3 хвилин
+                                <p className="popup__text">
+                                    {t('modal.social.fn')}
                                 </p>
                             </Form>
                         </div>
