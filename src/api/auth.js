@@ -356,6 +356,7 @@ export const authApi = {
                 }
             }
         } catch (error) {
+            console.log(error);
             if (error.response) {
                 return {
                     success: false,

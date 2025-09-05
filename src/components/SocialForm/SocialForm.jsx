@@ -11,6 +11,7 @@ import {authApi} from "../../api/auth.js";
 import {useModal} from "../../context/ModalProvider.jsx";
 import {useLoader} from "../../context/LoaderProvider.jsx";
 import {useQueryClient} from "@tanstack/react-query";
+import useVerificationStatus from "../../hooks/useVerificationStatus.jsx";
 
 function SocialForm() {
     const {t} = useTranslation();
@@ -20,7 +21,9 @@ function SocialForm() {
     const [type, setType] = useState('instagram');
     const [telegramLink, setTelegramLink] = useState(null)
 
-    const queryClient = useQueryClient()
+    const {requestVerification} = useVerificationStatus()
+
+    // const queryClient = useQueryClient()
 
     const switcherOptions = [
         {type: 'instagram', text: 'Instagram'},
@@ -39,10 +42,10 @@ function SocialForm() {
 
             if (!res.success) throw res.error
 
-            localStorage.setItem('verificationRequest', 'instagram')
-            queryClient.invalidateQueries({queryKey: ['userInfo']})
             changeModalType('message', res.message)
             closeModalWithDelay()
+
+            requestVerification('instagram')
         } catch (error) {
             changeModalType('message', error)
             closeModalWithDelay()
@@ -58,8 +61,10 @@ function SocialForm() {
 
             if (!res.success) throw res.error
 
-            localStorage.setItem('verificationRequest', 'telegram')
-            queryClient.invalidateQueries({queryKey: ['userInfo']})
+            requestVerification('telegram')
+            // localStorage.setItem('verificationRequest', 'telegram')
+            // queryClient.invalidateQueries({queryKey: ['userInfo']})
+
             setTelegramLink(res.link)
         } catch (error) {
             changeModalType('message', error)
@@ -122,6 +127,9 @@ function SocialForm() {
                                 >
                                     {t('modal.buttons.confirm')}
                                 </Button>
+                                <p style={{textAlign: 'center'}}>
+                                    *Очікування верифікації може зайняти до 3 хвилин
+                                </p>
                             </Form>
                         </div>
                     )}

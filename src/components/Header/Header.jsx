@@ -43,7 +43,6 @@ function Header() {
                         {currentUser && (
                             <UserMenu
                                 user={currentUser}
-                                handleLogout={handleLogout}
                             />
                         )}
 
